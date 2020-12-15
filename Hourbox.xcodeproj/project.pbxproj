@@ -98,6 +98,7 @@
 				86544065258854C200839146 /* AppDelegate.swift */,
 				86544069258854C200839146 /* ViewController.swift */,
 				8654406E258854C600839146 /* Assets.xcassets */,
+				865440972588576000839146 /* Services */,
 				86544070258854C600839146 /* LaunchScreen.storyboard */,
 				86544073258854C600839146 /* Info.plist */,
 			);
@@ -120,6 +121,13 @@
 				86544089258854C600839146 /* Info.plist */,
 			);
 			path = HourboxUITests;
+			sourceTree = "<group>";
+		};
+		865440972588576000839146 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,7 +436,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.felipeco.Hourbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -446,7 +454,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.felipeco.Hourbox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
