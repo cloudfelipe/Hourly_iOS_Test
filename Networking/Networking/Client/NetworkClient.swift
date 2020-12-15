@@ -17,12 +17,13 @@ public enum WebClientError: Error {
     case undefined(reason: String?)
     case decodableError(error: DecodingError)
     case noDataResponse
+    case errorWithCode(Int)
 }
 
 public typealias RequestResultable<T> = (Result<T, WebClientError>) -> Void
 
 public protocol WebClientType {
-    func loadRequest<T:Decodable>(urlRequest: URLRequest, completion: @escaping RequestResultable<T>)
+    func loadAPIRequest<T: APIRequestType>(endpoint: T, completion: @escaping RequestResultable<T.ResponseDataType>)
 }
 
 public protocol AuthProviderType {
@@ -39,24 +40,33 @@ final public class WebClient: WebClientType {
         self.authProvider = authProvider
     }
     
-    public func loadRequest<T:Decodable>(urlRequest: URLRequest, completion: @escaping RequestResultable<T>) {
-        urlSession.dataTask(with: urlRequest) { (data, response, error) in
-            if let data = data {
-                do {
-                    let responseObject = try JSONDecoder().decode(T.self, from: data)
-                    let responseCode = (response as? HTTPURLResponse)?.statusCode ?? 404
-                    switch responseCode {
-                    case 200:
-                        completion(.success(responseObject))
-                    default:
-                        completion(.failure(.noDataResponse))
+    public func loadAPIRequest<T: APIRequestType>(endpoint: T, completion: @escaping RequestResultable<T.ResponseDataType>) {
+        do {
+            let urlRequest = try endpoint.request()
+            urlSession.dataTask(with: urlRequest) { (data, response, error) in
+                if let data = data {
+                    let statusCode = (response as? HTTPURLResponse)?.statusCode ?? -1000
+                    if statusCode == 200 {
+                        do {
+                            let object = try endpoint.parseResponse(data: data)
+                            completion(.success(object))
+                        } catch let error {
+                            switch error {
+                            case is DecodingError:
+                                completion(.failure(.decodableError(error: error as! DecodingError)))
+                            default:
+                                completion(.failure(.unableToParseDataToJSON(reason: error.localizedDescription)))
+                            }
+                        }
+                    } else {
+                        completion(.failure(.errorWithCode(statusCode)))
                     }
-                } catch {
+                } else {
                     completion(.failure(.noDataResponse))
                 }
-            } else {
-                completion(.failure(.noDataResponse))
-            }
-        }.resume()
+            }.resume()
+        } catch {
+            completion(.failure(.noDataResponse))
+        }
     }
 }

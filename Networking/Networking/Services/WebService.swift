@@ -9,10 +9,10 @@
 import Foundation
 
 public protocol BaseURLProviderType {
-    
+    var baseURL: String { get }
 }
 
-public class WebServices {
+public class WebService {
     
     internal let client: WebClientType
     internal let baseUrl: BaseURLProviderType
