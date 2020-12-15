@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		86544066258854C200839146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86544065258854C200839146 /* AppDelegate.swift */; };
+		86544068258854C200839146 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86544067258854C200839146 /* SceneDelegate.swift */; };
+		8654406A258854C200839146 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86544069258854C200839146 /* ViewController.swift */; };
+		8654406D258854C200839146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8654406B258854C200839146 /* Main.storyboard */; };
+		8654406F258854C600839146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8654406E258854C600839146 /* Assets.xcassets */; };
+		86544072258854C600839146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86544070258854C600839146 /* LaunchScreen.storyboard */; };
+		8654407D258854C600839146 /* HourboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8654407C258854C600839146 /* HourboxTests.swift */; };
+		86544088258854C600839146 /* HourboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86544087258854C600839146 /* HourboxUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86544079258854C600839146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8654405A258854C200839146 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86544061258854C200839146;
+			remoteInfo = Hourbox;
+		};
+		86544084258854C600839146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8654405A258854C200839146 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86544061258854C200839146;
+			remoteInfo = Hourbox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		86544062258854C200839146 /* Hourbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hourbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86544065258854C200839146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		86544067258854C200839146 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		86544069258854C200839146 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8654406C258854C200839146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8654406E258854C600839146 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		86544071258854C600839146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		86544073258854C600839146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86544078258854C600839146 /* HourboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HourboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8654407C258854C600839146 /* HourboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourboxTests.swift; sourceTree = "<group>"; };
+		8654407E258854C600839146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86544083258854C600839146 /* HourboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HourboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86544087258854C600839146 /* HourboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourboxUITests.swift; sourceTree = "<group>"; };
+		86544089258854C600839146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8654405F258854C200839146 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86544075258854C600839146 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86544080258854C600839146 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		86544059258854C200839146 = {
+			isa = PBXGroup;
+			children = (
+				86544064258854C200839146 /* Hourbox */,
+				8654407B258854C600839146 /* HourboxTests */,
+				86544086258854C600839146 /* HourboxUITests */,
+				86544063258854C200839146 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		86544063258854C200839146 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86544062258854C200839146 /* Hourbox.app */,
+				86544078258854C600839146 /* HourboxTests.xctest */,
+				86544083258854C600839146 /* HourboxUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		86544064258854C200839146 /* Hourbox */ = {
+			isa = PBXGroup;
+			children = (
+				86544065258854C200839146 /* AppDelegate.swift */,
+				86544067258854C200839146 /* SceneDelegate.swift */,
+				86544069258854C200839146 /* ViewController.swift */,
+				8654406B258854C200839146 /* Main.storyboard */,
+				8654406E258854C600839146 /* Assets.xcassets */,
+				86544070258854C600839146 /* LaunchScreen.storyboard */,
+				86544073258854C600839146 /* Info.plist */,
+			);
+			path = Hourbox;
+			sourceTree = "<group>";
+		};
+		8654407B258854C600839146 /* HourboxTests */ = {
+			isa = PBXGroup;
+			children = (
+				8654407C258854C600839146 /* HourboxTests.swift */,
+				8654407E258854C600839146 /* Info.plist */,
+			);
+			path = HourboxTests;
+			sourceTree = "<group>";
+		};
+		86544086258854C600839146 /* HourboxUITests */ = {
+			isa = PBXGroup;
+			children = (
+				86544087258854C600839146 /* HourboxUITests.swift */,
+				86544089258854C600839146 /* Info.plist */,
+			);
+			path = HourboxUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		86544061258854C200839146 /* Hourbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8654408C258854C600839146 /* Build configuration list for PBXNativeTarget "Hourbox" */;
+			buildPhases = (
+				8654405E258854C200839146 /* Sources */,
+				8654405F258854C200839146 /* Frameworks */,
+				86544060258854C200839146 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hourbox;
+			productName = Hourbox;
+			productReference = 86544062258854C200839146 /* Hourbox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		86544077258854C600839146 /* HourboxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8654408F258854C600839146 /* Build configuration list for PBXNativeTarget "HourboxTests" */;
+			buildPhases = (
+				86544074258854C600839146 /* Sources */,
+				86544075258854C600839146 /* Frameworks */,
+				86544076258854C600839146 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8654407A258854C600839146 /* PBXTargetDependency */,
+			);
+			name = HourboxTests;
+			productName = HourboxTests;
+			productReference = 86544078258854C600839146 /* HourboxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		86544082258854C600839146 /* HourboxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86544092258854C600839146 /* Build configuration list for PBXNativeTarget "HourboxUITests" */;
+			buildPhases = (
+				8654407F258854C600839146 /* Sources */,
+				86544080258854C600839146 /* Frameworks */,
+				86544081258854C600839146 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86544085258854C600839146 /* PBXTargetDependency */,
+			);
+			name = HourboxUITests;
+			productName = HourboxUITests;
+			productReference = 86544083258854C600839146 /* HourboxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8654405A258854C200839146 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = "Felipe & Co. Studios";
+				TargetAttributes = {
+					86544061258854C200839146 = {
+						CreatedOnToolsVersion = 11.7;
+					};
+					86544077258854C600839146 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = 86544061258854C200839146;
+					};
+					86544082258854C600839146 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = 86544061258854C200839146;
+					};
+				};
+			};
+			buildConfigurationList = 8654405D258854C200839146 /* Build configuration list for PBXProject "Hourbox" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 86544059258854C200839146;
+			productRefGroup = 86544063258854C200839146 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				86544061258854C200839146 /* Hourbox */,
+				86544077258854C600839146 /* HourboxTests */,
+				86544082258854C600839146 /* HourboxUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		86544060258854C200839146 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86544072258854C600839146 /* LaunchScreen.storyboard in Resources */,
+				8654406F258854C600839146 /* Assets.xcassets in Resources */,
+				8654406D258854C200839146 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86544076258854C600839146 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86544081258854C600839146 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8654405E258854C200839146 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8654406A258854C200839146 /* ViewController.swift in Sources */,
+				86544066258854C200839146 /* AppDelegate.swift in Sources */,
+				86544068258854C200839146 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86544074258854C600839146 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8654407D258854C600839146 /* HourboxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8654407F258854C600839146 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86544088258854C600839146 /* HourboxUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8654407A258854C600839146 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86544061258854C200839146 /* Hourbox */;
+			targetProxy = 86544079258854C600839146 /* PBXContainerItemProxy */;
+		};
+		86544085258854C600839146 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86544061258854C200839146 /* Hourbox */;
+			targetProxy = 86544084258854C600839146 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8654406B258854C200839146 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8654406C258854C200839146 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		86544070258854C600839146 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86544071258854C600839146 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8654408A258854C600839146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8654408B258854C600839146 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8654408D258854C600839146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WV69PR89G;
+				INFOPLIST_FILE = Hourbox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.felipeco.Hourbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8654408E258854C600839146 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WV69PR89G;
+				INFOPLIST_FILE = Hourbox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.felipeco.Hourbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		86544090258854C600839146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WV69PR89G;
+				INFOPLIST_FILE = HourboxTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.felipeco.HourboxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hourbox.app/Hourbox";
+			};
+			name = Debug;
+		};
+		86544091258854C600839146 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WV69PR89G;
+				INFOPLIST_FILE = HourboxTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.felipeco.HourboxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hourbox.app/Hourbox";
+			};
+			name = Release;
+		};
+		86544093258854C600839146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WV69PR89G;
+				INFOPLIST_FILE = HourboxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.felipeco.HourboxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Hourbox;
+			};
+			name = Debug;
+		};
+		86544094258854C600839146 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3WV69PR89G;
+				INFOPLIST_FILE = HourboxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.felipeco.HourboxUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Hourbox;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8654405D258854C200839146 /* Build configuration list for PBXProject "Hourbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8654408A258854C600839146 /* Debug */,
+				8654408B258854C600839146 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8654408C258854C600839146 /* Build configuration list for PBXNativeTarget "Hourbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8654408D258854C600839146 /* Debug */,
+				8654408E258854C600839146 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8654408F258854C600839146 /* Build configuration list for PBXNativeTarget "HourboxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86544090258854C600839146 /* Debug */,
+				86544091258854C600839146 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86544092258854C600839146 /* Build configuration list for PBXNativeTarget "HourboxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86544093258854C600839146 /* Debug */,
+				86544094258854C600839146 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8654405A258854C200839146 /* Project object */;
+}
