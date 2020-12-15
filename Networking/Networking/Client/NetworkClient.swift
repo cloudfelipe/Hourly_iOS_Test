@@ -27,7 +27,7 @@ public protocol WebClientType {
 }
 
 public protocol AuthProviderType {
-    
+    var token: String { get }
 }
 
 final public class WebClient: WebClientType {
@@ -42,7 +42,10 @@ final public class WebClient: WebClientType {
     
     public func loadAPIRequest<T: APIRequestType>(endpoint: T, completion: @escaping RequestResultable<T.ResponseDataType>) {
         do {
-            let urlRequest = try endpoint.request()
+            
+            var urlRequest = try endpoint.request()
+            urlRequest.addValue("Authorization", forHTTPHeaderField: authProvider.token)
+            
             urlSession.dataTask(with: urlRequest) { (data, response, error) in
                 if let data = data {
                     let statusCode = (response as? HTTPURLResponse)?.statusCode ?? -1000
