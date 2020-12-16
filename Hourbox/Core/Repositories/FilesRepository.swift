@@ -32,24 +32,21 @@ struct FileQueryParam {
 
 protocol FilesRepositoryType {
     func getFiles(params: FileQueryParam, completion: @escaping DataResultable<Files>)
+    func downloadFile(file: Entry, completion: @escaping DataResultable<DownloadedFile>)
 }
 
 final class FilesRepository: FilesRepositoryType {
     
     let service: FilesServicesType
+    let downloadService: DownloadServiceType
     
-    init(service: FilesServicesType) {
+    init(service: FilesServicesType, downloadService: DownloadServiceType) {
         self.service = service
+        self.downloadService = downloadService
     }
     
     func getFiles(params: FileQueryParam, completion: @escaping DataResultable<Files>) {
         let request = APIFilesRequest(path: params.path.path)
-//
-//        let entry = [Entry(tag: .file, name: "sample.png", pathLower: "sample", id: "123"),
-//                     Entry(tag: .folder, name: "My documents", pathLower: "Path", id: "")]
-//        let file = Files(entries: entry, coursor: nil)
-//        completion(.success(file))
-        
         service.getFiles(params: request) { (result) in
             switch result {
             case .success(let response):
@@ -60,6 +57,16 @@ final class FilesRepository: FilesRepositoryType {
         }
     }
     
+    func downloadFile(file: Entry, completion: @escaping DataResultable<DownloadedFile>) {
+        downloadService.downloadFile(path: file.pathLower) { (result) in
+            switch result {
+            case .success(let response):
+                completion(.success(DownloadedFile(data: response.data)))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }
 
 
@@ -72,4 +79,9 @@ class FilesWrapper {
         let files = Files(entries: entries, coursor: api.coursor)
         return files
     }
+}
+
+
+public struct DownloadedFile {
+    let data: Data
 }

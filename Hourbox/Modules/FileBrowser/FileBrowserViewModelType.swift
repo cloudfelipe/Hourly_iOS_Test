@@ -68,7 +68,16 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
     
     func selectedFile(at index: IndexPath) {
         let item = files.value[index.row]
-        dependencies.coordinator.navigateToDirectory(with: .custom(item.pathLower))
+//        dependencies.coordinator.navigateToDirectory(with: .custom(item.pathLower))
+        
+        dependencies.down.downloadFile(file: item) { (result) in
+            switch result {
+            case .success(let file):
+                self.dependencies.coordinator.showPDF(with: file.data)
+            case .failure(let error):
+                break
+            }
+        }
     }
     
     deinit {
@@ -81,6 +90,7 @@ extension FileBrowserViewModel {
         let coordinator: FileBrowserCoordinatorType
         let path: FilePath
         let getFilesInteractor: GetFilesInteractorType
+        let down: DownloadFileInteractorType
     }
 }
 

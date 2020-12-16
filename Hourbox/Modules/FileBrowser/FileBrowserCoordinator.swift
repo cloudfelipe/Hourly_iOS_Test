@@ -11,10 +11,12 @@ import UIKit
 protocol FileBrowserCoordinatorDependencyType {
     var path: FilePath { get }
     var getFilesInteractor: GetFilesInteractorType { get }
+    var down: DownloadFileInteractorType { get }
 }
 
 protocol FileBrowserCoordinatorType {
     func navigateToDirectory(with path: FilePath)
+    func showPDF(with data: Data)
 }
 
 final class FileBrowserCoordinator: FileBrowserCoordinatorType {
@@ -22,6 +24,7 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
     struct Dependency: FileBrowserCoordinatorDependencyType {
         let path: FilePath
         let getFilesInteractor: GetFilesInteractorType
+        let down: DownloadFileInteractorType
     }
     
     let router: UINavigationController
@@ -35,16 +38,23 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
     func start() {
         let input = FileBrowserViewModel.InputDependencies(coordinator: self,
                                                     path: dependencies.path,
-                                                    getFilesInteractor: dependencies.getFilesInteractor)
+                                                    getFilesInteractor: dependencies.getFilesInteractor,
+                                                    down: dependencies.down)
         let viewModel = FileBrowserViewModel(dependencies: input)
         let viewController = FileBrowserViewController(viewModel: viewModel)
         router.pushViewController(viewController, animated: true)
     }
     
     func navigateToDirectory(with path: FilePath) {
-        let childDependency = Dependency(path: path, getFilesInteractor: dependencies.getFilesInteractor)
+        let childDependency = Dependency(path: path, getFilesInteractor: dependencies.getFilesInteractor, down: dependencies.down)
         let childCoordinator = FileBrowserCoordinator(router: router, dependencies: childDependency)
         childCoordinator.start()
+    }
+    
+    func showPDF(with data: Data) {
+        let viewer = PDFViewerViewController()
+        viewer.data = data
+        router.pushViewController(viewer, animated: true)
     }
     
     deinit {

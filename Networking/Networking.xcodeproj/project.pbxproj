@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		554B13F1B81FC590EDBDADFD /* Pods_Hourbox_Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C14A6B0E5E6F2575B4BDF32 /* Pods_Hourbox_Networking.framework */; };
 		8654411A25887DE200839146 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8654411025887DE200839146 /* Networking.framework */; };
 		8654411F25887DE200839146 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8654411E25887DE200839146 /* NetworkingTests.swift */; };
 		8654412125887DE200839146 /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 8654411325887DE200839146 /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +42,8 @@
 		868624182588902300B76232 /* WebClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868624172588902300B76232 /* WebClientTests.swift */; };
 		8686241C2588905900B76232 /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686241B2588905900B76232 /* URLProtocolMock.swift */; };
 		8686241E2588909900B76232 /* AuthProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686241D2588909900B76232 /* AuthProviderMock.swift */; };
+		86D5E5DA2589DDAB0099C2EE /* DownloadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5D92589DDAB0099C2EE /* DownloadFileService.swift */; };
+		86D5E5DB2589DDAB0099C2EE /* DownloadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5D92589DDAB0099C2EE /* DownloadFileService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D4187DA07B87C4143697BFE /* Pods-Hourbox-Networking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hourbox-Networking.release.xcconfig"; path = "Target Support Files/Pods-Hourbox-Networking/Pods-Hourbox-Networking.release.xcconfig"; sourceTree = "<group>"; };
+		7C14A6B0E5E6F2575B4BDF32 /* Pods_Hourbox_Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hourbox_Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8654411025887DE200839146 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8654411325887DE200839146 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		8654411425887DE200839146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +83,8 @@
 		868624172588902300B76232 /* WebClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebClientTests.swift; sourceTree = "<group>"; };
 		8686241B2588905900B76232 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		8686241D2588909900B76232 /* AuthProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderMock.swift; sourceTree = "<group>"; };
+		86D5E5D92589DDAB0099C2EE /* DownloadFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadFileService.swift; sourceTree = "<group>"; };
+		F817E4390EC2D92B98D75EAE /* Pods-Hourbox-Networking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hourbox-Networking.debug.xcconfig"; path = "Target Support Files/Pods-Hourbox-Networking/Pods-Hourbox-Networking.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554B13F1B81FC590EDBDADFD /* Pods_Hourbox_Networking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,12 +107,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		022951FA737E1EEAA5EFD933 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C14A6B0E5E6F2575B4BDF32 /* Pods_Hourbox_Networking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B614BAB87093E36797F8696 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F817E4390EC2D92B98D75EAE /* Pods-Hourbox-Networking.debug.xcconfig */,
+				5D4187DA07B87C4143697BFE /* Pods-Hourbox-Networking.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 		8654410625887DE200839146 = {
 			isa = PBXGroup;
 			children = (
 				8654411225887DE200839146 /* Networking */,
 				8654411D25887DE200839146 /* NetworkingTests */,
 				8654411125887DE200839146 /* Products */,
+				6B614BAB87093E36797F8696 /* Pods */,
+				022951FA737E1EEAA5EFD933 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,6 +214,7 @@
 			children = (
 				865441582588802700839146 /* WebService.swift */,
 				8654415B258884AD00839146 /* FilesServices.swift */,
+				86D5E5D92589DDAB0099C2EE /* DownloadFileService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -244,6 +273,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8654412425887DE200839146 /* Build configuration list for PBXNativeTarget "Networking" */;
 			buildPhases = (
+				0759E467BC84B4713E51A6A9 /* [CP] Check Pods Manifest.lock */,
 				8654410B25887DE200839146 /* Headers */,
 				8654410C25887DE200839146 /* Sources */,
 				8654410D25887DE200839146 /* Frameworks */,
@@ -330,6 +360,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0759E467BC84B4713E51A6A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hourbox-Networking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8654410C25887DE200839146 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -348,6 +403,7 @@
 				8654415125887EE600839146 /* URLRequest+RESTEndpoint.swift in Sources */,
 				865441612588852600839146 /* APIFilesRequest.swift in Sources */,
 				8654414F25887EE600839146 /* URL+RESTEndpoint.swift in Sources */,
+				86D5E5DA2589DDAB0099C2EE /* DownloadFileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +420,7 @@
 				8654414825887ECB00839146 /* APIContentType.swift in Sources */,
 				8654415A2588802700839146 /* WebService.swift in Sources */,
 				8654417225888F6E00839146 /* APIRequestTests.swift in Sources */,
+				86D5E5DB2589DDAB0099C2EE /* DownloadFileService.swift in Sources */,
 				865441622588852600839146 /* APIFilesRequest.swift in Sources */,
 				865441652588854E00839146 /* APIModelType.swift in Sources */,
 				8654416C2588882900839146 /* APIResponse.swift in Sources */,
@@ -510,6 +567,7 @@
 		};
 		8654412525887DE200839146 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F817E4390EC2D92B98D75EAE /* Pods-Hourbox-Networking.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -534,6 +592,7 @@
 		};
 		8654412625887DE200839146 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D4187DA07B87C4143697BFE /* Pods-Hourbox-Networking.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

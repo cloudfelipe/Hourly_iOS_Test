@@ -39,6 +39,10 @@
 		86D5E5D52589CB720099C2EE /* BaseViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5D32589CB720099C2EE /* BaseViewModelType.swift */; };
 		86D5E5D72589D0070099C2EE /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5D62589D0070099C2EE /* BaseViewModel.swift */; };
 		86D5E5D82589D0070099C2EE /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5D62589D0070099C2EE /* BaseViewModel.swift */; };
+		86D5E5DD2589E0110099C2EE /* DownloadFileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5DC2589E0110099C2EE /* DownloadFileInteractor.swift */; };
+		86D5E5DE2589E0110099C2EE /* DownloadFileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5DC2589E0110099C2EE /* DownloadFileInteractor.swift */; };
+		86D5E5E12589E2230099C2EE /* PDFViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5E02589E2230099C2EE /* PDFViewerViewController.swift */; };
+		86D5E5E22589E2230099C2EE /* PDFViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5E02589E2230099C2EE /* PDFViewerViewController.swift */; };
 		8ABC283713C4C943B087422B /* Pods_HourboxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E7CF1D6A483692568AB696 /* Pods_HourboxTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +108,8 @@
 		86D5E5D02589CADA0099C2EE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		86D5E5D32589CB720099C2EE /* BaseViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelType.swift; sourceTree = "<group>"; };
 		86D5E5D62589D0070099C2EE /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		86D5E5DC2589E0110099C2EE /* DownloadFileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadFileInteractor.swift; sourceTree = "<group>"; };
+		86D5E5E02589E2230099C2EE /* PDFViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewerViewController.swift; sourceTree = "<group>"; };
 		A48F4B01AA9772381205B317 /* Pods-Hourbox-HourboxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hourbox-HourboxUITests.release.xcconfig"; path = "Target Support Files/Pods-Hourbox-HourboxUITests/Pods-Hourbox-HourboxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D23079407410EC5109F45BFF /* Pods_Hourbox_HourboxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hourbox_HourboxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD9A7775BB0DFB53FCF47AF /* Pods_Hourbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hourbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				86D5E5BB258993C60099C2EE /* GetFilesInteractor.swift */,
+				86D5E5DC2589E0110099C2EE /* DownloadFileInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -244,12 +251,13 @@
 				86D5E5D02589CADA0099C2EE /* BaseViewController.swift */,
 				86D5E5D32589CB720099C2EE /* BaseViewModelType.swift */,
 				86D5E5D62589D0070099C2EE /* BaseViewModel.swift */,
-				86D5E5BF2589951E0099C2EE /* Home */,
+				86D5E5DF2589E20C0099C2EE /* PDFViewer */,
+				86D5E5BF2589951E0099C2EE /* FileBrowser */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		86D5E5BF2589951E0099C2EE /* Home */ = {
+		86D5E5BF2589951E0099C2EE /* FileBrowser */ = {
 			isa = PBXGroup;
 			children = (
 				86D5E5C0258995380099C2EE /* FileBrowserViewModelType.swift */,
@@ -257,7 +265,7 @@
 				86D5E5C62589A1220099C2EE /* FileCollectionViewCell.swift */,
 				86D5E5C92589C2110099C2EE /* FileBrowserCoordinator.swift */,
 			);
-			path = Home;
+			path = FileBrowser;
 			sourceTree = "<group>";
 		};
 		86D5E5CC2589CAA40099C2EE /* Utils */ = {
@@ -266,6 +274,14 @@
 				86D5E5CD2589CABF0099C2EE /* ViewAppearState.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		86D5E5DF2589E20C0099C2EE /* PDFViewer */ = {
+			isa = PBXGroup;
+			children = (
+				86D5E5E02589E2230099C2EE /* PDFViewerViewController.swift */,
+			);
+			path = PDFViewer;
 			sourceTree = "<group>";
 		};
 		D816786687DB1D430E0A14FC /* Pods */ = {
@@ -520,6 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86D5E5DD2589E0110099C2EE /* DownloadFileInteractor.swift in Sources */,
 				86D5E5BC258993C60099C2EE /* GetFilesInteractor.swift in Sources */,
 				86D5E5C1258995380099C2EE /* FileBrowserViewModelType.swift in Sources */,
 				86D5E5D12589CADA0099C2EE /* BaseViewController.swift in Sources */,
@@ -531,6 +548,7 @@
 				86D5E5D42589CB720099C2EE /* BaseViewModelType.swift in Sources */,
 				86D5E5C425899BC10099C2EE /* FileBrowserViewController.swift in Sources */,
 				86D5E5C72589A1220099C2EE /* FileCollectionViewCell.swift in Sources */,
+				86D5E5E12589E2230099C2EE /* PDFViewerViewController.swift in Sources */,
 				86544066258854C200839146 /* AppDelegate.swift in Sources */,
 				86D5E5CE2589CABF0099C2EE /* ViewAppearState.swift in Sources */,
 			);
@@ -541,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D5E5B425898E4C0099C2EE /* Entry.swift in Sources */,
+				86D5E5E22589E2230099C2EE /* PDFViewerViewController.swift in Sources */,
 				86D5E5C82589A1220099C2EE /* FileCollectionViewCell.swift in Sources */,
 				86D5E5BD258993C60099C2EE /* GetFilesInteractor.swift in Sources */,
 				8654407D258854C600839146 /* HourboxTests.swift in Sources */,
@@ -550,6 +569,7 @@
 				86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */,
 				86D5E5D52589CB720099C2EE /* BaseViewModelType.swift in Sources */,
 				86D5E5C525899BC10099C2EE /* FileBrowserViewController.swift in Sources */,
+				86D5E5DE2589E0110099C2EE /* DownloadFileInteractor.swift in Sources */,
 				86D5E5CB2589C2110099C2EE /* FileBrowserCoordinator.swift in Sources */,
 				86D5E5CF2589CABF0099C2EE /* ViewAppearState.swift in Sources */,
 			);
