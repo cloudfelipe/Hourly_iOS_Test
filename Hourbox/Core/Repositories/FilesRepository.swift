@@ -46,14 +46,19 @@ final class FilesRepository: FilesRepositoryType {
     func getFiles(params: FileQueryParam, completion: @escaping DataResultable<Files>) {
         let request = APIFilesRequest(path: params.path.path,
                                       isRecursive: params.includeNonDownloadables)
-        service.getFiles(params: request) { (result) in
-            switch result {
-            case .success(let response):
-                completion(.success(FilesWrapper().map(response)))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+        
+        let entry = [Entry(tag: .file, name: "sample.png", pathLower: "sample", id: "123"),
+                     Entry(tag: .folder, name: "My documents", pathLower: "Path", id: "")]
+        let file = Files(entries: entry, coursor: nil)
+        completion(.success(file))
+//        service.getFiles(params: request) { (result) in
+//            switch result {
+//            case .success(let response):
+//                completion(.success(FilesWrapper().map(response)))
+//            case .failure(let error):
+//                completion(.failure(error))
+//            }
+//        }
     }
     
 }
@@ -64,7 +69,7 @@ class FilesWrapper {
         let entries = api.entries.map { Entry(tag: EntryTag(rawValue: $0.tag) ?? EntryTag.folder,
                                               name: $0.name,
                                               pathLower: $0.pathLower,
-                                              id: $0.id) }
+                                              id: "$0.id") }
         let files = Files(entries: entries, coursor: api.coursor)
         return files
     }

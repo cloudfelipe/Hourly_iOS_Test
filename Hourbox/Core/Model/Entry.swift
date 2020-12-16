@@ -9,6 +9,15 @@
 enum EntryTag: String {
     case folder
     case file
+    
+    var iconName: String {
+        switch self {
+        case .file:
+            return "file"
+        case .folder:
+            return "folder"
+        }
+    }
 }
 
 struct Entry {

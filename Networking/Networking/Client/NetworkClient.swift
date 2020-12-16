@@ -44,10 +44,11 @@ final public class WebClient: WebClientType {
         do {
             
             var urlRequest = try endpoint.request()
-            urlRequest.addValue("Authorization", forHTTPHeaderField: authProvider.token)
+            urlRequest.addValue(authProvider.token, forHTTPHeaderField: "Authorization")
             
             urlSession.dataTask(with: urlRequest) { (data, response, error) in
                 if let data = data {
+//                    debugPrint("RESPONSE: ", String(data: data, encoding: .utf8)!)
                     let statusCode = (response as? HTTPURLResponse)?.statusCode ?? -1000
                     if statusCode == 200 {
                         do {

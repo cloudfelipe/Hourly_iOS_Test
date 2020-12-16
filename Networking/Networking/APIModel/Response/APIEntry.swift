@@ -12,12 +12,12 @@ public struct APIEntry: APIModelType {
     public let tag: String
     public let name: String
     public let pathLower: String
-    public let id: String
+//    public let id: String
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
+//        case id = "id"
         case name = "name"
-        case tag = "tag"
+        case tag = ".tag"
         case pathLower = "path_lower"
     }
 }

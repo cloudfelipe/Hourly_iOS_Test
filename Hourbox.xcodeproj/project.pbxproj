@@ -21,6 +21,12 @@
 		86D5E5B8258990A00099C2EE /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86D5E5B6258990A00099C2EE /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		86D5E5BC258993C60099C2EE /* GetFilesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5BB258993C60099C2EE /* GetFilesInteractor.swift */; };
 		86D5E5BD258993C60099C2EE /* GetFilesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5BB258993C60099C2EE /* GetFilesInteractor.swift */; };
+		86D5E5C1258995380099C2EE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5C0258995380099C2EE /* HomeViewModel.swift */; };
+		86D5E5C2258995380099C2EE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5C0258995380099C2EE /* HomeViewModel.swift */; };
+		86D5E5C425899BC10099C2EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5C325899BC10099C2EE /* HomeViewController.swift */; };
+		86D5E5C525899BC10099C2EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5C325899BC10099C2EE /* HomeViewController.swift */; };
+		86D5E5C72589A1220099C2EE /* FileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5C62589A1220099C2EE /* FileCollectionViewCell.swift */; };
+		86D5E5C82589A1220099C2EE /* FileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5C62589A1220099C2EE /* FileCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +77,9 @@
 		86D5E5B225898E4C0099C2EE /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		86D5E5B6258990A00099C2EE /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D5E5BB258993C60099C2EE /* GetFilesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFilesInteractor.swift; sourceTree = "<group>"; };
+		86D5E5C0258995380099C2EE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		86D5E5C325899BC10099C2EE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		86D5E5C62589A1220099C2EE /* FileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +134,7 @@
 			children = (
 				86544065258854C200839146 /* AppDelegate.swift */,
 				86544069258854C200839146 /* ViewController.swift */,
+				86D5E5BE258995100099C2EE /* Modules */,
 				86D5E5AC25898DE20099C2EE /* Core */,
 				8654406E258854C600839146 /* Assets.xcassets */,
 				86544070258854C600839146 /* LaunchScreen.storyboard */,
@@ -191,6 +201,24 @@
 				86D5E5BB258993C60099C2EE /* GetFilesInteractor.swift */,
 			);
 			path = Interactors;
+			sourceTree = "<group>";
+		};
+		86D5E5BE258995100099C2EE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				86D5E5BF2589951E0099C2EE /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		86D5E5BF2589951E0099C2EE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				86D5E5C0258995380099C2EE /* HomeViewModel.swift */,
+				86D5E5C325899BC10099C2EE /* HomeViewController.swift */,
+				86D5E5C62589A1220099C2EE /* FileCollectionViewCell.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,9 +353,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D5E5BC258993C60099C2EE /* GetFilesInteractor.swift in Sources */,
+				86D5E5C1258995380099C2EE /* HomeViewModel.swift in Sources */,
 				86D5E5B325898E4C0099C2EE /* Entry.swift in Sources */,
 				8654406A258854C200839146 /* ViewController.swift in Sources */,
 				86D5E5AF25898E090099C2EE /* FilesRepository.swift in Sources */,
+				86D5E5C425899BC10099C2EE /* HomeViewController.swift in Sources */,
+				86D5E5C72589A1220099C2EE /* FileCollectionViewCell.swift in Sources */,
 				86544066258854C200839146 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,9 +368,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D5E5B425898E4C0099C2EE /* Entry.swift in Sources */,
+				86D5E5C82589A1220099C2EE /* FileCollectionViewCell.swift in Sources */,
 				86D5E5BD258993C60099C2EE /* GetFilesInteractor.swift in Sources */,
 				8654407D258854C600839146 /* HourboxTests.swift in Sources */,
+				86D5E5C2258995380099C2EE /* HomeViewModel.swift in Sources */,
 				86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */,
+				86D5E5C525899BC10099C2EE /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
