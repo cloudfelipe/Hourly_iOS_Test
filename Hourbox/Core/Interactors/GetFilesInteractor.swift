@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol GetHomeFilesInteractorType {
-    func getFiles(completion: @escaping DataResultable<Files>)
+protocol GetFilesInteractorType {
+    func getFiles(param: FilePath, completion: @escaping DataResultable<Files>)
 }
 
-final class GetHomeFilesInteractor: GetHomeFilesInteractorType {
+final class GetFilesInteractor: GetFilesInteractorType {
     
     let repository: FilesRepositoryType
     
@@ -20,8 +20,7 @@ final class GetHomeFilesInteractor: GetHomeFilesInteractorType {
         self.repository = repository
     }
     
-    func getFiles(completion: @escaping DataResultable<Files>) {
-        let params = FileQueryParam(path: .home)
-        repository.getFiles(params: params, completion: completion)
+    func getFiles(param: FilePath, completion: @escaping DataResultable<Files>) {
+        repository.getFiles(params: FileQueryParam(path: param), completion: completion)
     }
 }

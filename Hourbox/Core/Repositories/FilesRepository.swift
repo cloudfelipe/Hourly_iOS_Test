@@ -11,23 +11,22 @@ import Networking
 
 typealias DataResultable<T> = (Result<T, Error>) -> Void
 
-struct FileQueryParam {
+enum FilePath {
+    case root
+    case custom(String)
     
-    enum Path {
-        case home
-        case custom(String)
-        
-        var path: String {
-            switch self {
-            case .home:
-                return ""
-            case .custom(let customPath):
-                return customPath
-            }
+    var path: String {
+        switch self {
+        case .root:
+            return ""
+        case .custom(let customPath):
+            return customPath
         }
     }
-    
-    let path: Path
+}
+
+struct FileQueryParam {
+    let path: FilePath
     let includeNonDownloadables: Bool = true
 }
 
@@ -44,21 +43,21 @@ final class FilesRepository: FilesRepositoryType {
     }
     
     func getFiles(params: FileQueryParam, completion: @escaping DataResultable<Files>) {
-        let request = APIFilesRequest(path: params.path.path,
-                                      isRecursive: params.includeNonDownloadables)
+        let request = APIFilesRequest(path: params.path.path)
+//
+//        let entry = [Entry(tag: .file, name: "sample.png", pathLower: "sample", id: "123"),
+//                     Entry(tag: .folder, name: "My documents", pathLower: "Path", id: "")]
+//        let file = Files(entries: entry, coursor: nil)
+//        completion(.success(file))
         
-        let entry = [Entry(tag: .file, name: "sample.png", pathLower: "sample", id: "123"),
-                     Entry(tag: .folder, name: "My documents", pathLower: "Path", id: "")]
-        let file = Files(entries: entry, coursor: nil)
-        completion(.success(file))
-//        service.getFiles(params: request) { (result) in
-//            switch result {
-//            case .success(let response):
-//                completion(.success(FilesWrapper().map(response)))
-//            case .failure(let error):
-//                completion(.failure(error))
-//            }
-//        }
+        service.getFiles(params: request) { (result) in
+            switch result {
+            case .success(let response):
+                completion(.success(FilesWrapper().map(response)))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
     
 }

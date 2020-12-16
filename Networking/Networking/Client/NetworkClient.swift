@@ -48,7 +48,7 @@ final public class WebClient: WebClientType {
             
             urlSession.dataTask(with: urlRequest) { (data, response, error) in
                 if let data = data {
-//                    debugPrint("RESPONSE: ", String(data: data, encoding: .utf8)!)
+                    debugPrint("RESPONSE: ", String(data: data, encoding: .utf8)!)
                     let statusCode = (response as? HTTPURLResponse)?.statusCode ?? -1000
                     if statusCode == 200 {
                         do {

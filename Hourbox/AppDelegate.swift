@@ -13,7 +13,7 @@ import Networking
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var viewModel: HomeViewModelType?
+    var rootNavigationVC: UINavigationController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -21,18 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let client = WebClient(authProvider: AuthProvider())
         let service = FilesServices(baseUrlProvider: URLProvider(), client: client)
         let repo = FilesRepository(service: service)
-        let interactor = GetHomeFilesInteractor(repository: repo)
-        let input = HomeViewModel.InputDependencies(getFilesInteractor: interactor)
-        let cviewModel = HomeViewModel(dependencies: input)
-//        cviewModel.getData()
-        viewModel = cviewModel
+        let interactor = GetFilesInteractor(repository: repo)
         
-        let viewController = HomeViewController(viewModel: cviewModel)
-        cviewModel.bind(view: viewController)
+        rootNavigationVC = UINavigationController()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = viewController
+        window?.rootViewController = rootNavigationVC
         window?.makeKeyAndVisible()
+        
+        let coordinatorDep = FileBrowserCoordinator.Dependency(path: .root, getFilesInteractor: interactor)
+        let coordinator = FileBrowserCoordinator(router: rootNavigationVC, dependencies: coordinatorDep)
+        coordinator.start()
         
         return true
     }

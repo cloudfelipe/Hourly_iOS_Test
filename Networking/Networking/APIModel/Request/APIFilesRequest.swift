@@ -28,7 +28,7 @@ public struct APIFilesRequest: APIModelType {
         case includeNonDownloadableFiles = "include_non_downloadable_files"
     }
     
-    public init(path: String, isRecursive: Bool, includeMediaInfo: Bool = true, includeDeleted: Bool = true, includeHasExplicitSharedMembers: Bool = true, includeMountedFolders: Bool = true, includeNonDownloadableFiles: Bool = true) {
+    public init(path: String, isRecursive: Bool = false, includeMediaInfo: Bool = true, includeDeleted: Bool = true, includeHasExplicitSharedMembers: Bool = true, includeMountedFolders: Bool = true, includeNonDownloadableFiles: Bool = true) {
         self.path = path
         self.isRecursive = isRecursive
         self.includeMediaInfo = includeMediaInfo
