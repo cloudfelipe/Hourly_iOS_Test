@@ -9,6 +9,6 @@
 import Foundation
 
 public struct APIResponse: APIModelType {
-    let entries: [APIEntry]
-    let coursor: String?
+    public let entries: [APIEntry]
+    public let coursor: String?
 }

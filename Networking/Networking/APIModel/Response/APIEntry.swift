@@ -9,10 +9,10 @@
 import Foundation
 
 public struct APIEntry: APIModelType {
-    let tag: String
-    let name: String
-    let pathLower: String
-    let id: String
+    public let tag: String
+    public let name: String
+    public let pathLower: String
+    public let id: String
     
     enum CodingKeys: String, CodingKey {
         case id = "id"

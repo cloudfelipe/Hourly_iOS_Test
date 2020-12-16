@@ -9,6 +9,7 @@
 import Foundation
 
 public struct APIFilesRequest: APIModelType {
+    
     let path: String
     let isRecursive: Bool
     let includeMediaInfo: Bool
@@ -25,5 +26,15 @@ public struct APIFilesRequest: APIModelType {
         case includeHasExplicitSharedMembers = "include_has_explicit_shared_members"
         case includeMountedFolders = "include_mounted_folders"
         case includeNonDownloadableFiles = "include_non_downloadable_files"
+    }
+    
+    public init(path: String, isRecursive: Bool, includeMediaInfo: Bool = true, includeDeleted: Bool = true, includeHasExplicitSharedMembers: Bool = true, includeMountedFolders: Bool = true, includeNonDownloadableFiles: Bool = true) {
+        self.path = path
+        self.isRecursive = isRecursive
+        self.includeMediaInfo = includeMediaInfo
+        self.includeDeleted = includeDeleted
+        self.includeHasExplicitSharedMembers = includeHasExplicitSharedMembers
+        self.includeMountedFolders = includeMountedFolders
+        self.includeNonDownloadableFiles = includeNonDownloadableFiles
     }
 }
