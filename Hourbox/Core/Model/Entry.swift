@@ -25,6 +25,14 @@ struct Entry {
     let name: String
     let pathLower: String
     let id: String
+    
+    var isImage: Bool {
+        return name.hasSuffix(".jpg") || name.hasSuffix(".png")
+    }
+    
+    var isPDF: Bool {
+        return name.hasSuffix(".pdf")
+    }
 }
 
 struct Files {

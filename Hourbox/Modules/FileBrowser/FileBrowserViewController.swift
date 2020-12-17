@@ -28,10 +28,10 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
         fatalError("init(coder:) has not been implemented")
     }
     
+    private var collectionAdapter = CollectionViewAdapter()
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = .init(top: 10, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 120, height: 200)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(FileCollectionViewCell.self, forCellWithReuseIdentifier: "FileCollectionViewCell")
         collectionView.backgroundColor = .white
@@ -41,6 +41,8 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,9 +57,15 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
             cell.setup(with: item)
         }.disposed(by: disposableBag)
         
+        viewModel.folderPath
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {
+                self.title = $0
+            }).disposed(by: disposableBag)
+        
         collectionView.rx.itemSelected.subscribe(onNext: { self.viewModel.selectedFile(at: $0) }).disposed(by: disposableBag)
                 
-//        collectionView.rx.setDelegate(self).disposed(by: disposableBag)
+        collectionView.rx.setDelegate(collectionAdapter).disposed(by: disposableBag)
     }
     
     deinit {
@@ -68,14 +76,16 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
 extension FileBrowserViewController: HomeViewType {
 }
 
-//extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.frame.width / 3 - 20, height: collectionView.frame.height / 5 - 20)
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        viewModel.selectedFile(at: indexPath)
-//    }
-//}
-
+final class CollectionViewAdapter: NSObject, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width / 3 - 20, height: collectionView.frame.height / 5 - 30)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 0, left: 10, bottom: 0, right: 10)
+    }
+}

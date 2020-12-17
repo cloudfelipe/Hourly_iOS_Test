@@ -24,6 +24,7 @@ class FileCollectionViewCell: UICollectionViewCell {
         title.translatesAutoresizingMaskIntoConstraints = false
         title.setContentHuggingPriority(.required, for: .vertical)
         title.setContentCompressionResistancePriority(.required, for: .vertical)
+        title.lineBreakMode = .byTruncatingHead
         title.text = "SAMPLE"
         title.textColor = .white
         return title
@@ -41,7 +42,6 @@ class FileCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = true
         imageView.contentMode = .scaleAspectFit
-//        imageView.image = UIImage(named: "folder")
         return imageView
     }()
     
@@ -51,18 +51,28 @@ class FileCollectionViewCell: UICollectionViewCell {
         
         let iconContainer = UIView()
         iconContainer.translatesAutoresizingMaskIntoConstraints = false
+//        iconContainer.setContentHuggingPriority(.defaultLow, for: .vertical)
         fileIconImageView.addToParent(iconContainer)
+//        iconContainer.addSubview(fileIconImageView)
+//        fileIconImageView.setContentCompressionResistancePriority(.init(rawValue: 249), for: .vertical)
+        fileIconImageView.backgroundColor = .red
 //        iconContainer.addSubview(fileIconImageView)
 //        fileIconImageView.centerXAnchor.constraint(equalTo: iconContainer.centerXAnchor).isActive = true
 //        fileIconImageView.centerYAnchor.constraint(equalTo: iconContainer.centerYAnchor).isActive = true
 //        fileIconImageView.widthAnchor.constraint(equalTo: iconContainer.widthAnchor, multiplier: 0.6, constant: 1).isActive = true
 //        fileIconImageView.heightAnchor.constraint(equalTo: iconContainer.heightAnchor, multiplier: 0.8, constant: 1).isActive = true
         
-        
+        let smapl = UILabel()
+        smapl.text = "sadasdas"
+        smapl.textColor = .white
+        smapl.translatesAutoresizingMaskIntoConstraints = false
         containerStackView.addArrangedSubview(iconContainer)
         containerStackView.addArrangedSubview(fileTitleLabel)
         containerStackView.addArrangedSubview(moreOptionsButton)
         containerStackView.addToParent(contentView)
+        
+//        iconContainer.heightAnchor.constraint(equalTo: containerStackView.heightAnchor, multiplier: 1).isActive = true
+
     }
     
     func setup(with data: FileViewData) {

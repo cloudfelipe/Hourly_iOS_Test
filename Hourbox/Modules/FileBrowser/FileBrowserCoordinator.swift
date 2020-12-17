@@ -17,6 +17,7 @@ protocol FileBrowserCoordinatorDependencyType {
 protocol FileBrowserCoordinatorType {
     func navigateToDirectory(with path: FilePath)
     func showPDF(with data: Data)
+    func showImage(with data: Data)
 }
 
 final class FileBrowserCoordinator: FileBrowserCoordinatorType {
@@ -52,6 +53,11 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
     }
     
     func showPDF(with data: Data) {
+        let viewer = PDFViewerViewController(data: data)
+        router?.pushViewController(viewer, animated: true)
+    }
+    
+    func showImage(with data: Data) {
         let viewer = ImageViewerViewController(imageData: data)
         router?.present(viewer, animated: true, completion: nil)
     }

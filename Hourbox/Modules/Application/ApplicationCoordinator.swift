@@ -30,7 +30,7 @@ final class ApplicationCoordinator: ApplicationCoordinatorType {
     
     
     func start() {
-        dependenciesContainer.removeAccessTokenInteractor.remove()
+//        dependenciesContainer.removeAccessTokenInteractor.remove()
         let inputDependencies = ApplicationViewModel.InputDependencies(coordinator: self,
                                                                        accessTokenRoot: accessTokenRoot,
                                                                        isUserLoggedInInteractor: dependenciesContainer.isUserLoggedInInteractor,

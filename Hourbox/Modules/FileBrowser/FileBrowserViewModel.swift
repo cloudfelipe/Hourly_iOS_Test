@@ -15,6 +15,7 @@ protocol FileBrowserViewModelType: BaseViewModelType {
     
     var filesData: Observable<[FileViewData]> { get }
     var dataRequestState: Observable<DataRequestState> { get }
+    var folderPath: Observable<String?> { get }
 }
 
 final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
@@ -27,14 +28,20 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
         return requestState.asObservable()
     }
     
+    var folderPath: Observable<String?> {
+        return path.asObservable()
+    }
+    
     private let files = BehaviorRelay<[Entry]>(value: [])
     private let requestState = BehaviorRelay<DataRequestState>(value: .normal)
     private let dependencies: InputDependencies
-    
+    private let path = BehaviorRelay<String?>(value: "/Home")
     
     init(dependencies: InputDependencies) {
         self.dependencies = dependencies
         super.init()
+        
+        path.accept(dependencies.path.path)
     }
     
     override func viewAppearStateDidChange(_ state: ViewAppearState) {
@@ -68,15 +75,31 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
     
     func selectedFile(at index: IndexPath) {
         let item = files.value[index.row]
-//        dependencies.coordinator.navigateToDirectory(with: .custom(item.pathLower))
         
-        dependencies.down.downloadFile(file: item) { (result) in
+        switch item.tag {
+        case .folder:
+            dependencies.coordinator.navigateToDirectory(with: .custom(item.pathLower))
+        case .file:
+            processFile(item)
+        }
+    }
+    
+    func processFile(_ file: Entry) {
+        dependencies.down.downloadFile(file: file) { (result) in
             switch result {
-            case .success(let file):
-                self.dependencies.coordinator.showPDF(with: file.data)
+            case .success(let data):
+                self.open(data: data.data, for: file)
             case .failure(let error):
                 break
             }
+        }
+    }
+    
+    func open(data: Data, for file: Entry) {
+        if file.isPDF {
+            dependencies.coordinator.showPDF(with: data)
+        } else if file.isImage {
+            dependencies.coordinator.showImage(with: data)
         }
     }
     
