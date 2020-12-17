@@ -19,7 +19,15 @@ protocol HomeViewType: AnyObject {
 }
 
 final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewController<T> {
-        
+    
+    override init(viewModel: T) {
+        super.init(viewModel: viewModel)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = .init(top: 10, left: 10, bottom: 10, right: 10)

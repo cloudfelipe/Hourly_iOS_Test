@@ -15,29 +15,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var rootNavigationVC: UINavigationController!
+    weak var applicationCoordinator: ApplicationCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        let tokenProvider = AuthProvider()
-        let dropboxClient = DropboxClient(accessToken: "uQGtRzNwT60AAAAAAAAAAaqSLwcTHK2RSzirh3JqtbNr7RcKoc2iq090L52S0h9Q")
-        let client = WebClient(authProvider: tokenProvider)
-        let service = FilesServices(baseUrlProvider: URLProvider(), client: client)
-        let downloadService = DownloadService(client: dropboxClient)
-        let repo = FilesRepository(service: service, downloadService: downloadService)
-        let interactor = GetFilesInteractor(repository: repo)
-        
         rootNavigationVC = UINavigationController()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootNavigationVC
         window?.makeKeyAndVisible()
         
-        let coordinatorDep = FileBrowserCoordinator.Dependency(path: .root, getFilesInteractor: interactor, down: DownloadFileInteractor(repository: repo))
-        let coordinator = FileBrowserCoordinator(router: rootNavigationVC, dependencies: coordinatorDep)
+        let coordinator = ApplicationCoordinator(router: rootNavigationVC)
         coordinator.start()
+        applicationCoordinator = coordinator
+        
+        DropboxClientsManager.setupWithAppKey("lpwlc9qrng9mdbm")
         
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        let oauthCompletion: DropboxOAuthCompletion = {
+          if let authResult = $0 {
+            self.applicationCoordinator?.dropboxAccessToken(token: authResult)
+          }
+        }
+        let canHandleUrl = DropboxClientsManager.handleRedirectURL(url, completion: oauthCompletion)
+        return canHandleUrl
     }
 
 }

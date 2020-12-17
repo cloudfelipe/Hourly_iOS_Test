@@ -27,10 +27,10 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
         let down: DownloadFileInteractorType
     }
     
-    let router: UINavigationController
+    weak var router: UINavigationController?
     let dependencies: FileBrowserCoordinatorDependencyType
     
-    init(router: UINavigationController, dependencies: FileBrowserCoordinatorDependencyType) {
+    init(router: UINavigationController?, dependencies: FileBrowserCoordinatorDependencyType) {
         self.router = router
         self.dependencies = dependencies
     }
@@ -42,7 +42,7 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
                                                     down: dependencies.down)
         let viewModel = FileBrowserViewModel(dependencies: input)
         let viewController = FileBrowserViewController(viewModel: viewModel)
-        router.pushViewController(viewController, animated: true)
+        router?.pushViewController(viewController, animated: true)
     }
     
     func navigateToDirectory(with path: FilePath) {
@@ -52,9 +52,8 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
     }
     
     func showPDF(with data: Data) {
-        let viewer = PDFViewerViewController()
-        viewer.data = data
-        router.pushViewController(viewer, animated: true)
+        let viewer = ImageViewerViewController(imageData: data)
+        router?.present(viewer, animated: true, completion: nil)
     }
     
     deinit {

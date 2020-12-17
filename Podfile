@@ -7,6 +7,9 @@ target 'Hourbox' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SwiftyDropbox'
+  pod 'KeychainAccess'
+
+  pod 'Lightbox'
 
   target 'HourboxTests' do
     inherit! :search_paths

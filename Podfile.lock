@@ -1,5 +1,34 @@
 PODS:
   - Alamofire (4.8.2)
+  - Cache (6.0.0)
+  - Imaginary (5.0.0):
+    - Cache (~> 6.0.0)
+  - KeychainAccess (4.2.1)
+  - Lightbox (2.5.0):
+    - Imaginary (~> 5.0.0)
+  - NYTPhotoViewer (5.0.5):
+    - NYTPhotoViewer/AnimatedGifSupport (= 5.0.5)
+    - NYTPhotoViewer/Core (= 5.0.5)
+  - NYTPhotoViewer/AnimatedGifSupport (5.0.5):
+    - NYTPhotoViewer/Core
+    - PINRemoteImage/iOS (~> 3.0.1)
+    - PINRemoteImage/PINCache
+  - NYTPhotoViewer/Core (5.0.5)
+  - PINCache (3.0.3):
+    - PINCache/Arc-exception-safe (= 3.0.3)
+    - PINCache/Core (= 3.0.3)
+  - PINCache/Arc-exception-safe (3.0.3):
+    - PINCache/Core
+  - PINCache/Core (3.0.3):
+    - PINOperation (~> 1.2.1)
+  - PINOperation (1.2.1)
+  - PINRemoteImage/Core (3.0.3):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.3):
+    - PINRemoteImage/Core
+  - PINRemoteImage/PINCache (3.0.3):
+    - PINCache (~> 3.0.3)
+    - PINRemoteImage/Core
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -10,6 +39,9 @@ PODS:
     - Alamofire (~> 4.8.2)
 
 DEPENDENCIES:
+  - KeychainAccess
+  - Lightbox
+  - NYTPhotoViewer
   - RxCocoa
   - RxSwift
   - SwiftyDropbox
@@ -17,6 +49,14 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Cache
+    - Imaginary
+    - KeychainAccess
+    - Lightbox
+    - NYTPhotoViewer
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -24,11 +64,19 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
+  Imaginary: cf5e3a7dd6ab1dcbd47ba8ce5edf2307c4e99eb3
+  KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
+  Lightbox: cc3d5124f024fa8197fd23f913160db1c61a1852
+  NYTPhotoViewer: 6f50ea92f265d54a350b39a7ab7a1b91ca487ff6
+  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
+  PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
+  PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SwiftyDropbox: 7e864f1e826bfc1b9b53a5edccef6c8d5fbe9e3b
 
-PODFILE CHECKSUM: 46ef1f908aaee393df22fb40c4fd03b0609bf878
+PODFILE CHECKSUM: c66fa96cdd1eb977653c819b6a0ee0cd99c3b07a
 
 COCOAPODS: 1.9.1

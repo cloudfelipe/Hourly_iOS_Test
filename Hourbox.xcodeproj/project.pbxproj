@@ -9,6 +9,30 @@
 /* Begin PBXBuildFile section */
 		49CE8C91D7ACFA5815074605 /* Pods_Hourbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD9A7775BB0DFB53FCF47AF /* Pods_Hourbox.framework */; };
 		4F0572CAE46550389FDAAFC6 /* Pods_Hourbox_HourboxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23079407410EC5109F45BFF /* Pods_Hourbox_HourboxUITests.framework */; };
+		860F889A258AE14600954F15 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F8899258AE14600954F15 /* ImageViewerViewController.swift */; };
+		860F889B258AE14600954F15 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F8899258AE14600954F15 /* ImageViewerViewController.swift */; };
+		860F889E258AE88200954F15 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F889D258AE88200954F15 /* SignInViewController.swift */; };
+		860F889F258AE88200954F15 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F889D258AE88200954F15 /* SignInViewController.swift */; };
+		860F88A1258AEEFB00954F15 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F88A0258AEEFB00954F15 /* SignInViewModel.swift */; };
+		860F88A2258AEEFB00954F15 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F88A0258AEEFB00954F15 /* SignInViewModel.swift */; };
+		860F88A4258AEF7A00954F15 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F88A3258AEF7A00954F15 /* SignInCoordinator.swift */; };
+		860F88A5258AEF7A00954F15 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F88A3258AEF7A00954F15 /* SignInCoordinator.swift */; };
+		864A2189258AF9720013DB1B /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2188258AF9720013DB1B /* ApplicationCoordinator.swift */; };
+		864A218A258AF9720013DB1B /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2188258AF9720013DB1B /* ApplicationCoordinator.swift */; };
+		864A218C258AFA160013DB1B /* ApplicactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A218B258AFA150013DB1B /* ApplicactionViewController.swift */; };
+		864A218D258AFA160013DB1B /* ApplicactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A218B258AFA150013DB1B /* ApplicactionViewController.swift */; };
+		864A218F258AFA430013DB1B /* ApplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A218E258AFA430013DB1B /* ApplicationViewModel.swift */; };
+		864A2190258AFA430013DB1B /* ApplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A218E258AFA430013DB1B /* ApplicationViewModel.swift */; };
+		864A2192258AFEFB0013DB1B /* StoreAccessTokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2191258AFEFB0013DB1B /* StoreAccessTokenInteractor.swift */; };
+		864A2193258AFEFB0013DB1B /* StoreAccessTokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2191258AFEFB0013DB1B /* StoreAccessTokenInteractor.swift */; };
+		864A2195258AFF0B0013DB1B /* GetAccessTokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2194258AFF0B0013DB1B /* GetAccessTokenInteractor.swift */; };
+		864A2196258AFF0B0013DB1B /* GetAccessTokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2194258AFF0B0013DB1B /* GetAccessTokenInteractor.swift */; };
+		864A2198258AFFBB0013DB1B /* AccessTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2197258AFFBB0013DB1B /* AccessTokenRepository.swift */; };
+		864A2199258AFFBB0013DB1B /* AccessTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2197258AFFBB0013DB1B /* AccessTokenRepository.swift */; };
+		864A219B258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A219A258B026E0013DB1B /* IsUserLoggedInInteractor.swift */; };
+		864A219C258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A219A258B026E0013DB1B /* IsUserLoggedInInteractor.swift */; };
+		864A219E258B0B240013DB1B /* RemoveAccessTokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A219D258B0B240013DB1B /* RemoveAccessTokenInteractor.swift */; };
+		864A219F258B0B240013DB1B /* RemoveAccessTokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A219D258B0B240013DB1B /* RemoveAccessTokenInteractor.swift */; };
 		86544066258854C200839146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86544065258854C200839146 /* AppDelegate.swift */; };
 		8654406A258854C200839146 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86544069258854C200839146 /* ViewController.swift */; };
 		8654406F258854C600839146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8654406E258854C600839146 /* Assets.xcassets */; };
@@ -23,8 +47,8 @@
 		86D5E5B8258990A00099C2EE /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86D5E5B6258990A00099C2EE /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		86D5E5BC258993C60099C2EE /* GetFilesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5BB258993C60099C2EE /* GetFilesInteractor.swift */; };
 		86D5E5BD258993C60099C2EE /* GetFilesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5BB258993C60099C2EE /* GetFilesInteractor.swift */; };
-		86D5E5C1258995380099C2EE /* FileBrowserViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5C0258995380099C2EE /* FileBrowserViewModelType.swift */; };
-		86D5E5C2258995380099C2EE /* FileBrowserViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5C0258995380099C2EE /* FileBrowserViewModelType.swift */; };
+		86D5E5C1258995380099C2EE /* FileBrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5C0258995380099C2EE /* FileBrowserViewModel.swift */; };
+		86D5E5C2258995380099C2EE /* FileBrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5C0258995380099C2EE /* FileBrowserViewModel.swift */; };
 		86D5E5C425899BC10099C2EE /* FileBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5C325899BC10099C2EE /* FileBrowserViewController.swift */; };
 		86D5E5C525899BC10099C2EE /* FileBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5C325899BC10099C2EE /* FileBrowserViewController.swift */; };
 		86D5E5C72589A1220099C2EE /* FileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5C62589A1220099C2EE /* FileCollectionViewCell.swift */; };
@@ -84,6 +108,18 @@
 		50E7CF1D6A483692568AB696 /* Pods_HourboxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HourboxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7331F79B69AAF57D6A93F556 /* Pods-Hourbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hourbox.release.xcconfig"; path = "Target Support Files/Pods-Hourbox/Pods-Hourbox.release.xcconfig"; sourceTree = "<group>"; };
 		7BFD348B7FB41124F9008E4C /* Pods-HourboxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HourboxTests.release.xcconfig"; path = "Target Support Files/Pods-HourboxTests/Pods-HourboxTests.release.xcconfig"; sourceTree = "<group>"; };
+		860F8899258AE14600954F15 /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
+		860F889D258AE88200954F15 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		860F88A0258AEEFB00954F15 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		860F88A3258AEF7A00954F15 /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
+		864A2188258AF9720013DB1B /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		864A218B258AFA150013DB1B /* ApplicactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicactionViewController.swift; sourceTree = "<group>"; };
+		864A218E258AFA430013DB1B /* ApplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewModel.swift; sourceTree = "<group>"; };
+		864A2191258AFEFB0013DB1B /* StoreAccessTokenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAccessTokenInteractor.swift; sourceTree = "<group>"; };
+		864A2194258AFF0B0013DB1B /* GetAccessTokenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccessTokenInteractor.swift; sourceTree = "<group>"; };
+		864A2197258AFFBB0013DB1B /* AccessTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenRepository.swift; sourceTree = "<group>"; };
+		864A219A258B026E0013DB1B /* IsUserLoggedInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsUserLoggedInInteractor.swift; sourceTree = "<group>"; };
+		864A219D258B0B240013DB1B /* RemoveAccessTokenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAccessTokenInteractor.swift; sourceTree = "<group>"; };
 		86544062258854C200839146 /* Hourbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hourbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86544065258854C200839146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86544069258854C200839146 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +136,7 @@
 		86D5E5B225898E4C0099C2EE /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		86D5E5B6258990A00099C2EE /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86D5E5BB258993C60099C2EE /* GetFilesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFilesInteractor.swift; sourceTree = "<group>"; };
-		86D5E5C0258995380099C2EE /* FileBrowserViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserViewModelType.swift; sourceTree = "<group>"; };
+		86D5E5C0258995380099C2EE /* FileBrowserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserViewModel.swift; sourceTree = "<group>"; };
 		86D5E5C325899BC10099C2EE /* FileBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserViewController.swift; sourceTree = "<group>"; };
 		86D5E5C62589A1220099C2EE /* FileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCollectionViewCell.swift; sourceTree = "<group>"; };
 		86D5E5C92589C2110099C2EE /* FileBrowserCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserCoordinator.swift; sourceTree = "<group>"; };
@@ -144,6 +180,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		860F8898258AE11A00954F15 /* ImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				860F8899258AE14600954F15 /* ImageViewerViewController.swift */,
+			);
+			path = ImageViewer;
+			sourceTree = "<group>";
+		};
+		860F889C258AE86800954F15 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				860F889D258AE88200954F15 /* SignInViewController.swift */,
+				860F88A0258AEEFB00954F15 /* SignInViewModel.swift */,
+				860F88A3258AEF7A00954F15 /* SignInCoordinator.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		864A2187258AF95A0013DB1B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				864A2188258AF9720013DB1B /* ApplicationCoordinator.swift */,
+				864A218B258AFA150013DB1B /* ApplicactionViewController.swift */,
+				864A218E258AFA430013DB1B /* ApplicationViewModel.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		86544059258854C200839146 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				86D5E5AE25898E090099C2EE /* FilesRepository.swift */,
+				864A2197258AFFBB0013DB1B /* AccessTokenRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -241,6 +306,10 @@
 			children = (
 				86D5E5BB258993C60099C2EE /* GetFilesInteractor.swift */,
 				86D5E5DC2589E0110099C2EE /* DownloadFileInteractor.swift */,
+				864A2191258AFEFB0013DB1B /* StoreAccessTokenInteractor.swift */,
+				864A219D258B0B240013DB1B /* RemoveAccessTokenInteractor.swift */,
+				864A2194258AFF0B0013DB1B /* GetAccessTokenInteractor.swift */,
+				864A219A258B026E0013DB1B /* IsUserLoggedInInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -251,6 +320,9 @@
 				86D5E5D02589CADA0099C2EE /* BaseViewController.swift */,
 				86D5E5D32589CB720099C2EE /* BaseViewModelType.swift */,
 				86D5E5D62589D0070099C2EE /* BaseViewModel.swift */,
+				864A2187258AF95A0013DB1B /* Application */,
+				860F889C258AE86800954F15 /* SignIn */,
+				860F8898258AE11A00954F15 /* ImageViewer */,
 				86D5E5DF2589E20C0099C2EE /* PDFViewer */,
 				86D5E5BF2589951E0099C2EE /* FileBrowser */,
 			);
@@ -260,7 +332,7 @@
 		86D5E5BF2589951E0099C2EE /* FileBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				86D5E5C0258995380099C2EE /* FileBrowserViewModelType.swift */,
+				86D5E5C0258995380099C2EE /* FileBrowserViewModel.swift */,
 				86D5E5C325899BC10099C2EE /* FileBrowserViewController.swift */,
 				86D5E5C62589A1220099C2EE /* FileCollectionViewCell.swift */,
 				86D5E5C92589C2110099C2EE /* FileBrowserCoordinator.swift */,
@@ -537,19 +609,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D5E5DD2589E0110099C2EE /* DownloadFileInteractor.swift in Sources */,
+				864A218F258AFA430013DB1B /* ApplicationViewModel.swift in Sources */,
 				86D5E5BC258993C60099C2EE /* GetFilesInteractor.swift in Sources */,
-				86D5E5C1258995380099C2EE /* FileBrowserViewModelType.swift in Sources */,
+				86D5E5C1258995380099C2EE /* FileBrowserViewModel.swift in Sources */,
 				86D5E5D12589CADA0099C2EE /* BaseViewController.swift in Sources */,
 				86D5E5B325898E4C0099C2EE /* Entry.swift in Sources */,
 				8654406A258854C200839146 /* ViewController.swift in Sources */,
 				86D5E5AF25898E090099C2EE /* FilesRepository.swift in Sources */,
+				860F889E258AE88200954F15 /* SignInViewController.swift in Sources */,
 				86D5E5CA2589C2110099C2EE /* FileBrowserCoordinator.swift in Sources */,
+				864A2195258AFF0B0013DB1B /* GetAccessTokenInteractor.swift in Sources */,
+				864A2192258AFEFB0013DB1B /* StoreAccessTokenInteractor.swift in Sources */,
 				86D5E5D72589D0070099C2EE /* BaseViewModel.swift in Sources */,
 				86D5E5D42589CB720099C2EE /* BaseViewModelType.swift in Sources */,
 				86D5E5C425899BC10099C2EE /* FileBrowserViewController.swift in Sources */,
+				864A2198258AFFBB0013DB1B /* AccessTokenRepository.swift in Sources */,
 				86D5E5C72589A1220099C2EE /* FileCollectionViewCell.swift in Sources */,
 				86D5E5E12589E2230099C2EE /* PDFViewerViewController.swift in Sources */,
+				864A219B258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */,
+				860F88A1258AEEFB00954F15 /* SignInViewModel.swift in Sources */,
+				864A218C258AFA160013DB1B /* ApplicactionViewController.swift in Sources */,
+				864A219E258B0B240013DB1B /* RemoveAccessTokenInteractor.swift in Sources */,
+				864A2189258AF9720013DB1B /* ApplicationCoordinator.swift in Sources */,
 				86544066258854C200839146 /* AppDelegate.swift in Sources */,
+				860F88A4258AEF7A00954F15 /* SignInCoordinator.swift in Sources */,
+				860F889A258AE14600954F15 /* ImageViewerViewController.swift in Sources */,
 				86D5E5CE2589CABF0099C2EE /* ViewAppearState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,17 +642,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				864A219F258B0B240013DB1B /* RemoveAccessTokenInteractor.swift in Sources */,
 				86D5E5B425898E4C0099C2EE /* Entry.swift in Sources */,
+				864A2196258AFF0B0013DB1B /* GetAccessTokenInteractor.swift in Sources */,
+				864A2190258AFA430013DB1B /* ApplicationViewModel.swift in Sources */,
 				86D5E5E22589E2230099C2EE /* PDFViewerViewController.swift in Sources */,
 				86D5E5C82589A1220099C2EE /* FileCollectionViewCell.swift in Sources */,
+				860F889B258AE14600954F15 /* ImageViewerViewController.swift in Sources */,
+				860F88A5258AEF7A00954F15 /* SignInCoordinator.swift in Sources */,
 				86D5E5BD258993C60099C2EE /* GetFilesInteractor.swift in Sources */,
 				8654407D258854C600839146 /* HourboxTests.swift in Sources */,
-				86D5E5C2258995380099C2EE /* FileBrowserViewModelType.swift in Sources */,
+				864A2199258AFFBB0013DB1B /* AccessTokenRepository.swift in Sources */,
+				86D5E5C2258995380099C2EE /* FileBrowserViewModel.swift in Sources */,
+				864A2193258AFEFB0013DB1B /* StoreAccessTokenInteractor.swift in Sources */,
 				86D5E5D82589D0070099C2EE /* BaseViewModel.swift in Sources */,
 				86D5E5D22589CADA0099C2EE /* BaseViewController.swift in Sources */,
+				860F88A2258AEEFB00954F15 /* SignInViewModel.swift in Sources */,
 				86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */,
 				86D5E5D52589CB720099C2EE /* BaseViewModelType.swift in Sources */,
 				86D5E5C525899BC10099C2EE /* FileBrowserViewController.swift in Sources */,
+				864A218D258AFA160013DB1B /* ApplicactionViewController.swift in Sources */,
+				860F889F258AE88200954F15 /* SignInViewController.swift in Sources */,
+				864A219C258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */,
+				864A218A258AF9720013DB1B /* ApplicationCoordinator.swift in Sources */,
 				86D5E5DE2589E0110099C2EE /* DownloadFileInteractor.swift in Sources */,
 				86D5E5CB2589C2110099C2EE /* FileBrowserCoordinator.swift in Sources */,
 				86D5E5CF2589CABF0099C2EE /* ViewAppearState.swift in Sources */,
