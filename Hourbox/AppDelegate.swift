@@ -18,15 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     weak var applicationCoordinator: ApplicationCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
         rootNavigationVC = UINavigationController()
+        let coordinator = ApplicationCoordinator(router: rootNavigationVC)
+        coordinator.start()
+        applicationCoordinator = coordinator
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootNavigationVC
         window?.makeKeyAndVisible()
-        
-        let coordinator = ApplicationCoordinator(router: rootNavigationVC)
-        coordinator.start()
-        applicationCoordinator = coordinator
         
         DropboxClientsManager.setupWithAppKey("lpwlc9qrng9mdbm")
         
@@ -43,16 +43,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return canHandleUrl
     }
 
-}
-
-struct URLProvider: BaseURLProviderType {
-    var baseURL: String {
-        "https://api.dropboxapi.com/2/"
-    }
-}
-
-struct AuthProvider: AuthProviderType {
-    var token: String {
-        "Bearer uQGtRzNwT60AAAAAAAAAAaqSLwcTHK2RSzirh3JqtbNr7RcKoc2iq090L52S0h9Q"
-    }
 }

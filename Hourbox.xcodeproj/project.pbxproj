@@ -33,6 +33,8 @@
 		864A219C258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A219A258B026E0013DB1B /* IsUserLoggedInInteractor.swift */; };
 		864A219E258B0B240013DB1B /* RemoveAccessTokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A219D258B0B240013DB1B /* RemoveAccessTokenInteractor.swift */; };
 		864A219F258B0B240013DB1B /* RemoveAccessTokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A219D258B0B240013DB1B /* RemoveAccessTokenInteractor.swift */; };
+		864A21A2258B17330013DB1B /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A21A1258B17330013DB1B /* DI.swift */; };
+		864A21A3258B17330013DB1B /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A21A1258B17330013DB1B /* DI.swift */; };
 		86544066258854C200839146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86544065258854C200839146 /* AppDelegate.swift */; };
 		8654406A258854C200839146 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86544069258854C200839146 /* ViewController.swift */; };
 		8654406F258854C600839146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8654406E258854C600839146 /* Assets.xcassets */; };
@@ -120,6 +122,7 @@
 		864A2197258AFFBB0013DB1B /* AccessTokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenRepository.swift; sourceTree = "<group>"; };
 		864A219A258B026E0013DB1B /* IsUserLoggedInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsUserLoggedInInteractor.swift; sourceTree = "<group>"; };
 		864A219D258B0B240013DB1B /* RemoveAccessTokenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAccessTokenInteractor.swift; sourceTree = "<group>"; };
+		864A21A1258B17330013DB1B /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		86544062258854C200839146 /* Hourbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hourbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86544065258854C200839146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86544069258854C200839146 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +211,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		864A21A0258B17230013DB1B /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				864A21A1258B17330013DB1B /* DI.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		86544059258854C200839146 = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +277,7 @@
 		86D5E5AC25898DE20099C2EE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				864A21A0258B17230013DB1B /* DI */,
 				86D5E5BA258993B00099C2EE /* Interactors */,
 				86D5E5B125898E330099C2EE /* Model */,
 				86D5E5AD25898DEF0099C2EE /* Repositories */,
@@ -628,6 +640,7 @@
 				86D5E5E12589E2230099C2EE /* PDFViewerViewController.swift in Sources */,
 				864A219B258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */,
 				860F88A1258AEEFB00954F15 /* SignInViewModel.swift in Sources */,
+				864A21A2258B17330013DB1B /* DI.swift in Sources */,
 				864A218C258AFA160013DB1B /* ApplicactionViewController.swift in Sources */,
 				864A219E258B0B240013DB1B /* RemoveAccessTokenInteractor.swift in Sources */,
 				864A2189258AF9720013DB1B /* ApplicationCoordinator.swift in Sources */,
@@ -662,6 +675,7 @@
 				86D5E5D52589CB720099C2EE /* BaseViewModelType.swift in Sources */,
 				86D5E5C525899BC10099C2EE /* FileBrowserViewController.swift in Sources */,
 				864A218D258AFA160013DB1B /* ApplicactionViewController.swift in Sources */,
+				864A21A3258B17330013DB1B /* DI.swift in Sources */,
 				860F889F258AE88200954F15 /* SignInViewController.swift in Sources */,
 				864A219C258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */,
 				864A218A258AF9720013DB1B /* ApplicationCoordinator.swift in Sources */,

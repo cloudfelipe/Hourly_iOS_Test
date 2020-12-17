@@ -8,6 +8,7 @@
 
 import Foundation
 import KeychainAccess
+import Networking
 
 protocol AccessTokenRepositoryType {
     func store(token: String)
@@ -26,5 +27,12 @@ extension Keychain: AccessTokenRepositoryType {
     
     func removeToken() {
         self["AUTH-TOKEN"] = nil
+    }
+}
+
+extension Keychain: AuthProviderType {
+    public var token: String {
+        let currentToken = getToken() ?? ""
+        return "Bearer " + currentToken
     }
 }
