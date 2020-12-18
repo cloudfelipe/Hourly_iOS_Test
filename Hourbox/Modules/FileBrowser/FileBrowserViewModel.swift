@@ -64,6 +64,7 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
                 self?.requestState.accept(.normal)
             case .failure(let error):
                 debugPrint(error)
+                self?.handle(error: error)
                 self?.requestState.accept(.error)
             }
         }
@@ -85,12 +86,19 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
     }
     
     func processFile(_ file: Entry) {
+        
+        if !file.isPDF && !file.isImage {
+            return
+        }
+        
+        requestState.accept(.downloading)
         dependencies.down.downloadFile(file: file) { (result) in
             switch result {
             case .success(let data):
+                self.requestState.accept(.downloadedFile)
                 self.open(data: data.data, for: file)
             case .failure(let error):
-                break
+                self.requestState.accept(.error)
             }
         }
     }
@@ -100,6 +108,15 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
             dependencies.coordinator.showPDF(with: data)
         } else if file.isImage {
             dependencies.coordinator.showImage(with: data)
+        }
+    }
+    
+    func handle(error: ErrorCategory) {
+        switch error {
+        case .nonRetryable:
+            dependencies.coordinator.showErrorMessage()
+        default:
+            break
         }
     }
     
@@ -121,10 +138,12 @@ enum DataRequestState {
     case loading
     case error
     case normal
+    case downloading
+    case downloadedFile
 }
 
 extension Entry {
     func dataView() -> FileViewData {
-        return FileViewData(name: name, iconName: tag.iconName)
+        return FileViewData(name: name, iconName: iconReference)
     }
 }

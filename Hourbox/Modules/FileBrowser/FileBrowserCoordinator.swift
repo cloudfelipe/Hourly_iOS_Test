@@ -18,6 +18,7 @@ protocol FileBrowserCoordinatorType {
     func navigateToDirectory(with path: FilePath)
     func showPDF(with data: Data)
     func showImage(with data: Data)
+    func showErrorMessage()
 }
 
 final class FileBrowserCoordinator: FileBrowserCoordinatorType {
@@ -60,6 +61,18 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
     func showImage(with data: Data) {
         let viewer = ImageViewerViewController(imageData: data)
         router?.present(viewer, animated: true, completion: nil)
+    }
+    
+    func pop() {
+        router?.popViewController(animated: true)
+    }
+    
+    func showErrorMessage() {
+        let alert = UIAlertController(title: "Error", message: "Something went wrong. Please try again later", preferredStyle: .alert)
+        alert.addAction(.init(title: "Ok", style: .destructive, handler: { [weak self] (_) in
+            self?.pop()
+        }))
+        router?.present(alert, animated: true, completion: nil)
     }
     
     deinit {

@@ -48,7 +48,9 @@ final class ApplicationCoordinator: ApplicationCoordinatorType {
     func goToSignIn() {
         let coordinatorDependencies = SignInCoordinatorDependency()
         let newRouter = UINavigationController()
+        newRouter.modalTransitionStyle = .crossDissolve
         newRouter.modalPresentationStyle = .fullScreen
+        newRouter.isNavigationBarHidden = true
         let coordinator = SignInCoordinator(router: newRouter, dependencies: coordinatorDependencies)
         coordinator.start()
         signinCoordinator = coordinator
@@ -60,6 +62,7 @@ final class ApplicationCoordinator: ApplicationCoordinatorType {
                                                                         getFilesInteractor: dependenciesContainer.getFilesInteractor,
                                                                         down: dependenciesContainer.downloadFileInteractor)
         let newRouter = UINavigationController()
+        newRouter.modalTransitionStyle = .crossDissolve
         newRouter.modalPresentationStyle = .fullScreen
         let coordinator = FileBrowserCoordinator(router: newRouter, dependencies: coordinatorDependencies)
         coordinator.start()

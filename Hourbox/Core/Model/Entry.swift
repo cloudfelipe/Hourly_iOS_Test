@@ -33,6 +33,18 @@ struct Entry {
     var isPDF: Bool {
         return name.hasSuffix(".pdf")
     }
+    
+    var iconReference: String {
+        if isImage {
+            return "img"
+        }
+        
+        if isPDF {
+            return "pdf"
+        }
+        
+        return tag.iconName
+    }
 }
 
 struct Files {

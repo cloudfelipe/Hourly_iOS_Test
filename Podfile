@@ -11,6 +11,8 @@ target 'Hourbox' do
 
   pod 'Lightbox'
   pod 'SkeletonView'
+  pod 'DZNEmptyDataSet'
+  pod 'SVProgressHUD'
 
   target 'HourboxTests' do
     inherit! :search_paths

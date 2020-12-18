@@ -9,6 +9,8 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import DZNEmptyDataSet
+import SVProgressHUD
 
 struct FileViewData {
     let name: String
@@ -43,7 +45,10 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionAdapter = CollectionViewAdapter(collection: collectionView)
+        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setDefaultMaskType(.black)
+        
+        collectionAdapter = CollectionViewAdapter(collectionView: collectionView)
         
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -80,16 +85,7 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
             .subscribe(onNext: requestState(_:))
             .disposed(by: disposableBag)
         
-        
-        collectionView.dataSource = collectionAdapter
-        collectionView.delegate = collectionAdapter
-        
         collectionView.rx.itemSelected.subscribe(onNext: { self.viewModel.selectedFile(at: $0) }).disposed(by: disposableBag)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-//        collectionView.showAnimatedGradientSkeleton()
     }
     
     func requestState(_ requestState: DataRequestState) {
@@ -100,13 +96,16 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
             break
         case .normal:
             collectionAdapter.hideLoading()
-            break
+        case .downloading:
+            SVProgressHUD.show()
+        case .downloadedFile:
+            SVProgressHUD.dismiss()
         }
     }
     
     func setItems(_ items: [FileViewData]) {
         collectionAdapter.setItems(items)
-        collectionView.reloadData()
+//        collectionView.reloadData()
     }
     
     deinit {
@@ -119,21 +118,39 @@ extension FileBrowserViewController: HomeViewType {
 
 import SkeletonView
 
-final class CollectionViewAdapter: NSObject, UICollectionViewDelegateFlowLayout, SkeletonCollectionViewDataSource {
+final class CollectionViewAdapter: NSObject, UICollectionViewDelegateFlowLayout, SkeletonCollectionViewDataSource, DZNEmptyDataSetSource {
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "empty")
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: "This folder is empty",
+                                  attributes: [.font : UIFont.boldSystemFont(ofSize: 20.0),
+                                               .foregroundColor: UIColor.black])
+        
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        return NSAttributedString(string: "Your files stored on Dropbox will appear here",
+                                  attributes: [.font : UIFont.systemFont(ofSize: 18.0),
+                                               .foregroundColor: UIColor.black])
+    }
     
     var items = [FileViewData]()
     weak var collectionView: UICollectionView?
     
-    init(collection: UICollectionView) {
-        self.collectionView = collection
+    init(collectionView: UICollectionView) {
+        self.collectionView = collectionView
         super.init()
+        
+        self.collectionView?.dataSource = self
+        self.collectionView?.emptyDataSetSource = self
+        self.collectionView?.delegate = self
     }
     
     func setItems(_ items: [FileViewData]) {
         self.items = items
-        DispatchQueue.main.async {
-            self.collectionView?.reloadData()
-        }
     }
     
     func loading() {
@@ -144,8 +161,14 @@ final class CollectionViewAdapter: NSObject, UICollectionViewDelegateFlowLayout,
     
     func hideLoading() {
         DispatchQueue.main.async {
-//            self.collectionView?.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.5))
-            self.collectionView?.hideSkeleton(transition: .crossDissolve(0.25))
+            self.collectionView?.hideSkeleton()
+            
+            UIView.transition(with: self.collectionView!,
+                              duration: 0.35,
+                              options: .transitionCrossDissolve,
+                              animations: {
+                                self.collectionView!.reloadData()
+            })
         }
     }
     
@@ -155,13 +178,11 @@ final class CollectionViewAdapter: NSObject, UICollectionViewDelegateFlowLayout,
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         items.count
-//        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FileCollectionViewCell", for: indexPath) as! FileCollectionViewCell
         cell.setup(with: items[indexPath.row])
-//        cell.setup(with: FileViewData(name: "sample", iconName: "folder"))
         return cell
     }
     
