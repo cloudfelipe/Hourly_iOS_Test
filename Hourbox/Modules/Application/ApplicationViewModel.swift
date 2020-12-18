@@ -20,6 +20,7 @@ final class ApplicationViewModel: BaseViewModel, ApplicationViewModelType {
         let accessTokenRoot: PublishSubject<DropboxOAuthResult>
         let isUserLoggedInInteractor: IsUserLoggedInInteractorType
         let storeAccessTokenInteractor: StoreAccessTokenInteractorType
+        let removeAccessTokenInteractor: RemoveAccessTokenInteractorType
     }
     
     let dependencies: InputDependencies
@@ -32,6 +33,17 @@ final class ApplicationViewModel: BaseViewModel, ApplicationViewModelType {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: processIncomingAuthResult(_:))
             .disposed(by: disposeBag)
+        
+        NotificationCenter.default
+            .rx.notification(.logout)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: logout(_:))
+            .disposed(by: disposeBag)
+    }
+    
+    @objc func logout(_ notification: Notification) {
+        dependencies.removeAccessTokenInteractor.remove()
+        dependencies.coordinator.logout()
     }
     
     override func viewAppearStateDidChange(_ state: ViewAppearState) {
@@ -51,7 +63,6 @@ final class ApplicationViewModel: BaseViewModel, ApplicationViewModelType {
             break
         }
     }
-    
     
     func grantAccess() {
         if dependencies.isUserLoggedInInteractor.isLoggedIn() {

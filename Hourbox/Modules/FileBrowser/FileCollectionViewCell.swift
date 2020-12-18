@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class FileCollectionViewCell: UICollectionViewCell {
     lazy var containerStackView: UIStackView = {
@@ -47,9 +48,10 @@ class FileCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .black
+//        contentView.backgroundColor = .black
         
         let iconContainer = UIView()
+        
         iconContainer.translatesAutoresizingMaskIntoConstraints = false
 //        iconContainer.setContentHuggingPriority(.defaultLow, for: .vertical)
         fileIconImageView.addToParent(iconContainer)
@@ -61,17 +63,23 @@ class FileCollectionViewCell: UICollectionViewCell {
 //        fileIconImageView.centerYAnchor.constraint(equalTo: iconContainer.centerYAnchor).isActive = true
 //        fileIconImageView.widthAnchor.constraint(equalTo: iconContainer.widthAnchor, multiplier: 0.6, constant: 1).isActive = true
 //        fileIconImageView.heightAnchor.constraint(equalTo: iconContainer.heightAnchor, multiplier: 0.8, constant: 1).isActive = true
-        
-        let smapl = UILabel()
-        smapl.text = "sadasdas"
-        smapl.textColor = .white
-        smapl.translatesAutoresizingMaskIntoConstraints = false
+
         containerStackView.addArrangedSubview(iconContainer)
         containerStackView.addArrangedSubview(fileTitleLabel)
         containerStackView.addArrangedSubview(moreOptionsButton)
         containerStackView.addToParent(contentView)
         
 //        iconContainer.heightAnchor.constraint(equalTo: containerStackView.heightAnchor, multiplier: 1).isActive = true
+        
+//        contentView.subviews.forEach { $0.isSkeletonable = true }
+        
+        self.isSkeletonable = true
+//        contentView.isSkeletonable = true
+//        containerStackView.isSkeletonable = true
+//        iconContainer.isSkeletonable = true
+//        fileIconImageView.isSkeletonable = true
+//        fileTitleLabel.isSkeletonable = true
+//        moreOptionsButton.isSkeletonable = true
 
     }
     
@@ -94,4 +102,17 @@ extension UIView {
         self.topAnchor.constraint(equalTo: parent.topAnchor).isActive = true
         self.bottomAnchor.constraint(equalTo: parent.bottomAnchor).isActive = true
     }
+}
+
+
+final class SkeletonCell: UICollectionViewCell {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.isSkeletonable = true
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }

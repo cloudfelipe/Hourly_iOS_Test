@@ -69,6 +69,10 @@
 		86D5E5DE2589E0110099C2EE /* DownloadFileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5DC2589E0110099C2EE /* DownloadFileInteractor.swift */; };
 		86D5E5E12589E2230099C2EE /* PDFViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5E02589E2230099C2EE /* PDFViewerViewController.swift */; };
 		86D5E5E22589E2230099C2EE /* PDFViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5E02589E2230099C2EE /* PDFViewerViewController.swift */; };
+		86FC3FAC258C4C5C0056B8FA /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC3FAB258C4C5C0056B8FA /* AppError.swift */; };
+		86FC3FAD258C4C5C0056B8FA /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC3FAB258C4C5C0056B8FA /* AppError.swift */; };
+		86FC3FAF258C58700056B8FA /* ErrorProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC3FAE258C58700056B8FA /* ErrorProcessor.swift */; };
+		86FC3FB0258C58700056B8FA /* ErrorProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC3FAE258C58700056B8FA /* ErrorProcessor.swift */; };
 		8ABC283713C4C943B087422B /* Pods_HourboxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E7CF1D6A483692568AB696 /* Pods_HourboxTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +153,8 @@
 		86D5E5D62589D0070099C2EE /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		86D5E5DC2589E0110099C2EE /* DownloadFileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadFileInteractor.swift; sourceTree = "<group>"; };
 		86D5E5E02589E2230099C2EE /* PDFViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewerViewController.swift; sourceTree = "<group>"; };
+		86FC3FAB258C4C5C0056B8FA /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		86FC3FAE258C58700056B8FA /* ErrorProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorProcessor.swift; sourceTree = "<group>"; };
 		A48F4B01AA9772381205B317 /* Pods-Hourbox-HourboxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hourbox-HourboxUITests.release.xcconfig"; path = "Target Support Files/Pods-Hourbox-HourboxUITests/Pods-Hourbox-HourboxUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D23079407410EC5109F45BFF /* Pods_Hourbox_HourboxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hourbox_HourboxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD9A7775BB0DFB53FCF47AF /* Pods_Hourbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hourbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,6 +283,7 @@
 		86D5E5AC25898DE20099C2EE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				86FC3FAA258C4C2E0056B8FA /* Errors */,
 				864A21A0258B17230013DB1B /* DI */,
 				86D5E5BA258993B00099C2EE /* Interactors */,
 				86D5E5B125898E330099C2EE /* Model */,
@@ -366,6 +373,15 @@
 				86D5E5E02589E2230099C2EE /* PDFViewerViewController.swift */,
 			);
 			path = PDFViewer;
+			sourceTree = "<group>";
+		};
+		86FC3FAA258C4C2E0056B8FA /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				86FC3FAB258C4C5C0056B8FA /* AppError.swift */,
+				86FC3FAE258C58700056B8FA /* ErrorProcessor.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		D816786687DB1D430E0A14FC /* Pods */ = {
@@ -631,6 +647,7 @@
 				860F889E258AE88200954F15 /* SignInViewController.swift in Sources */,
 				86D5E5CA2589C2110099C2EE /* FileBrowserCoordinator.swift in Sources */,
 				864A2195258AFF0B0013DB1B /* GetAccessTokenInteractor.swift in Sources */,
+				86FC3FAF258C58700056B8FA /* ErrorProcessor.swift in Sources */,
 				864A2192258AFEFB0013DB1B /* StoreAccessTokenInteractor.swift in Sources */,
 				86D5E5D72589D0070099C2EE /* BaseViewModel.swift in Sources */,
 				86D5E5D42589CB720099C2EE /* BaseViewModelType.swift in Sources */,
@@ -647,6 +664,7 @@
 				86544066258854C200839146 /* AppDelegate.swift in Sources */,
 				860F88A4258AEF7A00954F15 /* SignInCoordinator.swift in Sources */,
 				860F889A258AE14600954F15 /* ImageViewerViewController.swift in Sources */,
+				86FC3FAC258C4C5C0056B8FA /* AppError.swift in Sources */,
 				86D5E5CE2589CABF0099C2EE /* ViewAppearState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,6 +693,7 @@
 				86D5E5D52589CB720099C2EE /* BaseViewModelType.swift in Sources */,
 				86D5E5C525899BC10099C2EE /* FileBrowserViewController.swift in Sources */,
 				864A218D258AFA160013DB1B /* ApplicactionViewController.swift in Sources */,
+				86FC3FAD258C4C5C0056B8FA /* AppError.swift in Sources */,
 				864A21A3258B17330013DB1B /* DI.swift in Sources */,
 				860F889F258AE88200954F15 /* SignInViewController.swift in Sources */,
 				864A219C258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */,
@@ -682,6 +701,7 @@
 				86D5E5DE2589E0110099C2EE /* DownloadFileInteractor.swift in Sources */,
 				86D5E5CB2589C2110099C2EE /* FileBrowserCoordinator.swift in Sources */,
 				86D5E5CF2589CABF0099C2EE /* ViewAppearState.swift in Sources */,
+				86FC3FB0258C58700056B8FA /* ErrorProcessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

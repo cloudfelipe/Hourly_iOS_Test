@@ -13,6 +13,7 @@ import RxSwift
 protocol ApplicationCoordinatorType {
     func goToSignIn()
     func goToFileBrowser()
+    func logout()
 }
 
 final class ApplicationCoordinator: ApplicationCoordinatorType {
@@ -30,11 +31,11 @@ final class ApplicationCoordinator: ApplicationCoordinatorType {
     
     
     func start() {
-//        dependenciesContainer.removeAccessTokenInteractor.remove()
         let inputDependencies = ApplicationViewModel.InputDependencies(coordinator: self,
                                                                        accessTokenRoot: accessTokenRoot,
                                                                        isUserLoggedInInteractor: dependenciesContainer.isUserLoggedInInteractor,
-                                                                       storeAccessTokenInteractor: dependenciesContainer.storeAccessTokenInteractor)
+                                                                       storeAccessTokenInteractor: dependenciesContainer.storeAccessTokenInteractor,
+                                                                       removeAccessTokenInteractor: dependenciesContainer.removeAccessTokenInteractor)
         let viewModel = ApplicationViewModel(dependencies: inputDependencies)
         let viewController = ApplicationViewController(viewModel: viewModel)
         router?.pushViewController(viewController, animated: false)
@@ -66,4 +67,7 @@ final class ApplicationCoordinator: ApplicationCoordinatorType {
         
     }
     
+    func logout() {
+        router?.presentedViewController?.dismiss(animated: true, completion: nil)
+    }
 }

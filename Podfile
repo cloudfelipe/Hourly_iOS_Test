@@ -10,6 +10,7 @@ target 'Hourbox' do
   pod 'KeychainAccess'
 
   pod 'Lightbox'
+  pod 'SkeletonView'
 
   target 'HourboxTests' do
     inherit! :search_paths

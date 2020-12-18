@@ -25,7 +25,7 @@ final class DI {
     private var client: WebClient { WebClient(authProvider: tokenProvider) }
     private var service: FilesServices { FilesServices(baseUrlProvider: URLProvider(), client: client) }
     private var downloadService: DownloadService { DownloadService(client: dropboxClient) }
-    private var repo: FilesRepository { FilesRepository(service: service, downloadService: downloadService) }
+    private var repo: FilesRepository { FilesRepository(service: service, downloadService: downloadService, errorProcessor: ErrorProcessor()) }
    
     var getFilesInteractor: GetFilesInteractor { GetFilesInteractor(repository: repo) }
     var downloadFileInteractor: DownloadFileInteractorType { DownloadFileInteractor(repository: repo) }

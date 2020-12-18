@@ -9,7 +9,7 @@
 import Foundation
 import Networking
 
-typealias DataResultable<T> = (Result<T, Error>) -> Void
+typealias DataResultable<T> = (Result<T, ErrorCategory>) -> Void
 
 enum FilePath {
     case root
@@ -39,36 +39,37 @@ final class FilesRepository: FilesRepositoryType {
     
     let service: FilesServicesType
     let downloadService: DownloadServiceType
+    let errorProcessor: ErrorProcessorType
     
-    init(service: FilesServicesType, downloadService: DownloadServiceType) {
+    init(service: FilesServicesType, downloadService: DownloadServiceType, errorProcessor: ErrorProcessorType) {
         self.service = service
         self.downloadService = downloadService
+        self.errorProcessor = errorProcessor
     }
     
     func getFiles(params: FileQueryParam, completion: @escaping DataResultable<Files>) {
         let request = APIFilesRequest(path: params.path.path)
-        service.getFiles(params: request) { (result) in
+        service.getFiles(params: request) { [unowned errorProcessor] (result) in
             switch result {
             case .success(let response):
                 completion(.success(FilesWrapper().map(response)))
             case .failure(let error):
-                completion(.failure(error))
+                completion(.failure(errorProcessor.process(error: error)))
             }
         }
     }
     
     func downloadFile(file: Entry, completion: @escaping DataResultable<DownloadedFile>) {
-        downloadService.downloadFile(path: file.pathLower) { (result) in
+        downloadService.downloadFile(path: file.pathLower) { [unowned errorProcessor] (result) in
             switch result {
             case .success(let response):
                 completion(.success(DownloadedFile(data: response.data)))
             case .failure(let error):
-                completion(.failure(error))
+                completion(.failure(errorProcessor.process(error: error)))
             }
         }
     }
 }
-
 
 class FilesWrapper {
     func map(_ api: APIResponse) -> Files {
@@ -80,7 +81,6 @@ class FilesWrapper {
         return files
     }
 }
-
 
 public struct DownloadedFile {
     let data: Data

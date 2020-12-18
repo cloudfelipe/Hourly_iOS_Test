@@ -19,6 +19,7 @@ public enum WebClientError: Error {
     case noDataResponse
     case errorWithCode(Int)
     case unableDownloadFile(String)
+    case unAuthorized
 }
 
 public typealias RequestResultable<T> = (Result<T, WebClientError>) -> Void
@@ -64,7 +65,11 @@ final public class WebClient: WebClientType {
                             }
                         }
                     } else {
-                        completion(.failure(.errorWithCode(statusCode)))
+                        if statusCode == 401 {
+                            completion(.failure(.unAuthorized))
+                        } else {
+                            completion(.failure(.errorWithCode(statusCode)))
+                        }
                     }
                 } else {
                     completion(.failure(.noDataResponse))
@@ -74,4 +79,5 @@ final public class WebClient: WebClientType {
             completion(.failure(.noDataResponse))
         }
     }
+    
 }
