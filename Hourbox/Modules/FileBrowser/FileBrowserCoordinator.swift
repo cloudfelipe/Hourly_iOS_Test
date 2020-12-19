@@ -18,6 +18,7 @@ protocol FileBrowserCoordinatorType {
     func navigateToDirectory(with path: FilePath)
     func showPDF(with data: Data)
     func showImage(with data: Data)
+    func showFileDetail(with file: Entry)
     func showErrorMessage()
 }
 
@@ -55,16 +56,37 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
     
     func showPDF(with data: Data) {
         let viewer = PDFViewerViewController(data: data)
-        router?.pushViewController(viewer, animated: true)
+        push(viewer, animated: true)
     }
     
     func showImage(with data: Data) {
         let viewer = ImageViewerViewController(imageData: data)
-        router?.present(viewer, animated: true, completion: nil)
+        present(viewer, animated: true)
+    }
+    
+    func showFileDetail(with file: Entry) {
+        let inputDep = FileInformationDetailViewModel.InputDependencies(file: file)
+        let viewModel = FileInformationDetailViewModel(dependencies: inputDep)
+        let viewController = FileInformationDetailViewController(viewModel: viewModel)
+        push(viewController, animated: true)
+    }
+    
+    func push(_ viewController: UIViewController, animated: Bool) {
+        DispatchQueue.main.async {
+            self.router?.pushViewController(viewController, animated: animated)
+        }
     }
     
     func pop() {
-        router?.popViewController(animated: true)
+        DispatchQueue.main.async {
+            self.router?.popViewController(animated: true)
+        }
+    }
+    
+    func present(_ viewController: UIViewController, animated: Bool) {
+        DispatchQueue.main.async {
+            self.router?.present(viewController, animated: animated, completion: nil)
+        }
     }
     
     func showErrorMessage() {
@@ -72,7 +94,7 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
         alert.addAction(.init(title: "Ok", style: .destructive, handler: { [weak self] (_) in
             self?.pop()
         }))
-        router?.present(alert, animated: true, completion: nil)
+        present(alert, animated: true)
     }
     
     deinit {

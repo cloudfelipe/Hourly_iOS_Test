@@ -8,6 +8,7 @@ target 'Hourbox' do
   pod 'RxCocoa'
   pod 'SwiftyDropbox'
   pod 'KeychainAccess'
+  pod 'SwifterSwift'
 
   pod 'Lightbox'
   pod 'SkeletonView'

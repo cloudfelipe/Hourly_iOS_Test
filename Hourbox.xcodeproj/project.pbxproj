@@ -41,6 +41,10 @@
 		86544072258854C600839146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86544070258854C600839146 /* LaunchScreen.storyboard */; };
 		8654407D258854C600839146 /* HourboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8654407C258854C600839146 /* HourboxTests.swift */; };
 		86544088258854C600839146 /* HourboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86544087258854C600839146 /* HourboxUITests.swift */; };
+		86A32803258D241E00AC17F8 /* FileInformationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32802258D241E00AC17F8 /* FileInformationDetailViewModel.swift */; };
+		86A32804258D241E00AC17F8 /* FileInformationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32802258D241E00AC17F8 /* FileInformationDetailViewModel.swift */; };
+		86A32806258D297100AC17F8 /* FileInformationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32805258D297100AC17F8 /* FileInformationDetailViewController.swift */; };
+		86A32807258D297100AC17F8 /* FileInformationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32805258D297100AC17F8 /* FileInformationDetailViewController.swift */; };
 		86D5E5AF25898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B325898E4C0099C2EE /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5B225898E4C0099C2EE /* Entry.swift */; };
@@ -139,6 +143,8 @@
 		86544083258854C600839146 /* HourboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HourboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86544087258854C600839146 /* HourboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourboxUITests.swift; sourceTree = "<group>"; };
 		86544089258854C600839146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86A32802258D241E00AC17F8 /* FileInformationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileInformationDetailViewModel.swift; sourceTree = "<group>"; };
+		86A32805258D297100AC17F8 /* FileInformationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileInformationDetailViewController.swift; sourceTree = "<group>"; };
 		86D5E5AE25898E090099C2EE /* FilesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesRepository.swift; sourceTree = "<group>"; };
 		86D5E5B225898E4C0099C2EE /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		86D5E5B6258990A00099C2EE /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -280,6 +286,15 @@
 			path = HourboxUITests;
 			sourceTree = "<group>";
 		};
+		86A32801258D23F000AC17F8 /* FileInformationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				86A32802258D241E00AC17F8 /* FileInformationDetailViewModel.swift */,
+				86A32805258D297100AC17F8 /* FileInformationDetailViewController.swift */,
+			);
+			path = FileInformationDetail;
+			sourceTree = "<group>";
+		};
 		86D5E5AC25898DE20099C2EE /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +359,7 @@
 				860F8898258AE11A00954F15 /* ImageViewer */,
 				86D5E5DF2589E20C0099C2EE /* PDFViewer */,
 				86D5E5BF2589951E0099C2EE /* FileBrowser */,
+				86A32801258D23F000AC17F8 /* FileInformationDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -663,6 +679,8 @@
 				864A2189258AF9720013DB1B /* ApplicationCoordinator.swift in Sources */,
 				86544066258854C200839146 /* AppDelegate.swift in Sources */,
 				860F88A4258AEF7A00954F15 /* SignInCoordinator.swift in Sources */,
+				86A32803258D241E00AC17F8 /* FileInformationDetailViewModel.swift in Sources */,
+				86A32806258D297100AC17F8 /* FileInformationDetailViewController.swift in Sources */,
 				860F889A258AE14600954F15 /* ImageViewerViewController.swift in Sources */,
 				86FC3FAC258C4C5C0056B8FA /* AppError.swift in Sources */,
 				86D5E5CE2589CABF0099C2EE /* ViewAppearState.swift in Sources */,
@@ -691,6 +709,7 @@
 				860F88A2258AEEFB00954F15 /* SignInViewModel.swift in Sources */,
 				86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */,
 				86D5E5D52589CB720099C2EE /* BaseViewModelType.swift in Sources */,
+				86A32804258D241E00AC17F8 /* FileInformationDetailViewModel.swift in Sources */,
 				86D5E5C525899BC10099C2EE /* FileBrowserViewController.swift in Sources */,
 				864A218D258AFA160013DB1B /* ApplicactionViewController.swift in Sources */,
 				86FC3FAD258C4C5C0056B8FA /* AppError.swift in Sources */,
@@ -702,6 +721,7 @@
 				86D5E5CB2589C2110099C2EE /* FileBrowserCoordinator.swift in Sources */,
 				86D5E5CF2589CABF0099C2EE /* ViewAppearState.swift in Sources */,
 				86FC3FB0258C58700056B8FA /* ErrorProcessor.swift in Sources */,
+				86A32807258D297100AC17F8 /* FileInformationDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

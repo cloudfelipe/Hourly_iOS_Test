@@ -12,10 +12,25 @@ import Foundation
 
 protocol FileBrowserViewModelType: BaseViewModelType {
     func selectedFile(at index: IndexPath)
+    func extraOptionsTapped(_ option: ExtraOptions, for indexPath: IndexPath)
     
     var filesData: Observable<[FileViewData]> { get }
     var dataRequestState: Observable<DataRequestState> { get }
     var folderPath: Observable<String?> { get }
+}
+
+enum ExtraOptions: String, CaseIterable {
+    case thumbail
+    case fileInformation
+    
+    var name: String {
+        switch self {
+        case .fileInformation:
+            return "File Information"
+        case .thumbail:
+            return "File Thumbnail"
+        }
+    }
 }
 
 final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
@@ -77,6 +92,8 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
     func selectedFile(at index: IndexPath) {
         let item = files.value[index.row]
         
+//        dependencies.coordinator.showFileDetail(with: item)
+        
         switch item.tag {
         case .folder:
             dependencies.coordinator.navigateToDirectory(with: .custom(item.pathLower))
@@ -92,13 +109,13 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
         }
         
         requestState.accept(.downloading)
-        dependencies.down.downloadFile(file: file) { (result) in
+        dependencies.down.downloadFile(file: file) { [weak self] (result) in
             switch result {
             case .success(let data):
-                self.requestState.accept(.downloadedFile)
-                self.open(data: data.data, for: file)
+                self?.requestState.accept(.downloadedFile)
+                self?.open(data: data.data, for: file)
             case .failure(let error):
-                self.requestState.accept(.error)
+                self?.requestState.accept(.error)
             }
         }
     }
@@ -108,6 +125,16 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
             dependencies.coordinator.showPDF(with: data)
         } else if file.isImage {
             dependencies.coordinator.showImage(with: data)
+        }
+    }
+    
+    func extraOptionsTapped(_ option: ExtraOptions, for indexPath: IndexPath) {
+        let file = files.value[indexPath.row]
+        switch option {
+        case .fileInformation:
+            dependencies.coordinator.showFileDetail(with: file)
+        case .thumbail:
+            break
         }
     }
     

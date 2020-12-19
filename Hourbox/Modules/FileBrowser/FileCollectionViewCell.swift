@@ -10,6 +10,9 @@ import UIKit
 import SkeletonView
 
 class FileCollectionViewCell: UICollectionViewCell {
+    
+    private var moreInfoAction: (() -> Void)?
+    
     lazy var containerStackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -34,6 +37,7 @@ class FileCollectionViewCell: UICollectionViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setContentHuggingPriority(.required, for: .vertical)
         button.setContentCompressionResistancePriority(.required, for: .vertical)
+        button.addTarget(self, action: #selector(FileCollectionViewCell.moreInfoButtonAction(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -60,9 +64,21 @@ class FileCollectionViewCell: UICollectionViewCell {
         self.isSkeletonable = true
     }
     
-    func setup(with data: FileViewData) {
-        fileTitleLabel.text = data.name
-        fileIconImageView.image = UIImage(named: data.iconName)
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        moreInfoAction = nil
+        fileTitleLabel.text = nil
+        fileIconImageView.image = nil
+    }
+    
+    @objc func moreInfoButtonAction(_ sender: UIButton) {
+        moreInfoAction?()
+    }
+    
+    func setup(with data: FileViewData, moreInfoAction: @escaping (() -> Void)) {
+        self.fileTitleLabel.text = data.name
+        self.fileIconImageView.image = UIImage(named: data.iconName)
+        self.moreInfoAction = moreInfoAction
     }
     
     required init?(coder: NSCoder) {

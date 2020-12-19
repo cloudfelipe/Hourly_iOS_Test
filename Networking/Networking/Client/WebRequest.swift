@@ -27,6 +27,8 @@ public struct APIRequest<ResponseDataType: Decodable>: APIRequestType {
     }
 
     public func parseResponse(data: Data) throws -> ResponseDataType {
-        return try JSONDecoder().decode(ResponseDataType.self, from: data)
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.dateDecodingStrategy = .iso8601
+        return try jsonDecoder.decode(ResponseDataType.self, from: data)
     }
 }

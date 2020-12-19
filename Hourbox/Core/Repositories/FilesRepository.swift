@@ -54,6 +54,7 @@ final class FilesRepository: FilesRepositoryType {
             case .success(let response):
                 completion(.success(FilesWrapper().map(response)))
             case .failure(let error):
+                debugPrint(error)
                 completion(.failure(errorProcessor.process(error: error)))
             }
         }
@@ -65,6 +66,7 @@ final class FilesRepository: FilesRepositoryType {
             case .success(let response):
                 completion(.success(DownloadedFile(data: response.data)))
             case .failure(let error):
+                debugPrint(error)
                 completion(.failure(errorProcessor.process(error: error)))
             }
         }
@@ -73,10 +75,16 @@ final class FilesRepository: FilesRepositoryType {
 
 class FilesWrapper {
     func map(_ api: APIResponse) -> Files {
-        let entries = api.entries.map { Entry(tag: EntryTag(rawValue: $0.tag) ?? EntryTag.folder,
-                                              name: $0.name,
-                                              pathLower: $0.pathLower,
-                                              id: "$0.id") }
+        let entries = api.entries.map {
+            Entry(tag: EntryTag(rawValue: $0.tag)!,
+                  name: $0.name,
+                  pathLower: $0.pathLower,
+                  pathDisplay: $0.pathDisplay,
+                  hashValue: $0.hashValue,
+                  isDownloadable: $0.isDownloadable ?? false,
+                  size: $0.size ?? nil,
+                  modifiedDate: $0.clientModified)
+        }
         let files = Files(entries: entries, coursor: api.coursor)
         return files
     }

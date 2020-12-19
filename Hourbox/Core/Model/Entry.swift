@@ -6,6 +6,8 @@
 //  Copyright © 2020 Felipe & Co. Studios. All rights reserved.
 //
 
+import Foundation
+
 enum EntryTag: String {
     case folder
     case file
@@ -24,7 +26,11 @@ struct Entry {
     let tag: EntryTag
     let name: String
     let pathLower: String
-    let id: String
+    let pathDisplay: String
+    let hashValue: String?
+    let isDownloadable: Bool
+    let size: Int64?
+    let modifiedDate: Date?
     
     var isImage: Bool {
         return name.hasSuffix(".jpg") || name.hasSuffix(".png")

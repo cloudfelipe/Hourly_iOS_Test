@@ -20,7 +20,7 @@ struct FileViewData {
 protocol HomeViewType: AnyObject {
 }
 
-final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewController<T> {
+final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewController<T>, CollectionViewAdapterDelegate {
     
     override init(viewModel: T) {
         super.init(viewModel: viewModel)
@@ -49,6 +49,7 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
         SVProgressHUD.setDefaultMaskType(.black)
         
         collectionAdapter = CollectionViewAdapter(collectionView: collectionView)
+        collectionAdapter.delegate = self
         
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -64,42 +65,53 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
 //        viewModel.filesData
 //            .observeOn(MainScheduler.instance)
 //            .bind(to: collectionView.rx.items(cellIdentifier: "FileCollectionViewCell", cellType: FileCollectionViewCell.self)) { index,item,cell in
-//            cell.setup(with: item)
+//                cell.setup(with: item, moreInfoAction: {})
 //
 //        }.disposed(by: disposableBag)
         
         viewModel.filesData
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: setItems(_:))
+            .subscribe(onNext: { [weak self] in self?.setItems($0) })
             .disposed(by: disposableBag)
         
         viewModel.folderPath
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: {
-                self.title = $0
-            }).disposed(by: disposableBag)
+            .subscribe(onNext: { [weak self] in self?.title = $0 })
+            .disposed(by: disposableBag)
         
         viewModel.dataRequestState
             .observeOn(MainScheduler.instance)
-            .throttle(.seconds(3), scheduler: MainScheduler.instance)
-            .subscribe(onNext: requestState(_:))
+            .subscribe(onNext: { [weak self] in self?.requestState($0) })
             .disposed(by: disposableBag)
         
-        collectionView.rx.itemSelected.subscribe(onNext: { self.viewModel.selectedFile(at: $0) }).disposed(by: disposableBag)
+        collectionView.rx.itemSelected.subscribe(onNext: { [weak self] in self?.viewModel.selectedFile(at: $0) }).disposed(by: disposableBag)
+    }
+    
+    func complementaryViewTapped(at indexPath: IndexPath) {
+        let optionsSheet = UIAlertController(title: "Choose an option", message: nil, preferredStyle: .actionSheet)
+        ExtraOptions.allCases.forEach { option in
+            optionsSheet.addAction(title: option.name, style: .default, handler: { [weak self] action in
+                self?.viewModel.extraOptionsTapped(option, for: indexPath)
+            })
+        }
+        optionsSheet.addAction(title: "Cancel", style: .destructive, handler: nil)
+        self.present(optionsSheet, animated: true, completion: nil)
     }
     
     func requestState(_ requestState: DataRequestState) {
-        switch requestState {
-        case .loading:
-            collectionAdapter.loading()
-        case .error:
-            break
-        case .normal:
-            collectionAdapter.hideLoading()
-        case .downloading:
-            SVProgressHUD.show()
-        case .downloadedFile:
-            SVProgressHUD.dismiss()
+        DispatchQueue.main.async {
+            switch requestState {
+            case .loading:
+                self.collectionAdapter.loading()
+            case .error:
+                break
+            case .normal:
+                self.collectionAdapter.hideLoading()
+            case .downloading:
+                SVProgressHUD.show()
+            case .downloadedFile:
+                SVProgressHUD.dismiss()
+            }
         }
     }
     
@@ -117,6 +129,10 @@ extension FileBrowserViewController: HomeViewType {
 }
 
 import SkeletonView
+
+protocol CollectionViewAdapterDelegate: AnyObject {
+    func complementaryViewTapped(at indexPath: IndexPath)
+}
 
 final class CollectionViewAdapter: NSObject, UICollectionViewDelegateFlowLayout, SkeletonCollectionViewDataSource, DZNEmptyDataSetSource {
     
@@ -139,6 +155,7 @@ final class CollectionViewAdapter: NSObject, UICollectionViewDelegateFlowLayout,
     
     var items = [FileViewData]()
     weak var collectionView: UICollectionView?
+    weak var delegate: CollectionViewAdapterDelegate?
     
     init(collectionView: UICollectionView) {
         self.collectionView = collectionView
@@ -151,6 +168,7 @@ final class CollectionViewAdapter: NSObject, UICollectionViewDelegateFlowLayout,
     
     func setItems(_ items: [FileViewData]) {
         self.items = items
+        reload()
     }
     
     func loading() {
@@ -162,14 +180,17 @@ final class CollectionViewAdapter: NSObject, UICollectionViewDelegateFlowLayout,
     func hideLoading() {
         DispatchQueue.main.async {
             self.collectionView?.hideSkeleton()
-            
-            UIView.transition(with: self.collectionView!,
-                              duration: 0.35,
-                              options: .transitionCrossDissolve,
-                              animations: {
-                                self.collectionView!.reloadData()
-            })
+            self.reload()
         }
+    }
+    
+    func reload() {
+        UIView.transition(with: self.collectionView!,
+                          duration: 0.35,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                            self.collectionView!.reloadData()
+        })
     }
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
@@ -182,7 +203,7 @@ final class CollectionViewAdapter: NSObject, UICollectionViewDelegateFlowLayout,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FileCollectionViewCell", for: indexPath) as! FileCollectionViewCell
-        cell.setup(with: items[indexPath.row])
+        cell.setup(with: items[indexPath.row], moreInfoAction: { [weak delegate] in delegate?.complementaryViewTapped(at: indexPath)})
         return cell
     }
     

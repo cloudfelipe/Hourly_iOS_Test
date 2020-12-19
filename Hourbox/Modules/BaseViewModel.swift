@@ -15,7 +15,7 @@ class BaseViewModel: BaseViewModelType {
     
     init() {
         self.viewAppearState
-            .subscribe(onNext: viewAppearStateDidChange(_:))
+            .subscribe(onNext: { [weak self] in self?.viewAppearStateDidChange($0) })
             .disposed(by: disposeBag)
     }
     
