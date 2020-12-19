@@ -104,7 +104,8 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
             case .loading:
                 self.collectionAdapter.loading()
             case .error:
-                break
+                self.collectionAdapter.hideLoading()
+                SVProgressHUD.dismiss()
             case .normal:
                 self.collectionAdapter.hideLoading()
             case .downloading:
@@ -180,7 +181,6 @@ final class CollectionViewAdapter: NSObject, UICollectionViewDelegateFlowLayout,
     func hideLoading() {
         DispatchQueue.main.async {
             self.collectionView?.hideSkeleton()
-            self.reload()
         }
     }
     

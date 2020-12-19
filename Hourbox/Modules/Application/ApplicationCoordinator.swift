@@ -67,10 +67,14 @@ final class ApplicationCoordinator: ApplicationCoordinatorType {
         let coordinator = FileBrowserCoordinator(router: newRouter, dependencies: coordinatorDependencies)
         coordinator.start()
         router?.present(newRouter, animated: true, completion: nil)
-        
     }
     
     func logout() {
-        router?.presentedViewController?.dismiss(animated: true, completion: nil)
+        self.router?.presentedViewController?.dismiss(animated: true, completion: { self.showLogoutPopup() })
+    }
+    
+    func showLogoutPopup() {
+        let alert = UIAlertController(title: "Session expired", message: "Please log in again", defaultActionButtonTitle: "Ok")
+        router?.topPresentedViewController.present(alert, animated: true, completion: nil)
     }
 }

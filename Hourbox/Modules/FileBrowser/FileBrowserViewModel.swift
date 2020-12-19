@@ -91,9 +91,6 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
     
     func selectedFile(at index: IndexPath) {
         let item = files.value[index.row]
-        
-//        dependencies.coordinator.showFileDetail(with: item)
-        
         switch item.tag {
         case .folder:
             dependencies.coordinator.navigateToDirectory(with: .custom(item.pathLower))
@@ -114,7 +111,7 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
             case .success(let data):
                 self?.requestState.accept(.downloadedFile)
                 self?.open(data: data.data, for: file)
-            case .failure(let error):
+            case .failure(_):
                 self?.requestState.accept(.error)
             }
         }
