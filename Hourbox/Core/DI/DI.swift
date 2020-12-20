@@ -33,8 +33,7 @@ final class DI {
     var storeAccessTokenInteractor: StoreAccessTokenInteractorType { StoreAccessTokenInteractor(repository: accessTokenRepository)}
     var removeAccessTokenInteractor: RemoveAccessTokenInteractorType { RemoveAccessTokenInteractor(repository: accessTokenRepository) }
     var getThumbnailInteractor: GetThumbnailInteractorType { GetThumbnailInteractor(repository: repo) }
+    var logoutInteractor: LogoutInteractorType { LogoutInteractor() }
     
-    init() {
-        
-    }
+    init() { }
 }

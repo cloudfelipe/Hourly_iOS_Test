@@ -42,6 +42,11 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
         return collectionView
     }()
     
+    lazy var logoutButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Logout", style: .done, target: nil, action: nil)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,17 +56,23 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
         collectionAdapter = CollectionViewAdapter(collectionView: collectionView)
         collectionAdapter.delegate = self
         
+        navigationItem.rightBarButtonItem = logoutButton
+        
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
-                
+        
         view.addSubview(collectionView)
-
+        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-            
+        
+        setupBinding()
+    }
+    
+    func setupBinding() {
         viewModel.filesData
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in self?.setItems($0) })
@@ -77,19 +88,19 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
             .subscribe(onNext: { [weak self] in self?.requestState($0) })
             .disposed(by: disposableBag)
         
-        collectionView.rx.itemSelected.subscribe(onNext: { [weak self] in self?.viewModel.selectedFile(at: $0) }).disposed(by: disposableBag)
+        collectionView.rx.itemSelected
+            .subscribe(onNext: { [weak self] in self?.viewModel.selectedFile(at: $0) })
+            .disposed(by: disposableBag)
+        
+        logoutButton.rx.tap
+            .subscribe(onNext: { [weak viewModel] in
+                viewModel?.performLogout()
+            })
+            .disposed(by: disposableBag)
     }
     
     func complementaryViewTapped(at indexPath: IndexPath) {
         viewModel.fileInformation(for: indexPath)
-//        let optionsSheet = UIAlertController(title: "Choose an option", message: nil, preferredStyle: .actionSheet)
-//        ExtraOptions.allCases.forEach { option in
-//            optionsSheet.addAction(title: option.name, style: .default, handler: { [weak self] action in
-//                self?.viewModel.extraOptionsTapped(option, for: indexPath)
-//            })
-//        }
-//        optionsSheet.addAction(title: "Cancel", style: .destructive, handler: nil)
-//        self.present(optionsSheet, animated: true, completion: nil)
     }
     
     func requestState(_ requestState: DataRequestState) {
@@ -112,7 +123,6 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
     
     func setItems(_ items: [FileViewData]) {
         collectionAdapter.setItems(items)
-//        collectionView.reloadData()
     }
     
     deinit {

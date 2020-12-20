@@ -11,8 +11,9 @@ import UIKit
 protocol FileBrowserCoordinatorDependencyType {
     var path: FilePath { get }
     var getFilesInteractor: GetFilesInteractorType { get }
-    var down: DownloadFileInteractorType { get }
+    var downloadFileInteractor: DownloadFileInteractorType { get }
     var getThumbnailInteractor: GetThumbnailInteractorType { get }
+    var logoutInteractor: LogoutInteractorType { get }
 }
 
 protocol FileBrowserCoordinatorType {
@@ -28,8 +29,9 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
     struct Dependency: FileBrowserCoordinatorDependencyType {
         let path: FilePath
         let getFilesInteractor: GetFilesInteractorType
-        let down: DownloadFileInteractorType
+        let downloadFileInteractor: DownloadFileInteractorType
         let getThumbnailInteractor: GetThumbnailInteractorType
+        let logoutInteractor: LogoutInteractorType
     }
     
     weak var router: UINavigationController?
@@ -44,7 +46,8 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
         let input = FileBrowserViewModel.InputDependencies(coordinator: self,
                                                     path: dependencies.path,
                                                     getFilesInteractor: dependencies.getFilesInteractor,
-                                                    down: dependencies.down)
+                                                    logoutInteractor: dependencies.logoutInteractor,
+                                                    down: dependencies.downloadFileInteractor)
         let viewModel = FileBrowserViewModel(dependencies: input)
         let viewController = FileBrowserViewController(viewModel: viewModel)
         router?.pushViewController(viewController, animated: true)
@@ -52,8 +55,9 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
     
     func navigateToDirectory(with path: FilePath) {
         let childDependency = Dependency(path: path, getFilesInteractor: dependencies.getFilesInteractor,
-                                         down: dependencies.down,
-                                         getThumbnailInteractor: dependencies.getThumbnailInteractor)
+                                         downloadFileInteractor: dependencies.downloadFileInteractor,
+                                         getThumbnailInteractor: dependencies.getThumbnailInteractor,
+                                         logoutInteractor: dependencies.logoutInteractor)
         let childCoordinator = FileBrowserCoordinator(router: router, dependencies: childDependency)
         childCoordinator.start()
     }

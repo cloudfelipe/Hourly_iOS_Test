@@ -49,6 +49,8 @@
 		86A3280B258EC17000AC17F8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32809258EC17000AC17F8 /* UIViewController+Extensions.swift */; };
 		86A3280D258EC47300AC17F8 /* GetThumbnailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3280C258EC47300AC17F8 /* GetThumbnailInteractor.swift */; };
 		86A3280E258EC47300AC17F8 /* GetThumbnailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3280C258EC47300AC17F8 /* GetThumbnailInteractor.swift */; };
+		86A32810258ED84A00AC17F8 /* LogoutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3280F258ED84A00AC17F8 /* LogoutInteractor.swift */; };
+		86A32811258ED84A00AC17F8 /* LogoutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3280F258ED84A00AC17F8 /* LogoutInteractor.swift */; };
 		86D5E5AF25898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B325898E4C0099C2EE /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5B225898E4C0099C2EE /* Entry.swift */; };
@@ -151,6 +153,7 @@
 		86A32805258D297100AC17F8 /* FileInformationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileInformationDetailViewController.swift; sourceTree = "<group>"; };
 		86A32809258EC17000AC17F8 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		86A3280C258EC47300AC17F8 /* GetThumbnailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetThumbnailInteractor.swift; sourceTree = "<group>"; };
+		86A3280F258ED84A00AC17F8 /* LogoutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutInteractor.swift; sourceTree = "<group>"; };
 		86D5E5AE25898E090099C2EE /* FilesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesRepository.swift; sourceTree = "<group>"; };
 		86D5E5B225898E4C0099C2EE /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		86D5E5B6258990A00099C2EE /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -360,6 +363,7 @@
 				864A2194258AFF0B0013DB1B /* GetAccessTokenInteractor.swift */,
 				864A219A258B026E0013DB1B /* IsUserLoggedInInteractor.swift */,
 				86A3280C258EC47300AC17F8 /* GetThumbnailInteractor.swift */,
+				86A3280F258ED84A00AC17F8 /* LogoutInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -691,6 +695,7 @@
 				864A219B258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */,
 				860F88A1258AEEFB00954F15 /* SignInViewModel.swift in Sources */,
 				864A21A2258B17330013DB1B /* DI.swift in Sources */,
+				86A32810258ED84A00AC17F8 /* LogoutInteractor.swift in Sources */,
 				864A218C258AFA160013DB1B /* ApplicactionViewController.swift in Sources */,
 				864A219E258B0B240013DB1B /* RemoveAccessTokenInteractor.swift in Sources */,
 				864A2189258AF9720013DB1B /* ApplicationCoordinator.swift in Sources */,
@@ -737,6 +742,7 @@
 				864A218A258AF9720013DB1B /* ApplicationCoordinator.swift in Sources */,
 				86A3280E258EC47300AC17F8 /* GetThumbnailInteractor.swift in Sources */,
 				86D5E5DE2589E0110099C2EE /* DownloadFileInteractor.swift in Sources */,
+				86A32811258ED84A00AC17F8 /* LogoutInteractor.swift in Sources */,
 				86D5E5CB2589C2110099C2EE /* FileBrowserCoordinator.swift in Sources */,
 				86A3280B258EC17000AC17F8 /* UIViewController+Extensions.swift in Sources */,
 				86D5E5CF2589CABF0099C2EE /* ViewAppearState.swift in Sources */,

@@ -12,26 +12,12 @@ import Foundation
 
 protocol FileBrowserViewModelType: BaseViewModelType {
     func selectedFile(at index: IndexPath)
-    func extraOptionsTapped(_ option: ExtraOptions, for indexPath: IndexPath)
     func fileInformation(for indexPath: IndexPath)
+    func performLogout()
     
     var filesData: Observable<[FileViewData]> { get }
     var dataRequestState: Observable<DataRequestState> { get }
     var folderPath: Observable<String?> { get }
-}
-
-enum ExtraOptions: String, CaseIterable {
-    case thumbail
-    case fileInformation
-    
-    var name: String {
-        switch self {
-        case .fileInformation:
-            return "File Information"
-        case .thumbail:
-            return "File Thumbnail"
-        }
-    }
 }
 
 final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
@@ -126,14 +112,8 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
         }
     }
     
-    func extraOptionsTapped(_ option: ExtraOptions, for indexPath: IndexPath) {
-//        let file = files.value[indexPath.row]
-//        switch option {
-//        case .fileInformation:
-//            
-//        case .thumbail:
-//            break
-//        }
+    func performLogout() {
+        dependencies.logoutInteractor.logout()
     }
     
     func fileInformation(for indexPath: IndexPath) {
@@ -160,6 +140,7 @@ extension FileBrowserViewModel {
         let coordinator: FileBrowserCoordinatorType
         let path: FilePath
         let getFilesInteractor: GetFilesInteractorType
+        let logoutInteractor: LogoutInteractorType
         let down: DownloadFileInteractorType
     }
 }
