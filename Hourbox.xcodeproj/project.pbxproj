@@ -270,8 +270,9 @@
 				86D5E5CC2589CAA40099C2EE /* Utils */,
 				86D5E5BE258995100099C2EE /* Modules */,
 				86D5E5AC25898DE20099C2EE /* Core */,
-				8654406E258854C600839146 /* Assets.xcassets */,
 				86A32808258EC15700AC17F8 /* Extensions */,
+				86A32812258EE56100AC17F8 /* Misc */,
+				8654406E258854C600839146 /* Assets.xcassets */,
 				86544070258854C600839146 /* LaunchScreen.storyboard */,
 				86544073258854C600839146 /* Info.plist */,
 			);
@@ -311,6 +312,13 @@
 				86A32809258EC17000AC17F8 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		86A32812258EE56100AC17F8 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		86D5E5AC25898DE20099C2EE /* Core */ = {
