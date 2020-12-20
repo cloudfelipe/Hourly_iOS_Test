@@ -34,8 +34,8 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
         let logoutInteractor: LogoutInteractorType
     }
     
-    weak var router: UINavigationController?
-    let dependencies: FileBrowserCoordinatorDependencyType
+    private weak var router: UINavigationController?
+    private let dependencies: FileBrowserCoordinatorDependencyType
     
     init(router: UINavigationController?, dependencies: FileBrowserCoordinatorDependencyType) {
         self.router = router
@@ -80,6 +80,15 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
         push(viewController, animated: true)
     }
     
+    func showErrorMessage() {
+        let alert = UIAlertController(title: Texts.Error.title,
+                                      message: Texts.Error.message, preferredStyle: .alert)
+        alert.addAction(.init(title: Texts.General.ok, style: .destructive, handler: { [weak self] (_) in
+            self?.pop()
+        }))
+        present(alert, animated: true)
+    }
+    
     func push(_ viewController: UIViewController, animated: Bool) {
         DispatchQueue.main.async {
             self.router?.pushViewController(viewController, animated: animated)
@@ -96,17 +105,5 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
         DispatchQueue.main.async {
             self.router?.present(viewController, animated: animated, completion: nil)
         }
-    }
-    
-    func showErrorMessage() {
-        let alert = UIAlertController(title: "Error", message: "Something went wrong. Please try again later", preferredStyle: .alert)
-        alert.addAction(.init(title: "Ok", style: .destructive, handler: { [weak self] (_) in
-            self?.pop()
-        }))
-        present(alert, animated: true)
-    }
-    
-    deinit {
-        debugPrint("‼️ Child file browser coordinator deinit")
     }
 }

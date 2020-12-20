@@ -57,7 +57,7 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
         }
     }
     
-    func getData() {
+    private func getData() {
         requestState.accept(.loading)
         dependencies.getFilesInteractor.getFiles(param: dependencies.path) { [weak self] (result) in
             switch result {
@@ -65,14 +65,13 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
                 self?.prepareData(files: files)
                 self?.requestState.accept(.normal)
             case .failure(let error):
-                debugPrint(error)
                 self?.handle(error: error)
                 self?.requestState.accept(.error)
             }
         }
     }
     
-    func prepareData(files: Files) {
+    private func prepareData(files: Files) {
         self.files.accept(files.entries)
     }
     
@@ -86,7 +85,7 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
         }
     }
     
-    func processFile(_ file: Entry) {
+    private func processFile(_ file: Entry) {
         
         if !file.isPDF && !file.isImage {
             return
@@ -104,7 +103,7 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
         }
     }
     
-    func open(data: Data, for file: Entry) {
+    private func open(data: Data, for file: Entry) {
         if file.isPDF {
             dependencies.coordinator.showPDF(with: data)
         } else if file.isImage {
@@ -121,40 +120,12 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
         dependencies.coordinator.showFileDetail(with: file)
     }
     
-    func handle(error: ErrorCategory) {
+    private func handle(error: ErrorCategory) {
         switch error {
         case .nonRetryable:
             dependencies.coordinator.showErrorMessage()
         default:
             break
         }
-    }
-    
-    deinit {
-        debugPrint("‼️ files presenter deinit")
-    }
-}
-
-extension FileBrowserViewModel {
-    struct InputDependencies {
-        let coordinator: FileBrowserCoordinatorType
-        let path: FilePath
-        let getFilesInteractor: GetFilesInteractorType
-        let logoutInteractor: LogoutInteractorType
-        let down: DownloadFileInteractorType
-    }
-}
-
-enum DataRequestState {
-    case loading
-    case error
-    case normal
-    case downloading
-    case downloadedFile
-}
-
-extension Entry {
-    func dataView() -> FileViewData {
-        return FileViewData(name: name, iconName: iconReference)
     }
 }

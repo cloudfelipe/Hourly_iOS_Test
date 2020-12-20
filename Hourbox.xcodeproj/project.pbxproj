@@ -59,6 +59,14 @@
 		86A3281F258EE99900AC17F8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3281D258EE99900AC17F8 /* String+Extension.swift */; };
 		86A32821258EF16200AC17F8 /* FileInformationContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32820258EF16200AC17F8 /* FileInformationContracts.swift */; };
 		86A32822258EF16200AC17F8 /* FileInformationContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32820258EF16200AC17F8 /* FileInformationContracts.swift */; };
+		86A32824258EFB0400AC17F8 /* FileBrowerContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32823258EFB0400AC17F8 /* FileBrowerContracts.swift */; };
+		86A32825258EFB0400AC17F8 /* FileBrowerContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32823258EFB0400AC17F8 /* FileBrowerContracts.swift */; };
+		86A32827258EFC6400AC17F8 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32826258EFC6400AC17F8 /* UIView+Extensions.swift */; };
+		86A32828258EFC6400AC17F8 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32826258EFC6400AC17F8 /* UIView+Extensions.swift */; };
+		86A3282A258EFC9D00AC17F8 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32829258EFC9D00AC17F8 /* SkeletonCell.swift */; };
+		86A3282B258EFC9D00AC17F8 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32829258EFC9D00AC17F8 /* SkeletonCell.swift */; };
+		86A3282D258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3282C258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift */; };
+		86A3282E258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3282C258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift */; };
 		86D5E5AF25898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B325898E4C0099C2EE /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5B225898E4C0099C2EE /* Entry.swift */; };
@@ -166,6 +174,10 @@
 		86A3281A258EE97600AC17F8 /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
 		86A3281D258EE99900AC17F8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		86A32820258EF16200AC17F8 /* FileInformationContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileInformationContracts.swift; sourceTree = "<group>"; };
+		86A32823258EFB0400AC17F8 /* FileBrowerContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowerContracts.swift; sourceTree = "<group>"; };
+		86A32826258EFC6400AC17F8 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		86A32829258EFC9D00AC17F8 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
+		86A3282C258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserCollectionAdapter.swift; sourceTree = "<group>"; };
 		86D5E5AE25898E090099C2EE /* FilesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesRepository.swift; sourceTree = "<group>"; };
 		86D5E5B225898E4C0099C2EE /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		86D5E5B6258990A00099C2EE /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -324,6 +336,7 @@
 			children = (
 				86A32809258EC17000AC17F8 /* UIViewController+Extensions.swift */,
 				86A3281D258EE99900AC17F8 /* String+Extension.swift */,
+				86A32826258EFC6400AC17F8 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -414,6 +427,9 @@
 				86D5E5C325899BC10099C2EE /* FileBrowserViewController.swift */,
 				86D5E5C62589A1220099C2EE /* FileCollectionViewCell.swift */,
 				86D5E5C92589C2110099C2EE /* FileBrowserCoordinator.swift */,
+				86A32823258EFB0400AC17F8 /* FileBrowerContracts.swift */,
+				86A32829258EFC9D00AC17F8 /* SkeletonCell.swift */,
+				86A3282C258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift */,
 			);
 			path = FileBrowser;
 			sourceTree = "<group>";
@@ -698,6 +714,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86A3282A258EFC9D00AC17F8 /* SkeletonCell.swift in Sources */,
 				86D5E5DD2589E0110099C2EE /* DownloadFileInteractor.swift in Sources */,
 				864A218F258AFA430013DB1B /* ApplicationViewModel.swift in Sources */,
 				86D5E5BC258993C60099C2EE /* GetFilesInteractor.swift in Sources */,
@@ -719,12 +736,15 @@
 				86A32821258EF16200AC17F8 /* FileInformationContracts.swift in Sources */,
 				86D5E5C72589A1220099C2EE /* FileCollectionViewCell.swift in Sources */,
 				86D5E5E12589E2230099C2EE /* PDFViewerViewController.swift in Sources */,
+				86A32824258EFB0400AC17F8 /* FileBrowerContracts.swift in Sources */,
+				86A32827258EFC6400AC17F8 /* UIView+Extensions.swift in Sources */,
 				86A3281E258EE99900AC17F8 /* String+Extension.swift in Sources */,
 				864A219B258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */,
 				860F88A1258AEEFB00954F15 /* SignInViewModel.swift in Sources */,
 				864A21A2258B17330013DB1B /* DI.swift in Sources */,
 				86A32810258ED84A00AC17F8 /* LogoutInteractor.swift in Sources */,
 				864A218C258AFA160013DB1B /* ApplicactionViewController.swift in Sources */,
+				86A3282D258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift in Sources */,
 				864A219E258B0B240013DB1B /* RemoveAccessTokenInteractor.swift in Sources */,
 				864A2189258AF9720013DB1B /* ApplicationCoordinator.swift in Sources */,
 				86544066258854C200839146 /* AppDelegate.swift in Sources */,
@@ -749,10 +769,12 @@
 				864A2190258AFA430013DB1B /* ApplicationViewModel.swift in Sources */,
 				86D5E5E22589E2230099C2EE /* PDFViewerViewController.swift in Sources */,
 				86D5E5C82589A1220099C2EE /* FileCollectionViewCell.swift in Sources */,
+				86A3282E258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift in Sources */,
 				860F889B258AE14600954F15 /* ImageViewerViewController.swift in Sources */,
 				860F88A5258AEF7A00954F15 /* SignInCoordinator.swift in Sources */,
 				86A3281C258EE97600AC17F8 /* Texts.swift in Sources */,
 				86D5E5BD258993C60099C2EE /* GetFilesInteractor.swift in Sources */,
+				86A3282B258EFC9D00AC17F8 /* SkeletonCell.swift in Sources */,
 				8654407D258854C600839146 /* HourboxTests.swift in Sources */,
 				864A2199258AFFBB0013DB1B /* AccessTokenRepository.swift in Sources */,
 				86D5E5C2258995380099C2EE /* FileBrowserViewModel.swift in Sources */,
@@ -761,12 +783,14 @@
 				86D5E5D22589CADA0099C2EE /* BaseViewController.swift in Sources */,
 				86A32822258EF16200AC17F8 /* FileInformationContracts.swift in Sources */,
 				860F88A2258AEEFB00954F15 /* SignInViewModel.swift in Sources */,
+				86A32828258EFC6400AC17F8 /* UIView+Extensions.swift in Sources */,
 				86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */,
 				86D5E5D52589CB720099C2EE /* BaseViewModelType.swift in Sources */,
 				86A32804258D241E00AC17F8 /* FileInformationDetailViewModel.swift in Sources */,
 				86D5E5C525899BC10099C2EE /* FileBrowserViewController.swift in Sources */,
 				86A3281F258EE99900AC17F8 /* String+Extension.swift in Sources */,
 				864A218D258AFA160013DB1B /* ApplicactionViewController.swift in Sources */,
+				86A32825258EFB0400AC17F8 /* FileBrowerContracts.swift in Sources */,
 				86FC3FAD258C4C5C0056B8FA /* AppError.swift in Sources */,
 				864A21A3258B17330013DB1B /* DI.swift in Sources */,
 				860F889F258AE88200954F15 /* SignInViewController.swift in Sources */,

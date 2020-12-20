@@ -17,6 +17,7 @@
 //General
 "General.Ok" = "Ok";
 "General.Thumbnail" = "Thumbnail";
+"General.Logout" = "Log out";
 
 //FileInformation
 "FileInformation.Title" = "File information";
@@ -27,3 +28,10 @@
 "FileInformation.LastModified" = "Last Modified: ";
 "FileInformation.FullPath" = "Full Path: ";
 "FileInformation.HasValue" = "Hash Value: ";
+
+//Empty State
+"EmptyState.title" = "This folder is empty";
+"EmptyState.description" = "Your files stored on Dropbox will appear here";
+
+"Error.Title" = "Error";
+"Error.Message" = "Something went wrong. Please try again later";
