@@ -6,13 +6,12 @@
 //  Copyright © 2020 Felipe & Co. Studios. All rights reserved.
 //
 
-import UIKit
 import PDFKit
 
 final class PDFViewerViewController: UIViewController {
     
-    var pdfView: PDFView!
-    var data: Data!
+    private(set) var pdfView: PDFView!
+    private(set) var data: Data!
     
     init(data: Data) {
         self.data = data
