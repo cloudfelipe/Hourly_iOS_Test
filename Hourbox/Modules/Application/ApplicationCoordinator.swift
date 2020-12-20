@@ -38,6 +38,7 @@ final class ApplicationCoordinator: ApplicationCoordinatorType {
                                                                        removeAccessTokenInteractor: dependenciesContainer.removeAccessTokenInteractor)
         let viewModel = ApplicationViewModel(dependencies: inputDependencies)
         let viewController = ApplicationViewController(viewModel: viewModel)
+        router?.isNavigationBarHidden = true
         router?.pushViewController(viewController, animated: false)
     }
     

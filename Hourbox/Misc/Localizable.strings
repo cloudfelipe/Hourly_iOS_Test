@@ -18,6 +18,7 @@
 "General.Ok" = "Ok";
 "General.Thumbnail" = "Thumbnail";
 "General.Logout" = "Log out";
+"General.Home" = "Home";
 
 //FileInformation
 "FileInformation.Title" = "File information";

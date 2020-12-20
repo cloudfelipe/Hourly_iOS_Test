@@ -23,5 +23,4 @@ final class DownloadFileInteractor: DownloadFileInteractorType {
     func downloadFile(file: Entry, completion: @escaping DataResultable<DownloadedFile>) {
         repository.downloadFile(file: file, completion: completion)
     }
-
 }

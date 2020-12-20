@@ -17,6 +17,7 @@ enum Texts {
         static let thumbnail = "General.Thumbnail".localized()
         static let na = "N/A"
         static let logout = "General.Logout".localized()
+        static let home = "General.Home".localized()
     }
     
     enum Error {
@@ -39,10 +40,6 @@ enum Texts {
         static let fullPath = "FileInformation.FullPath".localized()
         static let hashValue = "FileInformation.HasValue".localized()
         static let dateFormat = "dd/MM/yyyy HH:mm"
-    }
-    
-    enum FileBrowser {
-        
     }
     
     enum EmptyState {

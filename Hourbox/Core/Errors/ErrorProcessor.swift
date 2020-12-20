@@ -24,9 +24,3 @@ final class ErrorProcessor: ErrorProcessorType {
         return error.resolveCategory()
     }
 }
-
-extension NSNotification.Name {
-    static var logout: NSNotification.Name {
-        NSNotification.Name.init("logout")
-    }
-}

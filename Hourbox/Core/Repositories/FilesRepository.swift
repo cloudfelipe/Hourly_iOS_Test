@@ -27,7 +27,7 @@ enum FilePath {
     var displayTitle: String {
         switch self {
         case .root:
-            return "Home"
+            return Texts.General.home
         case .custom(let customPath):
             return customPath
         }

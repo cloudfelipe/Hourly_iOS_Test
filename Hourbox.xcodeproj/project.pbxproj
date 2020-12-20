@@ -67,6 +67,8 @@
 		86A3282B258EFC9D00AC17F8 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32829258EFC9D00AC17F8 /* SkeletonCell.swift */; };
 		86A3282D258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3282C258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift */; };
 		86A3282E258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3282C258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift */; };
+		86A32830258F0E7100AC17F8 /* NSNotification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3282F258F0E7100AC17F8 /* NSNotification+Extensions.swift */; };
+		86A32831258F0E7100AC17F8 /* NSNotification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3282F258F0E7100AC17F8 /* NSNotification+Extensions.swift */; };
 		86D5E5AF25898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B325898E4C0099C2EE /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5B225898E4C0099C2EE /* Entry.swift */; };
@@ -178,6 +180,7 @@
 		86A32826258EFC6400AC17F8 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		86A32829258EFC9D00AC17F8 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
 		86A3282C258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserCollectionAdapter.swift; sourceTree = "<group>"; };
+		86A3282F258F0E7100AC17F8 /* NSNotification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Extensions.swift"; sourceTree = "<group>"; };
 		86D5E5AE25898E090099C2EE /* FilesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesRepository.swift; sourceTree = "<group>"; };
 		86D5E5B225898E4C0099C2EE /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		86D5E5B6258990A00099C2EE /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,6 +340,7 @@
 				86A32809258EC17000AC17F8 /* UIViewController+Extensions.swift */,
 				86A3281D258EE99900AC17F8 /* String+Extension.swift */,
 				86A32826258EFC6400AC17F8 /* UIView+Extensions.swift */,
+				86A3282F258F0E7100AC17F8 /* NSNotification+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -743,6 +747,7 @@
 				860F88A1258AEEFB00954F15 /* SignInViewModel.swift in Sources */,
 				864A21A2258B17330013DB1B /* DI.swift in Sources */,
 				86A32810258ED84A00AC17F8 /* LogoutInteractor.swift in Sources */,
+				86A32830258F0E7100AC17F8 /* NSNotification+Extensions.swift in Sources */,
 				864A218C258AFA160013DB1B /* ApplicactionViewController.swift in Sources */,
 				86A3282D258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift in Sources */,
 				864A219E258B0B240013DB1B /* RemoveAccessTokenInteractor.swift in Sources */,
@@ -796,6 +801,7 @@
 				860F889F258AE88200954F15 /* SignInViewController.swift in Sources */,
 				864A219C258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */,
 				864A218A258AF9720013DB1B /* ApplicationCoordinator.swift in Sources */,
+				86A32831258F0E7100AC17F8 /* NSNotification+Extensions.swift in Sources */,
 				86A3280E258EC47300AC17F8 /* GetThumbnailInteractor.swift in Sources */,
 				86D5E5DE2589E0110099C2EE /* DownloadFileInteractor.swift in Sources */,
 				86A32811258ED84A00AC17F8 /* LogoutInteractor.swift in Sources */,
