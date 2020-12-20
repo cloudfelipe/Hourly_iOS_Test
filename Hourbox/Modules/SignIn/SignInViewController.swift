@@ -28,6 +28,7 @@ final class SignInViewController<T: SignInViewModelType>: BaseViewController<T> 
         welcomeLabel.numberOfLines = 0
         welcomeLabel.font = .boldSystemFont(ofSize: 25.0)
         welcomeLabel.textAlignment = .center
+        welcomeLabel.adjustsFontSizeToFitWidth = true
         
         signinButton.setTitle(Texts.SignIn.button, for: .normal)
         signinButton.backgroundColor = .systemBlue
@@ -36,9 +37,9 @@ final class SignInViewController<T: SignInViewModelType>: BaseViewController<T> 
         signinButton.titleLabel?.font = .boldSystemFont(ofSize: 20.0)
         signinButton.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
         
-        
         let stackView = UIStackView(arrangedSubviews: [logoImageView, welcomeLabel, signinButton])
         stackView.axis = .vertical
+        stackView.spacing = 5.0
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(stackView)

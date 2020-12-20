@@ -12,7 +12,7 @@
 
 //Logout
 "Logout.Alert.Title" = "Session expired";
-"Logout.Alert.Message" = "Please log in again";
+"Logout.Alert.Message" = "Please sign in again";
 
 //General
 "General.Ok" = "Ok";
