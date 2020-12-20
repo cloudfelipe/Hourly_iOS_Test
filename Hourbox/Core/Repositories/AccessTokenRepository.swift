@@ -35,4 +35,8 @@ extension Keychain: AuthProviderType {
         let currentToken = getToken() ?? ""
         return "Bearer " + currentToken
     }
+    
+    public var header: String {
+        "Authorization"
+    }
 }

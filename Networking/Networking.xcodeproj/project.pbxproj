@@ -163,7 +163,6 @@
 			children = (
 				868624192588904700B76232 /* Mocks */,
 				8654415425887F3400839146 /* Client */,
-				8654415325887F1500839146 /* Extensions */,
 				8654411E25887DE200839146 /* NetworkingTests.swift */,
 				8654412025887DE200839146 /* Info.plist */,
 			);
@@ -190,13 +189,6 @@
 			);
 			name = Extensions;
 			path = ../../Hourbox/Networking/Extensions;
-			sourceTree = "<group>";
-		};
-		8654415325887F1500839146 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8654415425887F3400839146 /* Client */ = {

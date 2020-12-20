@@ -30,6 +30,7 @@ public protocol WebClientType {
 
 public protocol AuthProviderType {
     var token: String { get }
+    var header: String { get }
 }
 
 final public class WebClient: WebClientType {
@@ -46,11 +47,10 @@ final public class WebClient: WebClientType {
         do {
             
             var urlRequest = try endpoint.request()
-            urlRequest.addValue(authProvider.token, forHTTPHeaderField: "Authorization")
+            urlRequest.addValue(authProvider.token, forHTTPHeaderField: authProvider.header)
             
             urlSession.dataTask(with: urlRequest) { (data, response, error) in
                 if let data = data {
-//                    debugPrint("RESPONSE: ", String(data: data, encoding: .utf8)!)
                     let statusCode = (response as? HTTPURLResponse)?.statusCode ?? -1000
                     if statusCode == 200 {
                         do {

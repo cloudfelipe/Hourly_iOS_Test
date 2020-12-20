@@ -29,14 +29,11 @@ public final class DownloadService: DownloadServiceType {
         dropboxClient.files.download(path: path)
             .response { (response, error) in
                 if let response = response {
-                    debugPrint(response.0)
-                    debugPrint(response.1)
                     completion(.success(APIDownloadedFile(data: response.1)))
                 } else if let error = error {
                     debugPrint(error)
                     completion(.failure(.unableDownloadFile(error.description)))
                 } else {
-                    debugPrint("failError")
                     completion(.failure(.noDataResponse))
                 }
         }
@@ -51,7 +48,6 @@ public final class DownloadService: DownloadServiceType {
                     debugPrint(error)
                     completion(.failure(.unableDownloadFile(error.description)))
                 } else {
-                    debugPrint("failError")
                     completion(.failure(.noDataResponse))
                 }
         }
