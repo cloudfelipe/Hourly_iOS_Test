@@ -13,6 +13,7 @@ import Foundation
 protocol FileBrowserViewModelType: BaseViewModelType {
     func selectedFile(at index: IndexPath)
     func extraOptionsTapped(_ option: ExtraOptions, for indexPath: IndexPath)
+    func fileInformation(for indexPath: IndexPath)
     
     var filesData: Observable<[FileViewData]> { get }
     var dataRequestState: Observable<DataRequestState> { get }
@@ -50,13 +51,13 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
     private let files = BehaviorRelay<[Entry]>(value: [])
     private let requestState = BehaviorRelay<DataRequestState>(value: .normal)
     private let dependencies: InputDependencies
-    private let path = BehaviorRelay<String?>(value: "/Home")
+    private let path = BehaviorRelay<String?>(value: "")
     
     init(dependencies: InputDependencies) {
         self.dependencies = dependencies
         super.init()
         
-        path.accept(dependencies.path.path)
+        path.accept(dependencies.path.displayTitle)
     }
     
     override func viewAppearStateDidChange(_ state: ViewAppearState) {
@@ -126,13 +127,18 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
     }
     
     func extraOptionsTapped(_ option: ExtraOptions, for indexPath: IndexPath) {
+//        let file = files.value[indexPath.row]
+//        switch option {
+//        case .fileInformation:
+//            
+//        case .thumbail:
+//            break
+//        }
+    }
+    
+    func fileInformation(for indexPath: IndexPath) {
         let file = files.value[indexPath.row]
-        switch option {
-        case .fileInformation:
-            dependencies.coordinator.showFileDetail(with: file)
-        case .thumbail:
-            break
-        }
+        dependencies.coordinator.showFileDetail(with: file)
     }
     
     func handle(error: ErrorCategory) {

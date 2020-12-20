@@ -47,6 +47,8 @@
 		86A32807258D297100AC17F8 /* FileInformationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32805258D297100AC17F8 /* FileInformationDetailViewController.swift */; };
 		86A3280A258EC17000AC17F8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32809258EC17000AC17F8 /* UIViewController+Extensions.swift */; };
 		86A3280B258EC17000AC17F8 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32809258EC17000AC17F8 /* UIViewController+Extensions.swift */; };
+		86A3280D258EC47300AC17F8 /* GetThumbnailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3280C258EC47300AC17F8 /* GetThumbnailInteractor.swift */; };
+		86A3280E258EC47300AC17F8 /* GetThumbnailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3280C258EC47300AC17F8 /* GetThumbnailInteractor.swift */; };
 		86D5E5AF25898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B325898E4C0099C2EE /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5B225898E4C0099C2EE /* Entry.swift */; };
@@ -148,6 +150,7 @@
 		86A32802258D241E00AC17F8 /* FileInformationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileInformationDetailViewModel.swift; sourceTree = "<group>"; };
 		86A32805258D297100AC17F8 /* FileInformationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileInformationDetailViewController.swift; sourceTree = "<group>"; };
 		86A32809258EC17000AC17F8 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		86A3280C258EC47300AC17F8 /* GetThumbnailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetThumbnailInteractor.swift; sourceTree = "<group>"; };
 		86D5E5AE25898E090099C2EE /* FilesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesRepository.swift; sourceTree = "<group>"; };
 		86D5E5B225898E4C0099C2EE /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		86D5E5B6258990A00099C2EE /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -356,6 +359,7 @@
 				864A219D258B0B240013DB1B /* RemoveAccessTokenInteractor.swift */,
 				864A2194258AFF0B0013DB1B /* GetAccessTokenInteractor.swift */,
 				864A219A258B026E0013DB1B /* IsUserLoggedInInteractor.swift */,
+				86A3280C258EC47300AC17F8 /* GetThumbnailInteractor.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -668,6 +672,7 @@
 				864A218F258AFA430013DB1B /* ApplicationViewModel.swift in Sources */,
 				86D5E5BC258993C60099C2EE /* GetFilesInteractor.swift in Sources */,
 				86D5E5C1258995380099C2EE /* FileBrowserViewModel.swift in Sources */,
+				86A3280D258EC47300AC17F8 /* GetThumbnailInteractor.swift in Sources */,
 				86D5E5D12589CADA0099C2EE /* BaseViewController.swift in Sources */,
 				86D5E5B325898E4C0099C2EE /* Entry.swift in Sources */,
 				8654406A258854C200839146 /* ViewController.swift in Sources */,
@@ -730,6 +735,7 @@
 				860F889F258AE88200954F15 /* SignInViewController.swift in Sources */,
 				864A219C258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */,
 				864A218A258AF9720013DB1B /* ApplicationCoordinator.swift in Sources */,
+				86A3280E258EC47300AC17F8 /* GetThumbnailInteractor.swift in Sources */,
 				86D5E5DE2589E0110099C2EE /* DownloadFileInteractor.swift in Sources */,
 				86D5E5CB2589C2110099C2EE /* FileBrowserCoordinator.swift in Sources */,
 				86A3280B258EC17000AC17F8 /* UIViewController+Extensions.swift in Sources */,

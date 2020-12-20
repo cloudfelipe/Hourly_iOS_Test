@@ -62,13 +62,6 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
             
-//        viewModel.filesData
-//            .observeOn(MainScheduler.instance)
-//            .bind(to: collectionView.rx.items(cellIdentifier: "FileCollectionViewCell", cellType: FileCollectionViewCell.self)) { index,item,cell in
-//                cell.setup(with: item, moreInfoAction: {})
-//
-//        }.disposed(by: disposableBag)
-        
         viewModel.filesData
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in self?.setItems($0) })
@@ -88,14 +81,15 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
     }
     
     func complementaryViewTapped(at indexPath: IndexPath) {
-        let optionsSheet = UIAlertController(title: "Choose an option", message: nil, preferredStyle: .actionSheet)
-        ExtraOptions.allCases.forEach { option in
-            optionsSheet.addAction(title: option.name, style: .default, handler: { [weak self] action in
-                self?.viewModel.extraOptionsTapped(option, for: indexPath)
-            })
-        }
-        optionsSheet.addAction(title: "Cancel", style: .destructive, handler: nil)
-        self.present(optionsSheet, animated: true, completion: nil)
+        viewModel.fileInformation(for: indexPath)
+//        let optionsSheet = UIAlertController(title: "Choose an option", message: nil, preferredStyle: .actionSheet)
+//        ExtraOptions.allCases.forEach { option in
+//            optionsSheet.addAction(title: option.name, style: .default, handler: { [weak self] action in
+//                self?.viewModel.extraOptionsTapped(option, for: indexPath)
+//            })
+//        }
+//        optionsSheet.addAction(title: "Cancel", style: .destructive, handler: nil)
+//        self.present(optionsSheet, animated: true, completion: nil)
     }
     
     func requestState(_ requestState: DataRequestState) {

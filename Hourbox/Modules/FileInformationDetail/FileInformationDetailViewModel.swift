@@ -9,9 +9,12 @@
 import Foundation
 import RxSwift
 import SwifterSwift
+import RxCocoa
 
 protocol FileInformationDetailViewModelType: BaseViewModelType {
     var informationDataView: Observable<[FileInformation]> { get }
+    var dataRequestState: Observable<DataRequestState> { get }
+    var thumbnailData: Observable<Data> { get }
 }
 
 final class FileInformationDetailViewModel: BaseViewModel, FileInformationDetailViewModelType {
@@ -20,8 +23,18 @@ final class FileInformationDetailViewModel: BaseViewModel, FileInformationDetail
         informationData.asObserver()
     }
     
-    let dependencies: InputDependencies
+    var dataRequestState: Observable<DataRequestState> {
+        requestState.asObservable()
+    }
+    
+    var thumbnailData: Observable<Data> {
+        thumbnail.asObserver()
+    }
+    
+    private let dependencies: InputDependencies
+    private let requestState = BehaviorRelay<DataRequestState>(value: .normal)
     private var informationData = PublishSubject<[FileInformation]>()
+    private let thumbnail = PublishSubject<Data>()
     
     init(dependencies: InputDependencies) {
         self.dependencies = dependencies
@@ -48,12 +61,30 @@ final class FileInformationDetailViewModel: BaseViewModel, FileInformationDetail
                     FileInformation(title: "Hash value:", value: file.hashValue ?? "")]
         
         informationData.onNext(info.filter { $0.value != nil })
+        
+        downloadThumbnail(for: file)
+    }
+    
+    private func downloadThumbnail(for file: Entry) {
+        requestState.accept(.downloading)
+        DispatchQueue.global(qos: .background).async {
+            self.dependencies.getThumbnailInteractor.get(for: file) { [weak self] (result) in
+                switch result {
+                case .success(let thumbnail):
+                    self?.requestState.accept(.downloadedFile)
+                    self?.thumbnail.onNext(thumbnail.data)
+                case .failure(_):
+                    self?.requestState.accept(.error)
+                }
+            }
+        }
     }
 }
 
 extension FileInformationDetailViewModel {
     struct InputDependencies {
         let file: Entry
+        let getThumbnailInteractor: GetThumbnailInteractorType!
     }
 }
 

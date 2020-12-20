@@ -23,6 +23,15 @@ enum FilePath {
             return customPath
         }
     }
+    
+    var displayTitle: String {
+        switch self {
+        case .root:
+            return "Home"
+        case .custom(let customPath):
+            return customPath
+        }
+    }
 }
 
 struct FileQueryParam {
@@ -33,6 +42,7 @@ struct FileQueryParam {
 protocol FilesRepositoryType {
     func getFiles(params: FileQueryParam, completion: @escaping DataResultable<Files>)
     func downloadFile(file: Entry, completion: @escaping DataResultable<DownloadedFile>)
+    func getThumbnail(file: Entry, completion: @escaping DataResultable<DownloadedFile>)
 }
 
 final class FilesRepository: FilesRepositoryType {
@@ -62,6 +72,18 @@ final class FilesRepository: FilesRepositoryType {
     
     func downloadFile(file: Entry, completion: @escaping DataResultable<DownloadedFile>) {
         downloadService.downloadFile(path: file.pathLower) { [unowned errorProcessor] (result) in
+            switch result {
+            case .success(let response):
+                completion(.success(DownloadedFile(data: response.data)))
+            case .failure(let error):
+                debugPrint(error)
+                completion(.failure(errorProcessor.process(error: error)))
+            }
+        }
+    }
+    
+    func getThumbnail(file: Entry, completion: @escaping DataResultable<DownloadedFile>) {
+        downloadService.getThumbnail(path: file.pathLower) { [unowned errorProcessor] (result) in
             switch result {
             case .success(let response):
                 completion(.success(DownloadedFile(data: response.data)))

@@ -12,6 +12,7 @@ protocol FileBrowserCoordinatorDependencyType {
     var path: FilePath { get }
     var getFilesInteractor: GetFilesInteractorType { get }
     var down: DownloadFileInteractorType { get }
+    var getThumbnailInteractor: GetThumbnailInteractorType { get }
 }
 
 protocol FileBrowserCoordinatorType {
@@ -28,6 +29,7 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
         let path: FilePath
         let getFilesInteractor: GetFilesInteractorType
         let down: DownloadFileInteractorType
+        let getThumbnailInteractor: GetThumbnailInteractorType
     }
     
     weak var router: UINavigationController?
@@ -49,7 +51,9 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
     }
     
     func navigateToDirectory(with path: FilePath) {
-        let childDependency = Dependency(path: path, getFilesInteractor: dependencies.getFilesInteractor, down: dependencies.down)
+        let childDependency = Dependency(path: path, getFilesInteractor: dependencies.getFilesInteractor,
+                                         down: dependencies.down,
+                                         getThumbnailInteractor: dependencies.getThumbnailInteractor)
         let childCoordinator = FileBrowserCoordinator(router: router, dependencies: childDependency)
         childCoordinator.start()
     }
@@ -65,7 +69,8 @@ final class FileBrowserCoordinator: FileBrowserCoordinatorType {
     }
     
     func showFileDetail(with file: Entry) {
-        let inputDep = FileInformationDetailViewModel.InputDependencies(file: file)
+        let inputDep = FileInformationDetailViewModel.InputDependencies(file: file,
+                                                                        getThumbnailInteractor: dependencies.getThumbnailInteractor)
         let viewModel = FileInformationDetailViewModel(dependencies: inputDep)
         let viewController = FileInformationDetailViewController(viewModel: viewModel)
         push(viewController, animated: true)

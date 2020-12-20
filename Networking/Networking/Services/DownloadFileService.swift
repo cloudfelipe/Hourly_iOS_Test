@@ -15,6 +15,7 @@ public struct APIDownloadedFile: APIModelType {
 
 public protocol DownloadServiceType {
     func downloadFile(path: String, completion: @escaping RequestResultable<APIDownloadedFile>)
+    func getThumbnail(path: String, completion: @escaping RequestResultable<APIDownloadedFile>)
 }
 
 public final class DownloadService: DownloadServiceType {
@@ -38,6 +39,21 @@ public final class DownloadService: DownloadServiceType {
                     debugPrint("failError")
                     completion(.failure(.noDataResponse))
                 }
-            }
+        }
+    }
+    
+    public func getThumbnail(path: String, completion: @escaping RequestResultable<APIDownloadedFile>) {
+        dropboxClient.files.getThumbnail(path: path)
+            .response { (response, error) in
+                if let response = response {
+                    completion(.success(APIDownloadedFile(data: response.1)))
+                } else if let error = error {
+                    debugPrint(error)
+                    completion(.failure(.unableDownloadFile(error.description)))
+                } else {
+                    debugPrint("failError")
+                    completion(.failure(.noDataResponse))
+                }
+        }
     }
 }

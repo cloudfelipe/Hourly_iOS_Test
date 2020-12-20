@@ -60,7 +60,8 @@ final class ApplicationCoordinator: ApplicationCoordinatorType {
     func goToFileBrowser() {
         let coordinatorDependencies = FileBrowserCoordinator.Dependency(path: .root,
                                                                         getFilesInteractor: dependenciesContainer.getFilesInteractor,
-                                                                        down: dependenciesContainer.downloadFileInteractor)
+                                                                        down: dependenciesContainer.downloadFileInteractor,
+                                                                        getThumbnailInteractor: dependenciesContainer.getThumbnailInteractor)
         let newRouter = UINavigationController()
         newRouter.modalTransitionStyle = .crossDissolve
         newRouter.modalPresentationStyle = .fullScreen
