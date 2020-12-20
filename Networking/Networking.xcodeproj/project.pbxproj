@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		554B13F1B81FC590EDBDADFD /* Pods_Hourbox_Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C14A6B0E5E6F2575B4BDF32 /* Pods_Hourbox_Networking.framework */; };
+		3889C90C6E635EB50AF42FC8 /* libPods-Networking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 204B93B5A4CF9E8CE0CD933D /* libPods-Networking.a */; };
 		8654411A25887DE200839146 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8654411025887DE200839146 /* Networking.framework */; };
 		8654411F25887DE200839146 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8654411E25887DE200839146 /* NetworkingTests.swift */; };
 		8654412125887DE200839146 /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 8654411325887DE200839146 /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,6 +44,7 @@
 		8686241E2588909900B76232 /* AuthProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686241D2588909900B76232 /* AuthProviderMock.swift */; };
 		86D5E5DA2589DDAB0099C2EE /* DownloadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5D92589DDAB0099C2EE /* DownloadFileService.swift */; };
 		86D5E5DB2589DDAB0099C2EE /* DownloadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5D92589DDAB0099C2EE /* DownloadFileService.swift */; };
+		92D67C81C2DAC38EBD13BF55 /* libPods-NetworkingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2138688B5872CD89E2C10FB /* libPods-NetworkingTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +58,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		204B93B5A4CF9E8CE0CD933D /* libPods-Networking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Networking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42266D184A1213141F9D00C3 /* Pods-Networking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking.debug.xcconfig"; path = "Target Support Files/Pods-Networking/Pods-Networking.debug.xcconfig"; sourceTree = "<group>"; };
 		5D4187DA07B87C4143697BFE /* Pods-Hourbox-Networking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hourbox-Networking.release.xcconfig"; path = "Target Support Files/Pods-Hourbox-Networking/Pods-Hourbox-Networking.release.xcconfig"; sourceTree = "<group>"; };
-		7C14A6B0E5E6F2575B4BDF32 /* Pods_Hourbox_Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hourbox_Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		814DE54A3B652BDA878059F5 /* Pods-NetworkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingTests.debug.xcconfig"; path = "Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8654411025887DE200839146 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8654411325887DE200839146 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		8654411425887DE200839146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +87,9 @@
 		8686241B2588905900B76232 /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
 		8686241D2588909900B76232 /* AuthProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviderMock.swift; sourceTree = "<group>"; };
 		86D5E5D92589DDAB0099C2EE /* DownloadFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadFileService.swift; sourceTree = "<group>"; };
+		A2138688B5872CD89E2C10FB /* libPods-NetworkingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetworkingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB74AB20C999C744701880C6 /* Pods-Networking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Networking.release.xcconfig"; path = "Target Support Files/Pods-Networking/Pods-Networking.release.xcconfig"; sourceTree = "<group>"; };
+		DC1CEC671D0316E7632020F8 /* Pods-NetworkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingTests.release.xcconfig"; path = "Target Support Files/Pods-NetworkingTests/Pods-NetworkingTests.release.xcconfig"; sourceTree = "<group>"; };
 		F817E4390EC2D92B98D75EAE /* Pods-Hourbox-Networking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hourbox-Networking.debug.xcconfig"; path = "Target Support Files/Pods-Hourbox-Networking/Pods-Hourbox-Networking.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				554B13F1B81FC590EDBDADFD /* Pods_Hourbox_Networking.framework in Frameworks */,
+				3889C90C6E635EB50AF42FC8 /* libPods-Networking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8654411A25887DE200839146 /* Networking.framework in Frameworks */,
+				92D67C81C2DAC38EBD13BF55 /* libPods-NetworkingTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +117,8 @@
 		022951FA737E1EEAA5EFD933 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7C14A6B0E5E6F2575B4BDF32 /* Pods_Hourbox_Networking.framework */,
+				204B93B5A4CF9E8CE0CD933D /* libPods-Networking.a */,
+				A2138688B5872CD89E2C10FB /* libPods-NetworkingTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,6 +128,10 @@
 			children = (
 				F817E4390EC2D92B98D75EAE /* Pods-Hourbox-Networking.debug.xcconfig */,
 				5D4187DA07B87C4143697BFE /* Pods-Hourbox-Networking.release.xcconfig */,
+				42266D184A1213141F9D00C3 /* Pods-Networking.debug.xcconfig */,
+				DB74AB20C999C744701880C6 /* Pods-Networking.release.xcconfig */,
+				814DE54A3B652BDA878059F5 /* Pods-NetworkingTests.debug.xcconfig */,
+				DC1CEC671D0316E7632020F8 /* Pods-NetworkingTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -284,6 +296,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8654412725887DE200839146 /* Build configuration list for PBXNativeTarget "NetworkingTests" */;
 			buildPhases = (
+				9A3F0540E0D6413A83C19561 /* [CP] Check Pods Manifest.lock */,
 				8654411525887DE200839146 /* Sources */,
 				8654411625887DE200839146 /* Frameworks */,
 				8654411725887DE200839146 /* Resources */,
@@ -368,7 +381,29 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Hourbox-Networking-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Networking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A3F0540E0D6413A83C19561 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NetworkingTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -559,7 +594,7 @@
 		};
 		8654412525887DE200839146 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F817E4390EC2D92B98D75EAE /* Pods-Hourbox-Networking.debug.xcconfig */;
+			baseConfigurationReference = 42266D184A1213141F9D00C3 /* Pods-Networking.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -584,7 +619,7 @@
 		};
 		8654412625887DE200839146 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D4187DA07B87C4143697BFE /* Pods-Hourbox-Networking.release.xcconfig */;
+			baseConfigurationReference = DB74AB20C999C744701880C6 /* Pods-Networking.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -609,6 +644,7 @@
 		};
 		8654412825887DE200839146 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 814DE54A3B652BDA878059F5 /* Pods-NetworkingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -627,6 +663,7 @@
 		};
 		8654412925887DE200839146 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC1CEC671D0316E7632020F8 /* Pods-NetworkingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

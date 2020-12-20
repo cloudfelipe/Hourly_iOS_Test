@@ -17,15 +17,20 @@ target 'Hourbox' do
 
   target 'HourboxTests' do
     inherit! :search_paths
+    pod 'RxBlocking'
+    pod 'RxTest'
   end
 
   target 'HourboxUITests' do
   end
 
-  target 'Networking' do
-  pod 'SwiftyDropbox'
-  project 'Networking/Networking'
 end
 
+target 'Networking' do
+    pod 'SwiftyDropbox'
+    project 'Networking/Networking'
 
+    target 'NetworkingTests' do
+      inherit! :search_paths
+    end
 end

@@ -12,4 +12,7 @@ struct AuthProviderMock: AuthProviderType {
     var token: String {
         return UUID().uuidString
     }
+    var header: String {
+        return "Authorization"
+    }
 }

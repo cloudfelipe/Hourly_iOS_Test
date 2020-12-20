@@ -8,7 +8,7 @@
 
 import Foundation
 import KeychainAccess
-import Networking
+//import Networking
 
 protocol AccessTokenRepositoryType {
     func store(token: String)
@@ -30,7 +30,7 @@ extension Keychain: AccessTokenRepositoryType {
     }
 }
 
-extension Keychain: AuthProviderType {
+extension Keychain {
     public var token: String {
         let currentToken = getToken() ?? ""
         return "Bearer " + currentToken

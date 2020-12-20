@@ -30,7 +30,7 @@ public protocol WebClientType {
 
 public protocol AuthProviderType {
     var token: String { get }
-    var header: String { get }
+    var header: String { get }
 }
 
 final public class WebClient: WebClientType {

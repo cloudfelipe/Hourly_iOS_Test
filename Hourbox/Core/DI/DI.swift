@@ -20,7 +20,7 @@ final class DI {
     
     private var keychainAccess: Keychain { Keychain(service: "com.felipeco.Hourbox") }
     private var accessTokenRepository: AccessTokenRepositoryType { keychainAccess }
-    private var tokenProvider: AuthProviderType { keychainAccess }
+    private var tokenProvider: AuthProviderType { TokenAccess(token: keychainAccess.token, header: keychainAccess.header) }
     private var dropboxClient: DropboxClient { DropboxClient(accessToken: keychainAccess.getToken() ?? "" ) }
     private var client: WebClient { WebClient(authProvider: tokenProvider) }
     private var service: FilesServices { FilesServices(baseUrlProvider: URLProvider(), client: client) }
@@ -36,4 +36,9 @@ final class DI {
     var logoutInteractor: LogoutInteractorType { LogoutInteractor() }
     
     init() { }
+}
+
+struct TokenAccess: AuthProviderType {
+    let token: String
+    let header: String
 }

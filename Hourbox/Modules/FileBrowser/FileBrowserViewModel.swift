@@ -122,10 +122,8 @@ final class FileBrowserViewModel: BaseViewModel, FileBrowserViewModelType {
     
     private func handle(error: ErrorCategory) {
         switch error {
-        case .nonRetryable:
-            dependencies.coordinator.showErrorMessage()
         default:
-            break
+            dependencies.coordinator.showErrorMessage()
         }
     }
 }

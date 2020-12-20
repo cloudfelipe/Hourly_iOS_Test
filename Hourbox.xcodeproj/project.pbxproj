@@ -28,13 +28,15 @@
 		864A2195258AFF0B0013DB1B /* GetAccessTokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2194258AFF0B0013DB1B /* GetAccessTokenInteractor.swift */; };
 		864A2196258AFF0B0013DB1B /* GetAccessTokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2194258AFF0B0013DB1B /* GetAccessTokenInteractor.swift */; };
 		864A2198258AFFBB0013DB1B /* AccessTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2197258AFFBB0013DB1B /* AccessTokenRepository.swift */; };
-		864A2199258AFFBB0013DB1B /* AccessTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2197258AFFBB0013DB1B /* AccessTokenRepository.swift */; };
 		864A219B258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A219A258B026E0013DB1B /* IsUserLoggedInInteractor.swift */; };
 		864A219C258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A219A258B026E0013DB1B /* IsUserLoggedInInteractor.swift */; };
 		864A219E258B0B240013DB1B /* RemoveAccessTokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A219D258B0B240013DB1B /* RemoveAccessTokenInteractor.swift */; };
 		864A219F258B0B240013DB1B /* RemoveAccessTokenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A219D258B0B240013DB1B /* RemoveAccessTokenInteractor.swift */; };
 		864A21A2258B17330013DB1B /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A21A1258B17330013DB1B /* DI.swift */; };
 		864A21A3258B17330013DB1B /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A21A1258B17330013DB1B /* DI.swift */; };
+		8650268A258FFC89008D982F /* AccessTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2197258AFFBB0013DB1B /* AccessTokenRepository.swift */; };
+		8650268C25900F91008D982F /* FileBrowserCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8650268B25900F91008D982F /* FileBrowserCoordinatorSpy.swift */; };
+		8650268E25900FB5008D982F /* InteractorStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8650268D25900FB5008D982F /* InteractorStubs.swift */; };
 		86544066258854C200839146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86544065258854C200839146 /* AppDelegate.swift */; };
 		8654406A258854C200839146 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86544069258854C200839146 /* ViewController.swift */; };
 		8654406F258854C600839146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8654406E258854C600839146 /* Assets.xcassets */; };
@@ -69,6 +71,7 @@
 		86A3282E258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3282C258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift */; };
 		86A32830258F0E7100AC17F8 /* NSNotification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3282F258F0E7100AC17F8 /* NSNotification+Extensions.swift */; };
 		86A32831258F0E7100AC17F8 /* NSNotification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3282F258F0E7100AC17F8 /* NSNotification+Extensions.swift */; };
+		86C10CC0258FEDAF000BE2CA /* FileBrowserViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C10CBF258FEDAF000BE2CA /* FileBrowserViewModelTest.swift */; };
 		86D5E5AF25898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B325898E4C0099C2EE /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5B225898E4C0099C2EE /* Entry.swift */; };
@@ -155,6 +158,8 @@
 		864A219A258B026E0013DB1B /* IsUserLoggedInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsUserLoggedInInteractor.swift; sourceTree = "<group>"; };
 		864A219D258B0B240013DB1B /* RemoveAccessTokenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAccessTokenInteractor.swift; sourceTree = "<group>"; };
 		864A21A1258B17330013DB1B /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
+		8650268B25900F91008D982F /* FileBrowserCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserCoordinatorSpy.swift; sourceTree = "<group>"; };
+		8650268D25900FB5008D982F /* InteractorStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorStubs.swift; sourceTree = "<group>"; };
 		86544062258854C200839146 /* Hourbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hourbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86544065258854C200839146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86544069258854C200839146 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +186,7 @@
 		86A32829258EFC9D00AC17F8 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
 		86A3282C258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserCollectionAdapter.swift; sourceTree = "<group>"; };
 		86A3282F258F0E7100AC17F8 /* NSNotification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+Extensions.swift"; sourceTree = "<group>"; };
+		86C10CBF258FEDAF000BE2CA /* FileBrowserViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserViewModelTest.swift; sourceTree = "<group>"; };
 		86D5E5AE25898E090099C2EE /* FilesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesRepository.swift; sourceTree = "<group>"; };
 		86D5E5B225898E4C0099C2EE /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		86D5E5B6258990A00099C2EE /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,6 +315,7 @@
 		8654407B258854C600839146 /* HourboxTests */ = {
 			isa = PBXGroup;
 			children = (
+				86C10CBE258FED8D000BE2CA /* FileBrowser */,
 				8654407C258854C600839146 /* HourboxTests.swift */,
 				8654407E258854C600839146 /* Info.plist */,
 			);
@@ -351,6 +358,16 @@
 				86A32817258EE7A600AC17F8 /* Localizable.strings */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		86C10CBE258FED8D000BE2CA /* FileBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				86C10CBF258FEDAF000BE2CA /* FileBrowserViewModelTest.swift */,
+				8650268B25900F91008D982F /* FileBrowserCoordinatorSpy.swift */,
+				8650268D25900FB5008D982F /* InteractorStubs.swift */,
+			);
+			path = FileBrowser;
 			sourceTree = "<group>";
 		};
 		86D5E5AC25898DE20099C2EE /* Core */ = {
@@ -508,6 +525,7 @@
 				86544074258854C600839146 /* Sources */,
 				86544075258854C600839146 /* Frameworks */,
 				86544076258854C600839146 /* Resources */,
+				D277F31324D530F5B7F616CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -711,6 +729,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hourbox/Pods-Hourbox-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D277F31324D530F5B7F616CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HourboxTests/Pods-HourboxTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HourboxTests/Pods-HourboxTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HourboxTests/Pods-HourboxTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -773,6 +808,7 @@
 				864A2196258AFF0B0013DB1B /* GetAccessTokenInteractor.swift in Sources */,
 				864A2190258AFA430013DB1B /* ApplicationViewModel.swift in Sources */,
 				86D5E5E22589E2230099C2EE /* PDFViewerViewController.swift in Sources */,
+				8650268A258FFC89008D982F /* AccessTokenRepository.swift in Sources */,
 				86D5E5C82589A1220099C2EE /* FileCollectionViewCell.swift in Sources */,
 				86A3282E258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift in Sources */,
 				860F889B258AE14600954F15 /* ImageViewerViewController.swift in Sources */,
@@ -781,7 +817,7 @@
 				86D5E5BD258993C60099C2EE /* GetFilesInteractor.swift in Sources */,
 				86A3282B258EFC9D00AC17F8 /* SkeletonCell.swift in Sources */,
 				8654407D258854C600839146 /* HourboxTests.swift in Sources */,
-				864A2199258AFFBB0013DB1B /* AccessTokenRepository.swift in Sources */,
+				8650268E25900FB5008D982F /* InteractorStubs.swift in Sources */,
 				86D5E5C2258995380099C2EE /* FileBrowserViewModel.swift in Sources */,
 				864A2193258AFEFB0013DB1B /* StoreAccessTokenInteractor.swift in Sources */,
 				86D5E5D82589D0070099C2EE /* BaseViewModel.swift in Sources */,
@@ -802,9 +838,11 @@
 				864A219C258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */,
 				864A218A258AF9720013DB1B /* ApplicationCoordinator.swift in Sources */,
 				86A32831258F0E7100AC17F8 /* NSNotification+Extensions.swift in Sources */,
+				8650268C25900F91008D982F /* FileBrowserCoordinatorSpy.swift in Sources */,
 				86A3280E258EC47300AC17F8 /* GetThumbnailInteractor.swift in Sources */,
 				86D5E5DE2589E0110099C2EE /* DownloadFileInteractor.swift in Sources */,
 				86A32811258ED84A00AC17F8 /* LogoutInteractor.swift in Sources */,
+				86C10CC0258FEDAF000BE2CA /* FileBrowserViewModelTest.swift in Sources */,
 				86D5E5CB2589C2110099C2EE /* FileBrowserCoordinator.swift in Sources */,
 				86A3280B258EC17000AC17F8 /* UIViewController+Extensions.swift in Sources */,
 				86D5E5CF2589CABF0099C2EE /* ViewAppearState.swift in Sources */,

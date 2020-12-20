@@ -7,12 +7,16 @@ PODS:
   - KeychainAccess (4.2.1)
   - Lightbox (2.5.0):
     - Imaginary (~> 5.0.0)
+  - RxBlocking (5.1.1):
+    - RxSwift (~> 5)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - RxTest (5.1.1):
+    - RxSwift (~> 5)
   - SkeletonView (1.11.0)
   - SVProgressHUD (2.2.5)
   - SwifterSwift (5.2.0):
@@ -47,8 +51,10 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - KeychainAccess
   - Lightbox
+  - RxBlocking
   - RxCocoa
   - RxSwift
+  - RxTest
   - SkeletonView
   - SVProgressHUD
   - SwifterSwift
@@ -62,9 +68,11 @@ SPEC REPOS:
     - Imaginary
     - KeychainAccess
     - Lightbox
+    - RxBlocking
     - RxCocoa
     - RxRelay
     - RxSwift
+    - RxTest
     - SkeletonView
     - SVProgressHUD
     - SwifterSwift
@@ -77,14 +85,16 @@ SPEC CHECKSUMS:
   Imaginary: cf5e3a7dd6ab1dcbd47ba8ce5edf2307c4e99eb3
   KeychainAccess: 9b07f665298d13c3a85881bd3171f6f49b8151c1
   Lightbox: cc3d5124f024fa8197fd23f913160db1c61a1852
+  RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxTest: 711632d5644dffbeb62c936a521b5b008a1e1faa
   SkeletonView: cc84ce90a804dd0dd7198dd802833411c8a64eaf
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
   SwiftyDropbox: 7e864f1e826bfc1b9b53a5edccef6c8d5fbe9e3b
 
-PODFILE CHECKSUM: d37a466b11e42b880c5c41fc6ea53843dd69d147
+PODFILE CHECKSUM: 6a18fac497ee1d689db1a72c28f72f04a97a2329
 
 COCOAPODS: 1.9.1
