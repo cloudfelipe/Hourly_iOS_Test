@@ -15,16 +15,19 @@ protocol SignInCoordinatorType {
 }
 
 protocol SignInCoordinatorDependencyType {
-    
+    var userPermissions: [String] { get }
 }
+
 struct SignInCoordinatorDependency: SignInCoordinatorDependencyType {
-    
+    var userPermissions: [String] = ["account_info.read",
+                                     "files.metadata.read",
+                                     "files.content.read"]
 }
 
 final class SignInCoordinator: SignInCoordinatorType {
     
-    weak var router: UINavigationController?
-    let dependencies: SignInCoordinatorDependencyType
+    private weak var router: UINavigationController?
+    private let dependencies: SignInCoordinatorDependencyType
     
     init(router: UINavigationController, dependencies: SignInCoordinatorDependencyType) {
         self.router = router
@@ -40,9 +43,7 @@ final class SignInCoordinator: SignInCoordinatorType {
     
     func openDropBoxSignIn() {
         let scopeRequest = ScopeRequest(scopeType: .user,
-                                        scopes: ["account_info.read",
-                                                 "files.metadata.read",
-                                                 "files.content.read"],
+                                        scopes: dependencies.userPermissions,
                                         includeGrantedScopes: false)
         DropboxClientsManager.authorizeFromControllerV2(
             UIApplication.shared,
@@ -52,9 +53,7 @@ final class SignInCoordinator: SignInCoordinatorType {
             scopeRequest: scopeRequest
         )
     }
-    
-    
-    
+
     func dismiss() {
         router?.dismiss(animated: true, completion: nil)
     }

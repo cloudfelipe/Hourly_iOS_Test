@@ -11,8 +11,8 @@ import RxSwift
 
 class BaseViewController<T: BaseViewModelType>: UIViewController {
     
-    var viewModel: T
-    var disposableBag = DisposeBag()
+    private(set) var viewModel: T
+    private(set) var disposeBag = DisposeBag()
     
     init(viewModel: T) {
         self.viewModel = viewModel

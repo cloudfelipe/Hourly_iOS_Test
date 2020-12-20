@@ -18,18 +18,18 @@ final class SignInViewController<T: SignInViewModelType>: BaseViewController<T> 
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        let logoImageView = UIImageView(image: UIImage(named: "frontLogo"))
+        let logoImageView = UIImageView(image: #imageLiteral(resourceName: "frontLogo"))
         logoImageView.contentMode = .scaleAspectFit
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor, multiplier: 0.7).isActive = true
         
         let welcomeLabel = UILabel()
-        welcomeLabel.text = "Welcome to your very own Dropbox's file browser experience.\n\nPlease sign in to get started."
+        welcomeLabel.text = Texts.SignIn.welcomeTitle
         welcomeLabel.numberOfLines = 0
         welcomeLabel.font = .boldSystemFont(ofSize: 25.0)
         welcomeLabel.textAlignment = .center
         
-        signinButton.setTitle("Sign In", for: .normal)
+        signinButton.setTitle(Texts.SignIn.button, for: .normal)
         signinButton.backgroundColor = .systemBlue
         signinButton.setTitleColor(.white, for: .normal)
         signinButton.translatesAutoresizingMaskIntoConstraints = false

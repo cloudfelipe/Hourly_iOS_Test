@@ -84,19 +84,19 @@ final class FileInformationDetailViewController<T: FileInformationDetailViewMode
             cell.detailTextLabel?.text = item.value
             return cell
         }
-        .disposed(by: disposableBag)
+        .disposed(by: disposeBag)
         
         viewModel.dataRequestState
         .observeOn(MainScheduler.instance)
         .subscribe(onNext: { [weak self] in self?.requestState($0) })
-        .disposed(by: disposableBag)
+        .disposed(by: disposeBag)
         
         viewModel.thumbnailData
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak thumbnailImageView] data in
                 thumbnailImageView?.image = UIImage(data: data)
             })
-            .disposed(by: disposableBag)
+            .disposed(by: disposeBag)
     }
     
     func requestState(_ requestState: DataRequestState) {

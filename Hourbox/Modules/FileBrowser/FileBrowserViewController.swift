@@ -76,27 +76,27 @@ final class FileBrowserViewController<T: FileBrowserViewModelType>: BaseViewCont
         viewModel.filesData
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in self?.setItems($0) })
-            .disposed(by: disposableBag)
+            .disposed(by: disposeBag)
         
         viewModel.folderPath
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in self?.title = $0 })
-            .disposed(by: disposableBag)
+            .disposed(by: disposeBag)
         
         viewModel.dataRequestState
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] in self?.requestState($0) })
-            .disposed(by: disposableBag)
+            .disposed(by: disposeBag)
         
         collectionView.rx.itemSelected
             .subscribe(onNext: { [weak self] in self?.viewModel.selectedFile(at: $0) })
-            .disposed(by: disposableBag)
+            .disposed(by: disposeBag)
         
         logoutButton.rx.tap
             .subscribe(onNext: { [weak viewModel] in
                 viewModel?.performLogout()
             })
-            .disposed(by: disposableBag)
+            .disposed(by: disposeBag)
     }
     
     func complementaryViewTapped(at indexPath: IndexPath) {

@@ -8,6 +8,4 @@
 
 import UIKit
 
-final class ApplicationViewController<T: ApplicationViewModelType>: BaseViewController<T> {
-
-}
+final class ApplicationViewController<T: ApplicationViewModelType>: BaseViewController<T> { }

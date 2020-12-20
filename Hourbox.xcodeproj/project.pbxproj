@@ -51,6 +51,12 @@
 		86A3280E258EC47300AC17F8 /* GetThumbnailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3280C258EC47300AC17F8 /* GetThumbnailInteractor.swift */; };
 		86A32810258ED84A00AC17F8 /* LogoutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3280F258ED84A00AC17F8 /* LogoutInteractor.swift */; };
 		86A32811258ED84A00AC17F8 /* LogoutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3280F258ED84A00AC17F8 /* LogoutInteractor.swift */; };
+		86A32818258EE7A600AC17F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86A32817258EE7A600AC17F8 /* Localizable.strings */; };
+		86A32819258EE7A600AC17F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86A32817258EE7A600AC17F8 /* Localizable.strings */; };
+		86A3281B258EE97600AC17F8 /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3281A258EE97600AC17F8 /* Texts.swift */; };
+		86A3281C258EE97600AC17F8 /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3281A258EE97600AC17F8 /* Texts.swift */; };
+		86A3281E258EE99900AC17F8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3281D258EE99900AC17F8 /* String+Extension.swift */; };
+		86A3281F258EE99900AC17F8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3281D258EE99900AC17F8 /* String+Extension.swift */; };
 		86D5E5AF25898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B325898E4C0099C2EE /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5B225898E4C0099C2EE /* Entry.swift */; };
@@ -154,6 +160,9 @@
 		86A32809258EC17000AC17F8 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		86A3280C258EC47300AC17F8 /* GetThumbnailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetThumbnailInteractor.swift; sourceTree = "<group>"; };
 		86A3280F258ED84A00AC17F8 /* LogoutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutInteractor.swift; sourceTree = "<group>"; };
+		86A32817258EE7A600AC17F8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		86A3281A258EE97600AC17F8 /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
+		86A3281D258EE99900AC17F8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		86D5E5AE25898E090099C2EE /* FilesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesRepository.swift; sourceTree = "<group>"; };
 		86D5E5B225898E4C0099C2EE /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		86D5E5B6258990A00099C2EE /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,10 +276,10 @@
 			children = (
 				86544065258854C200839146 /* AppDelegate.swift */,
 				86544069258854C200839146 /* ViewController.swift */,
-				86D5E5CC2589CAA40099C2EE /* Utils */,
 				86D5E5BE258995100099C2EE /* Modules */,
 				86D5E5AC25898DE20099C2EE /* Core */,
 				86A32808258EC15700AC17F8 /* Extensions */,
+				86D5E5CC2589CAA40099C2EE /* Utils */,
 				86A32812258EE56100AC17F8 /* Misc */,
 				8654406E258854C600839146 /* Assets.xcassets */,
 				86544070258854C600839146 /* LaunchScreen.storyboard */,
@@ -310,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				86A32809258EC17000AC17F8 /* UIViewController+Extensions.swift */,
+				86A3281D258EE99900AC17F8 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,6 +327,7 @@
 		86A32812258EE56100AC17F8 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				86A32817258EE7A600AC17F8 /* Localizable.strings */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -407,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				86D5E5CD2589CABF0099C2EE /* ViewAppearState.swift */,
+				86A3281A258EE97600AC17F8 /* Texts.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -552,6 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86544072258854C600839146 /* LaunchScreen.storyboard in Resources */,
+				86A32818258EE7A600AC17F8 /* Localizable.strings in Resources */,
 				8654406F258854C600839146 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +573,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86A32819258EE7A600AC17F8 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -700,6 +714,7 @@
 				864A2198258AFFBB0013DB1B /* AccessTokenRepository.swift in Sources */,
 				86D5E5C72589A1220099C2EE /* FileCollectionViewCell.swift in Sources */,
 				86D5E5E12589E2230099C2EE /* PDFViewerViewController.swift in Sources */,
+				86A3281E258EE99900AC17F8 /* String+Extension.swift in Sources */,
 				864A219B258B026E0013DB1B /* IsUserLoggedInInteractor.swift in Sources */,
 				860F88A1258AEEFB00954F15 /* SignInViewModel.swift in Sources */,
 				864A21A2258B17330013DB1B /* DI.swift in Sources */,
@@ -710,6 +725,7 @@
 				86544066258854C200839146 /* AppDelegate.swift in Sources */,
 				860F88A4258AEF7A00954F15 /* SignInCoordinator.swift in Sources */,
 				86A32803258D241E00AC17F8 /* FileInformationDetailViewModel.swift in Sources */,
+				86A3281B258EE97600AC17F8 /* Texts.swift in Sources */,
 				86A3280A258EC17000AC17F8 /* UIViewController+Extensions.swift in Sources */,
 				86A32806258D297100AC17F8 /* FileInformationDetailViewController.swift in Sources */,
 				860F889A258AE14600954F15 /* ImageViewerViewController.swift in Sources */,
@@ -730,6 +746,7 @@
 				86D5E5C82589A1220099C2EE /* FileCollectionViewCell.swift in Sources */,
 				860F889B258AE14600954F15 /* ImageViewerViewController.swift in Sources */,
 				860F88A5258AEF7A00954F15 /* SignInCoordinator.swift in Sources */,
+				86A3281C258EE97600AC17F8 /* Texts.swift in Sources */,
 				86D5E5BD258993C60099C2EE /* GetFilesInteractor.swift in Sources */,
 				8654407D258854C600839146 /* HourboxTests.swift in Sources */,
 				864A2199258AFFBB0013DB1B /* AccessTokenRepository.swift in Sources */,
@@ -742,6 +759,7 @@
 				86D5E5D52589CB720099C2EE /* BaseViewModelType.swift in Sources */,
 				86A32804258D241E00AC17F8 /* FileInformationDetailViewModel.swift in Sources */,
 				86D5E5C525899BC10099C2EE /* FileBrowserViewController.swift in Sources */,
+				86A3281F258EE99900AC17F8 /* String+Extension.swift in Sources */,
 				864A218D258AFA160013DB1B /* ApplicactionViewController.swift in Sources */,
 				86FC3FAD258C4C5C0056B8FA /* AppError.swift in Sources */,
 				864A21A3258B17330013DB1B /* DI.swift in Sources */,
@@ -798,6 +816,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -858,6 +877,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

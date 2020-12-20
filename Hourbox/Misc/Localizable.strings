@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Hourbox
+
+  Created by Felipe Correa on 19/12/20.
+  Copyright © 2020 Felipe & Co. Studios. All rights reserved.
+*/
+
+//Sign in
+"SignIn.Welcome.Title" = "Welcome to your very own Dropbox's file browser experience.\n\nPlease sign in to get started.";
+"SignIn.Button.Title" = "Sign In";
+
+//Logout
+"Logout.Alert.Title" = "Session expired";
+"Logout.Alert.Message" = "Please log in again";
+
+//General
+"General.Ok" = "Ok";

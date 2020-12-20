@@ -10,9 +10,7 @@ import Foundation
 import SwiftyDropbox
 import RxSwift
 
-protocol ApplicationViewModelType: BaseViewModelType {
-    
-}
+protocol ApplicationViewModelType: BaseViewModelType { }
 
 final class ApplicationViewModel: BaseViewModel, ApplicationViewModelType {
     struct InputDependencies {
@@ -23,7 +21,7 @@ final class ApplicationViewModel: BaseViewModel, ApplicationViewModelType {
         let removeAccessTokenInteractor: RemoveAccessTokenInteractorType
     }
     
-    let dependencies: InputDependencies
+    private let dependencies: InputDependencies
     
     init(dependencies: InputDependencies) {
         self.dependencies = dependencies
@@ -55,7 +53,7 @@ final class ApplicationViewModel: BaseViewModel, ApplicationViewModelType {
         }
     }
     
-    func processIncomingAuthResult(_ authResult: DropboxOAuthResult) {
+    private func processIncomingAuthResult(_ authResult: DropboxOAuthResult) {
         switch authResult {
         case .success(let token):
             dependencies.storeAccessTokenInteractor.store(token: token.accessToken)
@@ -64,7 +62,7 @@ final class ApplicationViewModel: BaseViewModel, ApplicationViewModelType {
         }
     }
     
-    func grantAccess() {
+    private func grantAccess() {
         if dependencies.isUserLoggedInInteractor.isLoggedIn() {
             dependencies.coordinator.goToFileBrowser()
         } else {

@@ -26,7 +26,7 @@ final class SignInViewModel: BaseViewModel, SignInViewModelType {
     func binding(startSignIn: Driver<Void>) {
         startSignIn
             .drive(onNext: {[weak self] in
-                self?.start()
+                self?.startSignIn()
             })
             .disposed(by: disposeBag)
     }
@@ -40,13 +40,13 @@ final class SignInViewModel: BaseViewModel, SignInViewModelType {
         }
     }
     
-    func checkUserState() {
+    private func checkUserState() {
         if dependencies.isUserLoggedIn.isLoggedIn() {
             dependencies.coordinator.dismiss()
         }
     }
     
-    func start() {
+    private func startSignIn() {
         dependencies.coordinator.openDropBoxSignIn()
     }
 }

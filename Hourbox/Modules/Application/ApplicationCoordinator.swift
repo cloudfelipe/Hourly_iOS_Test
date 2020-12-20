@@ -18,11 +18,11 @@ protocol ApplicationCoordinatorType {
 
 final class ApplicationCoordinator: ApplicationCoordinatorType {
     
-    weak var router: UINavigationController?
-    let accessTokenRoot = PublishSubject<DropboxOAuthResult>()
-    let dependenciesContainer: DI
+    private let accessTokenRoot = PublishSubject<DropboxOAuthResult>()
+    private let dependenciesContainer: DI
     
-    weak var signinCoordinator: SignInCoordinator?
+    private weak var router: UINavigationController?
+    private weak var signinCoordinator: SignInCoordinator?
     
     init(router: UINavigationController) {
         self.router = router
@@ -76,7 +76,9 @@ final class ApplicationCoordinator: ApplicationCoordinatorType {
     }
     
     func showLogoutPopup() {
-        let alert = UIAlertController(title: "Session expired", message: "Please log in again", defaultActionButtonTitle: "Ok")
+        let alert = UIAlertController(title: Texts.Logout.title,
+                                      message: Texts.Logout.message,
+                                      defaultActionButtonTitle: Texts.General.ok)
         router?.topPresentedViewController.present(alert, animated: true, completion: nil)
     }
 }
