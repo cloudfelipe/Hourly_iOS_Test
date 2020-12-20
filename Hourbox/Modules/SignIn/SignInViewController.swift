@@ -18,16 +18,35 @@ final class SignInViewController<T: SignInViewModelType>: BaseViewController<T> 
         super.viewDidLoad()
         view.backgroundColor = .white
         
+        let logoImageView = UIImageView(image: UIImage(named: "frontLogo"))
+        logoImageView.contentMode = .scaleAspectFit
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor, multiplier: 0.7).isActive = true
+        
+        let welcomeLabel = UILabel()
+        welcomeLabel.text = "Welcome to your very own Dropbox's file browser experience.\n\nPlease sign in to get started."
+        welcomeLabel.numberOfLines = 0
+        welcomeLabel.font = .boldSystemFont(ofSize: 25.0)
+        welcomeLabel.textAlignment = .center
+        
         signinButton.setTitle("Sign In", for: .normal)
         signinButton.backgroundColor = .systemBlue
-        signinButton.setTitleColor(.black, for: .normal)
+        signinButton.setTitleColor(.white, for: .normal)
         signinButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(signinButton)
-        
-        signinButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        signinButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        signinButton.titleLabel?.font = .boldSystemFont(ofSize: 20.0)
         signinButton.heightAnchor.constraint(equalToConstant: 60.0).isActive = true
-        signinButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        
+        
+        let stackView = UIStackView(arrangedSubviews: [logoImageView, welcomeLabel, signinButton])
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(stackView)
+        
+        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        stackView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.6).isActive = true
+        stackView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
         
         setupBinding()
     }

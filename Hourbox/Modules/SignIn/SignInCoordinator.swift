@@ -48,9 +48,7 @@ final class SignInCoordinator: SignInCoordinatorType {
             UIApplication.shared,
             controller: router?.viewControllers.first,
             loadingStatusDelegate: nil,
-            openURL: { (url: URL) -> Void in
-                UIApplication.shared.open(url)
-            },
+            openURL: {_ in},
             scopeRequest: scopeRequest
         )
     }
