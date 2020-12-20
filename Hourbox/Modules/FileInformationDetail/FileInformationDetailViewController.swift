@@ -23,13 +23,13 @@ final class FileInformationDetailViewController<T: FileInformationDetailViewMode
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "file")
+        imageView.image = #imageLiteral(resourceName: "file")
         imageView.isSkeletonable = true
         return imageView
     }()
     
     lazy var thumbnailTitleLabel: UILabel = {
-        let label = UILabel(text: "Thumbnail")
+        let label = UILabel(text: Texts.General.thumbnail)
         label.textAlignment = .center
         label.setContentHuggingPriority(.required, for: .vertical)
         label.setContentHuggingPriority(.required, for: .vertical)
@@ -68,17 +68,17 @@ final class FileInformationDetailViewController<T: FileInformationDetailViewMode
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 1).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 1).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 1).isActive = true
-        title = "File information"
+        title = Texts.FileInformation.title
     }
     
     private func setupBinding() {
         viewModel.informationDataView
         .bind(to: tableView.rx.items) { (tableView, row, item) in
             let cell: UITableViewCell!
-            if let celld = tableView.dequeueReusableCell(withIdentifier: "CumtonCell") {
+            if let celld = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell") {
                 cell = celld
             } else {
-                cell = UITableViewCell(style: .value1, reuseIdentifier: "CustomCell")
+                cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
             }
             cell.textLabel?.text = item.title
             cell.detailTextLabel?.text = item.value

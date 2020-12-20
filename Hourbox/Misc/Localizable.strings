@@ -16,3 +16,14 @@
 
 //General
 "General.Ok" = "Ok";
+"General.Thumbnail" = "Thumbnail";
+
+//FileInformation
+"FileInformation.Title" = "File information";
+"FileInformation.Name" = "Name: ";
+"FileInformation.Type" = "Type: ";
+"FileInformation.Downloadable" = "Downloadable: ";
+"FileInformation.size" = "Size: ";
+"FileInformation.LastModified" = "Last Modified: ";
+"FileInformation.FullPath" = "Full Path: ";
+"FileInformation.HasValue" = "Hash Value: ";

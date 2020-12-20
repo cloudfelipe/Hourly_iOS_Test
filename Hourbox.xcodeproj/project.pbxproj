@@ -57,6 +57,8 @@
 		86A3281C258EE97600AC17F8 /* Texts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3281A258EE97600AC17F8 /* Texts.swift */; };
 		86A3281E258EE99900AC17F8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3281D258EE99900AC17F8 /* String+Extension.swift */; };
 		86A3281F258EE99900AC17F8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A3281D258EE99900AC17F8 /* String+Extension.swift */; };
+		86A32821258EF16200AC17F8 /* FileInformationContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32820258EF16200AC17F8 /* FileInformationContracts.swift */; };
+		86A32822258EF16200AC17F8 /* FileInformationContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A32820258EF16200AC17F8 /* FileInformationContracts.swift */; };
 		86D5E5AF25898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5AE25898E090099C2EE /* FilesRepository.swift */; };
 		86D5E5B325898E4C0099C2EE /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D5E5B225898E4C0099C2EE /* Entry.swift */; };
@@ -163,6 +165,7 @@
 		86A32817258EE7A600AC17F8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		86A3281A258EE97600AC17F8 /* Texts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texts.swift; sourceTree = "<group>"; };
 		86A3281D258EE99900AC17F8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		86A32820258EF16200AC17F8 /* FileInformationContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileInformationContracts.swift; sourceTree = "<group>"; };
 		86D5E5AE25898E090099C2EE /* FilesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesRepository.swift; sourceTree = "<group>"; };
 		86D5E5B225898E4C0099C2EE /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		86D5E5B6258990A00099C2EE /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,6 +314,7 @@
 			children = (
 				86A32802258D241E00AC17F8 /* FileInformationDetailViewModel.swift */,
 				86A32805258D297100AC17F8 /* FileInformationDetailViewController.swift */,
+				86A32820258EF16200AC17F8 /* FileInformationContracts.swift */,
 			);
 			path = FileInformationDetail;
 			sourceTree = "<group>";
@@ -712,6 +716,7 @@
 				86D5E5D42589CB720099C2EE /* BaseViewModelType.swift in Sources */,
 				86D5E5C425899BC10099C2EE /* FileBrowserViewController.swift in Sources */,
 				864A2198258AFFBB0013DB1B /* AccessTokenRepository.swift in Sources */,
+				86A32821258EF16200AC17F8 /* FileInformationContracts.swift in Sources */,
 				86D5E5C72589A1220099C2EE /* FileCollectionViewCell.swift in Sources */,
 				86D5E5E12589E2230099C2EE /* PDFViewerViewController.swift in Sources */,
 				86A3281E258EE99900AC17F8 /* String+Extension.swift in Sources */,
@@ -754,6 +759,7 @@
 				864A2193258AFEFB0013DB1B /* StoreAccessTokenInteractor.swift in Sources */,
 				86D5E5D82589D0070099C2EE /* BaseViewModel.swift in Sources */,
 				86D5E5D22589CADA0099C2EE /* BaseViewController.swift in Sources */,
+				86A32822258EF16200AC17F8 /* FileInformationContracts.swift in Sources */,
 				860F88A2258AEEFB00954F15 /* SignInViewModel.swift in Sources */,
 				86D5E5B025898E090099C2EE /* FilesRepository.swift in Sources */,
 				86D5E5D52589CB720099C2EE /* BaseViewModelType.swift in Sources */,

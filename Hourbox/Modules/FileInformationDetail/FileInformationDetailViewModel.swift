@@ -52,13 +52,14 @@ final class FileInformationDetailViewModel: BaseViewModel, FileInformationDetail
     }
     
     private func prepareFileInformation(with file: Entry) {
-        let info = [FileInformation(title: "Name:", value: file.name),
-                    FileInformation(title: "Type:", value: file.tag.rawValue),
-                    FileInformation(title: "Downloadable:", value: file.isDownloadable.string),
-                    FileInformation(title: "Size:", value: file.size?.string),
-                    FileInformation(title: "Last modified:", value: file.modifiedDate?.string(withFormat: "dd/MM/yyyy HH:mm")),
-                    FileInformation(title: "Full Path:", value: file.pathDisplay),
-                    FileInformation(title: "Hash value:", value: file.hashValue ?? "")]
+        typealias Title = Texts.FileInformation
+        let info = [FileInformation(title: Title.name, value: file.name),
+                    FileInformation(title: Title.type, value: file.tag.rawValue),
+                    FileInformation(title: Title.downloadable, value: file.isDownloadable.string),
+                    FileInformation(title: Title.size, value: file.size?.string),
+                    FileInformation(title: Title.lastModified, value: file.modifiedDate?.string(withFormat: Title.dateFormat)),
+                    FileInformation(title: Title.fullPath, value: file.pathDisplay),
+                    FileInformation(title: Title.hashValue, value: file.hashValue ?? Texts.General.na)]
         
         informationData.onNext(info.filter { $0.value != nil })
         
@@ -79,16 +80,4 @@ final class FileInformationDetailViewModel: BaseViewModel, FileInformationDetail
             }
         }
     }
-}
-
-extension FileInformationDetailViewModel {
-    struct InputDependencies {
-        let file: Entry
-        let getThumbnailInteractor: GetThumbnailInteractorType!
-    }
-}
-
-struct FileInformation {
-    let title: String
-    let value: String?
 }
