@@ -1,5 +1,5 @@
 
-![Hourbox](Screenshots/appstore.png)
+<img src="Screenshots/appstore.png" width="180"/>
 Made with ❤️ in Medellin, Colombia.
 
 ## Overview
