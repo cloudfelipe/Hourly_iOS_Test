@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if ProcessInfo.processInfo.arguments.contains("UITestMode") {
             di = DIMock()
         } else {
-            di = DI()
+            di = DIMock()
         }
         
         rootNavigationVC = UINavigationController()
