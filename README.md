@@ -1,6 +1,8 @@
 
-<img src="Screenshots/appstore.png" width="180"/>
-Made with ❤️ in Medellin, Colombia.
+<p align="center">
+  <img src="Screenshots/appstore.png" width="180"/>
+  Made with ❤️ in Medellin, Colombia.
+</p>
 
 ## Overview
 
