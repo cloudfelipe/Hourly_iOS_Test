@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49CE8C91D7ACFA5815074605 /* Pods_Hourbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD9A7775BB0DFB53FCF47AF /* Pods_Hourbox.framework */; };
-		4F0572CAE46550389FDAAFC6 /* Pods_Hourbox_HourboxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D23079407410EC5109F45BFF /* Pods_Hourbox_HourboxUITests.framework */; };
 		860F889A258AE14600954F15 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F8899258AE14600954F15 /* ImageViewerViewController.swift */; };
 		860F889B258AE14600954F15 /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F8899258AE14600954F15 /* ImageViewerViewController.swift */; };
 		860F889E258AE88200954F15 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860F889D258AE88200954F15 /* SignInViewController.swift */; };
@@ -106,7 +104,6 @@
 		86FC3FAD258C4C5C0056B8FA /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC3FAB258C4C5C0056B8FA /* AppError.swift */; };
 		86FC3FAF258C58700056B8FA /* ErrorProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC3FAE258C58700056B8FA /* ErrorProcessor.swift */; };
 		86FC3FB0258C58700056B8FA /* ErrorProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FC3FAE258C58700056B8FA /* ErrorProcessor.swift */; };
-		8ABC283713C4C943B087422B /* Pods_HourboxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E7CF1D6A483692568AB696 /* Pods_HourboxTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,12 +138,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		02696BF00EB34F54974EE819 /* Pods-Hourbox-HourboxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hourbox-HourboxUITests.debug.xcconfig"; path = "Target Support Files/Pods-Hourbox-HourboxUITests/Pods-Hourbox-HourboxUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		236279740ED0FF27B844C275 /* Pods-HourboxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HourboxTests.debug.xcconfig"; path = "Target Support Files/Pods-HourboxTests/Pods-HourboxTests.debug.xcconfig"; sourceTree = "<group>"; };
-		3025E1F2215CF2B2B3862C8D /* Pods-Hourbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hourbox.debug.xcconfig"; path = "Target Support Files/Pods-Hourbox/Pods-Hourbox.debug.xcconfig"; sourceTree = "<group>"; };
-		50E7CF1D6A483692568AB696 /* Pods_HourboxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HourboxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7331F79B69AAF57D6A93F556 /* Pods-Hourbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hourbox.release.xcconfig"; path = "Target Support Files/Pods-Hourbox/Pods-Hourbox.release.xcconfig"; sourceTree = "<group>"; };
-		7BFD348B7FB41124F9008E4C /* Pods-HourboxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HourboxTests.release.xcconfig"; path = "Target Support Files/Pods-HourboxTests/Pods-HourboxTests.release.xcconfig"; sourceTree = "<group>"; };
 		860F8899258AE14600954F15 /* ImageViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewerViewController.swift; sourceTree = "<group>"; };
 		860F889D258AE88200954F15 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		860F88A0258AEEFB00954F15 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
@@ -206,9 +197,6 @@
 		86D5E5E02589E2230099C2EE /* PDFViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewerViewController.swift; sourceTree = "<group>"; };
 		86FC3FAB258C4C5C0056B8FA /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		86FC3FAE258C58700056B8FA /* ErrorProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorProcessor.swift; sourceTree = "<group>"; };
-		A48F4B01AA9772381205B317 /* Pods-Hourbox-HourboxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hourbox-HourboxUITests.release.xcconfig"; path = "Target Support Files/Pods-Hourbox-HourboxUITests/Pods-Hourbox-HourboxUITests.release.xcconfig"; sourceTree = "<group>"; };
-		D23079407410EC5109F45BFF /* Pods_Hourbox_HourboxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hourbox_HourboxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAD9A7775BB0DFB53FCF47AF /* Pods_Hourbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hourbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,7 +205,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D5E5B7258990A00099C2EE /* Networking.framework in Frameworks */,
-				49CE8C91D7ACFA5815074605 /* Pods_Hourbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +212,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ABC283713C4C943B087422B /* Pods_HourboxTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +219,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F0572CAE46550389FDAAFC6 /* Pods_Hourbox_HourboxUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,9 +392,6 @@
 			isa = PBXGroup;
 			children = (
 				86D5E5B6258990A00099C2EE /* Networking.framework */,
-				FAD9A7775BB0DFB53FCF47AF /* Pods_Hourbox.framework */,
-				D23079407410EC5109F45BFF /* Pods_Hourbox_HourboxUITests.framework */,
-				50E7CF1D6A483692568AB696 /* Pods_HourboxTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -488,12 +470,6 @@
 		D816786687DB1D430E0A14FC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3025E1F2215CF2B2B3862C8D /* Pods-Hourbox.debug.xcconfig */,
-				7331F79B69AAF57D6A93F556 /* Pods-Hourbox.release.xcconfig */,
-				02696BF00EB34F54974EE819 /* Pods-Hourbox-HourboxUITests.debug.xcconfig */,
-				A48F4B01AA9772381205B317 /* Pods-Hourbox-HourboxUITests.release.xcconfig */,
-				236279740ED0FF27B844C275 /* Pods-HourboxTests.debug.xcconfig */,
-				7BFD348B7FB41124F9008E4C /* Pods-HourboxTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -505,12 +481,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8654408C258854C600839146 /* Build configuration list for PBXNativeTarget "Hourbox" */;
 			buildPhases = (
-				53A250B0135D0B94132A181A /* [CP] Check Pods Manifest.lock */,
 				8654405E258854C200839146 /* Sources */,
 				8654405F258854C200839146 /* Frameworks */,
 				86544060258854C200839146 /* Resources */,
 				86D5E5B9258990A00099C2EE /* Embed Frameworks */,
-				94122DA6FAA1493A6E913171 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -525,11 +499,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8654408F258854C600839146 /* Build configuration list for PBXNativeTarget "HourboxTests" */;
 			buildPhases = (
-				430C73FDE5C6335762F53D3A /* [CP] Check Pods Manifest.lock */,
 				86544074258854C600839146 /* Sources */,
 				86544075258854C600839146 /* Frameworks */,
 				86544076258854C600839146 /* Resources */,
-				D277F31324D530F5B7F616CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -545,11 +517,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86544092258854C600839146 /* Build configuration list for PBXNativeTarget "HourboxUITests" */;
 			buildPhases = (
-				82C24AD9436A4BC3D81DFA1B /* [CP] Check Pods Manifest.lock */,
 				8654407F258854C600839146 /* Sources */,
 				86544080258854C600839146 /* Frameworks */,
 				86544081258854C600839146 /* Resources */,
-				5763E06FC304AABDB6382F00 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -631,126 +601,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		430C73FDE5C6335762F53D3A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HourboxTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		53A250B0135D0B94132A181A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Hourbox-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5763E06FC304AABDB6382F00 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Hourbox-HourboxUITests/Pods-Hourbox-HourboxUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Hourbox-HourboxUITests/Pods-Hourbox-HourboxUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hourbox-HourboxUITests/Pods-Hourbox-HourboxUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		82C24AD9436A4BC3D81DFA1B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Hourbox-HourboxUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		94122DA6FAA1493A6E913171 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Hourbox/Pods-Hourbox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Hourbox/Pods-Hourbox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hourbox/Pods-Hourbox-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D277F31324D530F5B7F616CE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HourboxTests/Pods-HourboxTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HourboxTests/Pods-HourboxTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HourboxTests/Pods-HourboxTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8654405E258854C200839146 /* Sources */ = {
@@ -1010,7 +860,6 @@
 		};
 		8654408D258854C600839146 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3025E1F2215CF2B2B3862C8D /* Pods-Hourbox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1029,7 +878,6 @@
 		};
 		8654408E258854C600839146 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7331F79B69AAF57D6A93F556 /* Pods-Hourbox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -1048,7 +896,6 @@
 		};
 		86544090258854C600839146 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 236279740ED0FF27B844C275 /* Pods-HourboxTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1071,7 +918,6 @@
 		};
 		86544091258854C600839146 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BFD348B7FB41124F9008E4C /* Pods-HourboxTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1094,7 +940,6 @@
 		};
 		86544093258854C600839146 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02696BF00EB34F54974EE819 /* Pods-Hourbox-HourboxUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1115,7 +960,6 @@
 		};
 		86544094258854C600839146 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A48F4B01AA9772381205B317 /* Pods-Hourbox-HourboxUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
