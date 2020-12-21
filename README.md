@@ -26,7 +26,7 @@
 
 ## Setup
 
-Clone project and then install dependencies using [Cocoapods](https://github.com/CocoaPods/CocoaPods) on the root of project:
+Clone project and then install dependencies using [Cocoapods](https://github.com/CocoaPods/CocoaPods) on the root of the project:
 
 `pod install`
 
@@ -46,7 +46,7 @@ Clone project and then install dependencies using [Cocoapods](https://github.com
 * Networking module for network services.
 * We have interfaces for the repositories in order to respect the dependencies rule on the usecases,
 as they should not be aware of the repositories impl that will be in an upper layer than usecases
-* Unit test for main module (FileBrowser) in order to show how apply unit test for all other modules.
+* Unit test for main module only (FileBrowser) in order to show how to apply unit test for all other modules.
 * UI Test to check the flow between modules.
 
 ## Built With
