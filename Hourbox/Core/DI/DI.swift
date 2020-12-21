@@ -16,7 +16,17 @@ struct URLProvider: BaseURLProviderType {
     }
 }
 
-final class DI {
+protocol DependencyInversionType {
+    var getFilesInteractor: GetFilesInteractorType { get }
+    var downloadFileInteractor: DownloadFileInteractorType { get }
+    var isUserLoggedInInteractor: IsUserLoggedInInteractorType { get }
+    var storeAccessTokenInteractor: StoreAccessTokenInteractorType { get }
+    var removeAccessTokenInteractor: RemoveAccessTokenInteractorType { get }
+    var getThumbnailInteractor: GetThumbnailInteractorType { get }
+    var logoutInteractor: LogoutInteractorType { get }
+}
+
+final class DI: DependencyInversionType {
     
     private var keychainAccess: Keychain { Keychain(service: "com.felipeco.Hourbox") }
     private var accessTokenRepository: AccessTokenRepositoryType { keychainAccess }
@@ -27,7 +37,7 @@ final class DI {
     private var downloadService: DownloadService { DownloadService(client: dropboxClient) }
     private var repo: FilesRepository { FilesRepository(service: service, downloadService: downloadService, errorProcessor: ErrorProcessor()) }
    
-    var getFilesInteractor: GetFilesInteractor { GetFilesInteractor(repository: repo) }
+    var getFilesInteractor: GetFilesInteractorType { GetFilesInteractor(repository: repo) }
     var downloadFileInteractor: DownloadFileInteractorType { DownloadFileInteractor(repository: repo) }
     var isUserLoggedInInteractor: IsUserLoggedInInteractorType { IsUserLoggedInInteractor(repository: accessTokenRepository) }
     var storeAccessTokenInteractor: StoreAccessTokenInteractorType { StoreAccessTokenInteractor(repository: accessTokenRepository)}

@@ -19,8 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        var di: DependencyInversionType
+
+        if ProcessInfo.processInfo.arguments.contains("UITestMode") {
+            di = DIMock()
+        } else {
+            di = DI()
+        }
+        
         rootNavigationVC = UINavigationController()
-        let coordinator = ApplicationCoordinator(router: rootNavigationVC)
+        let coordinator = ApplicationCoordinator(router: rootNavigationVC, di: di)
         coordinator.start()
         applicationCoordinator = coordinator
         

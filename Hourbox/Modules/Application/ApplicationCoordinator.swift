@@ -19,16 +19,15 @@ protocol ApplicationCoordinatorType {
 final class ApplicationCoordinator: ApplicationCoordinatorType {
     
     private let accessTokenRoot = PublishSubject<DropboxOAuthResult>()
-    private let dependenciesContainer: DI
+    private let dependenciesContainer: DependencyInversionType
     
     private weak var router: UINavigationController?
     private weak var signinCoordinator: SignInCoordinator?
     
-    init(router: UINavigationController) {
+    init(router: UINavigationController, di: DependencyInversionType) {
         self.router = router
-        self.dependenciesContainer = DI()
+        self.dependenciesContainer = di
     }
-    
     
     func start() {
         let inputDependencies = ApplicationViewModel.InputDependencies(coordinator: self,

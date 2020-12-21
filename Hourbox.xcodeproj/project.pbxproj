@@ -37,6 +37,8 @@
 		8650268A258FFC89008D982F /* AccessTokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A2197258AFFBB0013DB1B /* AccessTokenRepository.swift */; };
 		8650268C25900F91008D982F /* FileBrowserCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8650268B25900F91008D982F /* FileBrowserCoordinatorSpy.swift */; };
 		8650268E25900FB5008D982F /* InteractorStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8650268D25900FB5008D982F /* InteractorStubs.swift */; };
+		8650269025901307008D982F /* DIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8650268F25901307008D982F /* DIMock.swift */; };
+		8650269125901307008D982F /* DIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8650268F25901307008D982F /* DIMock.swift */; };
 		86544066258854C200839146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86544065258854C200839146 /* AppDelegate.swift */; };
 		8654406A258854C200839146 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86544069258854C200839146 /* ViewController.swift */; };
 		8654406F258854C600839146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8654406E258854C600839146 /* Assets.xcassets */; };
@@ -160,6 +162,7 @@
 		864A21A1258B17330013DB1B /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		8650268B25900F91008D982F /* FileBrowserCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserCoordinatorSpy.swift; sourceTree = "<group>"; };
 		8650268D25900FB5008D982F /* InteractorStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorStubs.swift; sourceTree = "<group>"; };
+		8650268F25901307008D982F /* DIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIMock.swift; sourceTree = "<group>"; };
 		86544062258854C200839146 /* Hourbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hourbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86544065258854C200839146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86544069258854C200839146 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				864A21A1258B17330013DB1B /* DI.swift */,
+				8650268F25901307008D982F /* DIMock.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -783,6 +787,7 @@
 				864A21A2258B17330013DB1B /* DI.swift in Sources */,
 				86A32810258ED84A00AC17F8 /* LogoutInteractor.swift in Sources */,
 				86A32830258F0E7100AC17F8 /* NSNotification+Extensions.swift in Sources */,
+				8650269025901307008D982F /* DIMock.swift in Sources */,
 				864A218C258AFA160013DB1B /* ApplicactionViewController.swift in Sources */,
 				86A3282D258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift in Sources */,
 				864A219E258B0B240013DB1B /* RemoveAccessTokenInteractor.swift in Sources */,
@@ -809,6 +814,7 @@
 				864A2190258AFA430013DB1B /* ApplicationViewModel.swift in Sources */,
 				86D5E5E22589E2230099C2EE /* PDFViewerViewController.swift in Sources */,
 				8650268A258FFC89008D982F /* AccessTokenRepository.swift in Sources */,
+				8650269125901307008D982F /* DIMock.swift in Sources */,
 				86D5E5C82589A1220099C2EE /* FileCollectionViewCell.swift in Sources */,
 				86A3282E258F084D00AC17F8 /* FileBrowserCollectionAdapter.swift in Sources */,
 				860F889B258AE14600954F15 /* ImageViewerViewController.swift in Sources */,
