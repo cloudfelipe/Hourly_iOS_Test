@@ -1,6 +1,6 @@
 
 ![Hourbox](Screenshots/appstore.png)
-Made with ❤️
+Made with ❤️ in Medellin, Colombia.
 
 ## Overview
 
